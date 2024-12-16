@@ -1,0 +1,1 @@
+<div onclick="window.location.href='/';" id="fixedheader">Bank Lampung</div>
