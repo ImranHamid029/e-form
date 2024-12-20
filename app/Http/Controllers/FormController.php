@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\FormSubmission;
 
 class FormController extends Controller
 {
@@ -14,6 +15,7 @@ class FormController extends Controller
      */
     public function __invoke(Request $request)
     {
-        echo view('form');
+        echo view('form.form');
     }
+    
 }

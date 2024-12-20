@@ -8,6 +8,11 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\SetorController;
+use App\Http\Controllers\TarikController;
+use App\Http\Controllers\PengaduanController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -53,3 +58,17 @@ Route::resource('/mahasiswa',MahasiswaController::class);
 Route::get('/admin', [AccountOfficerController::class, 'incoming']);
 Route::get('/admin/in', [AccountOfficerController::class, 'incoming']);
 Route::get('/admin/detail/{id}', [AccountOfficerController::class, 'detail']);
+
+//Setor Tunai
+Route::get('/setor', SetorController::class);
+
+//Tarik Tunai
+Route::get('/tarik', TarikController::class);
+Route::post('/form-submit', [TarikController::class, 'store'])->name('form.store');
+
+//Pengaduan
+Route::get('/pengaduan', function () {
+    return view('pengaduan');
+})->name('pengaduan.page');
+
+Route::post('/pengaduan-submit', [PengaduanController::class, 'store'])->name('pengaduan.submit');
