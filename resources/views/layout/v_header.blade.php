@@ -79,8 +79,9 @@
                                     <li><a href="#">Daftar</a>
                                         <ul class="dropdown">
                                             <li><a href="/kredit">Kredit Aneka Usaha</a></li>
-                                            <li><a href="/kredit">Kredit B</a></li>
-                                            <li><a href="/kredit">Kredit C</a></li>
+                                            <li><a href="/setor">Setor Tunai</a></li>
+                                            <li><a href="/tarik">Tarik Tunai</a></li>
+                                            <li><a href="/pengaduan">Pengaduan Online</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Tentang Kami</a></li>
