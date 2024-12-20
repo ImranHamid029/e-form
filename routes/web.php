@@ -64,7 +64,7 @@ Route::get('/setor', SetorController::class);
 
 //Tarik Tunai
 Route::get('/tarik', TarikController::class);
-Route::post('/form-submit', [TarikController::class, 'store'])->name('form.store');
+Route::post('/tarik-submit', [TarikController::class, 'store'])->name('tarik.store');
 
 //Pengaduan
 Route::get('/pengaduan', function () {

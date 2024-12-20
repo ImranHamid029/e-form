@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Tarik;
 class TarikController extends Controller
 {
     public function store(Request $request)
@@ -15,7 +15,7 @@ class TarikController extends Controller
         ]);
 
         // Simpan data ke MongoDB
-        FormSubmission::create([
+        Tarik::create([
             'no_rekening' => $request->no_rekening,
             'nama_pemilik' => $request->nama_pemilik,
         ]);

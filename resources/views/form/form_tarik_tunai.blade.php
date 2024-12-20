@@ -27,7 +27,7 @@
     }
 </style>
 
-<form action="{{ route('form.store') }}" method="POST" enctype="multipart/form-data" id="regForm">
+<form action="{{ route('tarik.store') }}" method="POST" enctype="multipart/form-data" id="regForm">
     @csrf
     <div class="form-group mb-3 d-flex justify-content-center">
         <div class="card mt-4" style="width:80%">
