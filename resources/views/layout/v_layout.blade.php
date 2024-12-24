@@ -1,4 +1,4 @@
-@include('layout.v_header')
+@include('layout.header2')
 
 @yield('content')          
 

@@ -3,13 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Pengaduan;
 
-class PengaduanController extends Controller
+class FormPengaduanController extends Controller
 {
     public function __invoke()
     {
-        echo view('pengaduan');
+        echo view('form.form_pengaduan');
     }
-    
 }

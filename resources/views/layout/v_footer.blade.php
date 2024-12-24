@@ -1,41 +1,25 @@
-
-
-    <!-- ##### Footer Area Start ##### -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Bank Lampung</title>
+</head>
+<body>
+ 
     <footer class="footer-area">
         
-
         <!-- Copywrite Area -->
-        <div class="copywrite-area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="copywrite-content d-flex flex-wrap justify-content-between align-items-center">
-                            <!-- Footer Logo -->
-                            <a href="/" class="footer-logo"><img src="img/logo.png" width="200px" alt=""></a>
-
-                            <!-- Copywrite Text -->
-                            <p class="copywrite-text"><a href="#"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="copywrite-area" >
+            <p class="copywrite-text">
+                PT Bank Lampung Berizin & diawasi oleh Otoritas Jasa Keuangan serta merupakan peserta penjaminan LPS
+            </p>
+            <p class="copywrite-text">
+                &copy;<script>document.write(new Date().getFullYear());</script> 
+                <a href="https://www.banklampung.co.id/" target="_blank"><b style="color:white;">Bank Lampung</b></a>
+            </p>
         </div>
     </footer>
-    <!-- ##### Footer Area Start ##### -->
-
-    <!-- ##### All Javascript Script ##### -->
-    <!-- jQuery-2.2.4 js -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="js/bootstrap/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="js/bootstrap/bootstrap.min.js"></script>
-    <!-- All Plugins js -->
-    <script src="js/plugins/plugins.js"></script>
-    <!-- Active js -->
-    <script src="js/active.js"></script>
 </body>
-
 </html>

@@ -11,7 +11,7 @@ use App\Http\Controllers\TestController;
 use App\Http\Controllers\SetorController;
 use App\Http\Controllers\TarikController;
 use App\Http\Controllers\PengaduanController;
-
+use App\Http\Controllers\FormPengaduanController;
 
 
 /*
@@ -70,5 +70,7 @@ Route::post('/tarik-submit', [TarikController::class, 'store'])->name('tarik.sto
 Route::get('/pengaduan', function () {
     return view('pengaduan');
 })->name('pengaduan.page');
-
 Route::post('/pengaduan-submit', [PengaduanController::class, 'store'])->name('pengaduan.submit');
+Route::get('/form_pengaduan',function(){
+    return view('form.form_pengaduan');
+});
