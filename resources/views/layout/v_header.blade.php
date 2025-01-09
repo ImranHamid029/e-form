@@ -12,7 +12,7 @@
     <title>Kredit Bank Lampung</title>
 
     <!-- Favicon -->
-    <link rel="icon" href="img/logo6.png">
+    
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
@@ -20,37 +20,9 @@
 </head>
 
 <body>
-    <!-- Preloader -->
-    <div class="preloader d-flex align-items-center justify-content-center">
-        <div class="lds-ellipsis">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
+   
 
-    <!-- ##### Header Area Start ##### -->
-    <header class="header-area">
-        <!-- Top Header Area -->
-        <div class="top-header-area">
-            <div class="container h-100">
-                <div class="row h-100 align-items-center">
-                    <div class="col-12 d-flex justify-content-between">
-                        <!-- Logo Area -->
-                        <div class="logo">
-                            <a href="/"><img src="img/logo.png" width="160px" alt=""></a>
-                        </div>
-
-                        <!-- Top Contact Info -->
-                        <div class="top-contact-info d-flex align-items-center">
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="Jl. Wolter Monginsidi No.182, Teluk Betung, Kota Bandar Lampung"><img src="img/core-img/placeholder.png" alt=""> <span>Jl. Wolter Monginsidi No.182, Teluk Betung, Kota Bandar Lampung</span></a>
-                            <a href="#" data-toggle="tooltip" data-placement="bottom" title="komunikasi@banklampung.co.id"><img src="img/core-img/message.png" alt=""> <span>komunikasi@banklampung.co.id</span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+   
 
         <!-- Navbar Area -->
         <div class="credit-main-menu" id="sticker">
@@ -58,20 +30,6 @@
                 <div class="container">
                     <!-- Menu -->
                     <nav class="classy-navbar justify-content-between" id="creditNav">
-
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <!-- Menu -->
-                        <div class="classy-menu">
-
-                            <!-- Close Button -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
                             <!-- Nav Start -->
                             <div class="classynav">
                                 <ul>

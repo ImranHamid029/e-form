@@ -141,9 +141,7 @@ button:hover {
 }
 
 /* Mark the steps that are finished and valid: */
-.step.finish {
-  background-color: #4CAF50;
-}
+
 .container {
   display: block;
   position: relative;
