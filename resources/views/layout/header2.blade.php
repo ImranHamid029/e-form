@@ -44,7 +44,7 @@
                                                 <ul class="dropdown">
                                                     <li><a href="/kredit" data-full-text="Kredit Aneka Usaha" class="body-lg-semibold">Kredit Aneka Usaha</a></li>
                                                     <li><a href="/pengaduan" data-full-text="Pengaduan Online" class="body-lg-semibold">Pengaduan Online</a></li>
-                                                    <li><a href="/cek-status" class="body-lg-semibold">Cek Status</a></li>
+                                                    <li><a href="/chack-status" class="body-lg-semibold">Cek Status</a></li>
                                                 </ul>
                                             </li>
                                             <li><a href="#" class="menu-dropdown body-lg-semibold">Menu e-Formulir<i class="fa fa-chevron-down"style="padding-left:24px"></i></a>

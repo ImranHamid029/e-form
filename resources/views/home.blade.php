@@ -3,38 +3,40 @@
 
 
 <body>
-   
+ 
     <!-- ##### Features Area Start ###### -->
-    <section class="features-area ">
-    <div class="container2" >
-    <div class="row align-items-center">
-        <!-- Teks Selamat Datang di Kiri -->
-        <div class="col-12 col-md-6 mb-4" >
-            <div class="single-features-area wow fadeInUp" data-wow-delay="100ms">
-                <!-- Section Heading -->
-                <div class="section-heading">
-                    <h1 class="h1-bold">Selamat datang di e-Form Bank Lampung!</h1>
+<section class="features-area ">
+    <div class="container2" style="padding-bottom:120px; ">
+        <div class="home-container">
+            <div class="row align-items-center">
+            <!-- Teks Selamat Datang di Kiri -->
+                <div class="col-12 col-md-6 mb-4" >
+                    <div class="single-features-area wow fadeInUp" data-wow-delay="100ms" style="color:#fff">
+                        <!-- Section Heading -->
+                        <div class="section-heading">
+                            <h1 class="h1-bold">Selamat datang di e-Form Bank Lampung!</h1>
+                        </div>
+                        <p class="body-lg-regular" style="color:#fff">Kami hadir untuk memberikan kemudahan 
+                            dan kenyamanan dalam memenuhi kebutuhan 
+                            finansial Anda. Jelajahi layanan digital kami, 
+                            mulai dari pengajuan kredit, pengaduan, hingga 
+                            transaksi perbankan lainnya secara cepat, aman, 
+                            dan praktis.</p>
+                        <p style="color:#fff">Bank Lampung bahagia melayani dari hati.</p>
+                    </div>
                 </div>
-                <p class="body-lg-regular">Kami hadir untuk memberikan kemudahan 
-                    dan kenyamanan dalam memenuhi kebutuhan 
-                    finansial Anda. Jelajahi layanan digital kami, 
-                    mulai dari pengajuan kredit, pengaduan, hingga 
-                    transaksi perbankan lainnya secara cepat, aman, 
-                    dan praktis.</p>
-                <p>Bank Lampung bahagia melayani dari hati.</p>
-            </div>
-        </div>
 
-        <!-- Gambar di Kanan -->
-        <div class="col-12 col-md-6 d-flex justify-content-center">
-            <div class="image" >
-                <a href="/">
-                    <img id="dynamic-image" src="img/img41.png" class="img-fluid" alt="Bank Lampung">
-                </a>
+                <!-- Gambar di Kanan -->
+                <div class="col-12 col-md-6 d-flex justify-content-center">
+                    <div class="image" >
+                        <a href="/">
+                            <img id="dynamic-image" src="img/img41.png" class="img-fluid" alt="Bank Lampung">
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     
 

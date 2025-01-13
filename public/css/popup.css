@@ -1,0 +1,111 @@
+/* Popup area */
+.popup-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 9999;
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.popup-container {
+    background-color: #DEE7FB;
+    width: 535px; 
+    height: auto; 
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex; 
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+}
+.top-area-popup {
+    color: #fff;
+    background-color: #007DFE;
+    border-radius: 12px;
+    text-align: center;
+    width: 100%;
+    height: 63px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    
+    
+}
+
+.popup-content {
+    padding-top: 24px;
+   text-align: start;
+   width: 100%;
+    
+}
+.btn-area{
+    justify-content:space-between;
+    align-items: center;
+    padding:24px;
+    display: flex;
+}
+.single-btn-area{
+    display: flex;
+    align-items: center;
+    padding:24px;
+    display: flex;
+    text-align: center;
+}
+.date-area p {
+    text-align: right; 
+    margin: 0; 
+    padding: 0; 
+}
+
+.info-transaction li{
+    display: flex;
+    align-items: baseline;
+    padding: 5px 0;
+    position: relative; 
+    list-style: none;
+}
+.info-transaction li span {
+    margin-right: 10px;
+    min-width: 150px;
+    display: inline-block;
+}
+
+.info-transaction li::before {
+    content: "•"; /* Gunakan bullet point */
+    position: absolute;
+    left: -20px; /* Tempatkan di kiri */
+    color: #000; /* Warna bullet */
+    font-size: 16px; /* Ukuran bullet */
+}
+.popup-area-error{
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; 
+  margin: 0 auto; 
+  
+}
+.popup-error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 9999;
+    backdrop-filter: blur(8px); 
+    -webkit-backdrop-filter: blur(8px);
+}

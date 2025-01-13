@@ -24,17 +24,18 @@
                             <div class="col-12 d-flex justify-content-between" style="height:96px">
                                 <!-- Logo Area -->
                                 <div class="admin-name" style="white-space: nowrap;">
-                                    <p class="admin-name body-lg-semibold" style="color:#fff">Hi, Admin 1</p>
+                                    <a href="/"><img src="img/logo.png" width="232px" height="113" alt=""></a>
                                 </div>
-
+                                
                                 <!-- Menu -->
                                 <div class="classy-menu d-flex justify-content-between" style="height:96px;">
 
                                     <!-- Nav Start -->
                                     <div class="classynav" style="height:96px; justify-content:end;display: flex; align-items: center; text-align: center;">
                                         <ul >
-                                            <li > <p style="color:#fff;">Cabang: Kantor Pusat</p></li>
-                                            <li > <p style="color:#fff;">Kode Cabang: ABC </p></li>
+                                            <li > <p style="color:#fff;">Kantor Oprasional: Kantor Pusat</p></li>
+                                            <li > <p style="color:#fff;">Kode Kantor: ABC </p></li>
+                                            <li>  <p style="color:#fff;"> Teller 1</p></li>
                                         </ul>
                                        
                                         

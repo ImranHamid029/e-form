@@ -14,7 +14,7 @@ h1,h2,h3,h4{
 }
 
 p {
-  color: #000000;
+  
   font-size: 18px;
     font-weight:400px ;
     font-size: 18px;
@@ -73,7 +73,7 @@ p {
 /* Heading 2 - Bold */
 .h2-bold {
     font-weight: 700; /* SemiBold */
-    font-size: 48px;
+    font-size: 36px;
     line-height: 44px;
 }
 
@@ -196,7 +196,7 @@ p {
     font-size: 16px;
     line-height: 24px;
 }
-.body-md-bold{
+p .body-md-bold{
     font-weight:700px ;
     font-size: 16px;
     line-height: 24px;
@@ -225,22 +225,22 @@ p {
 }
 
 .caption-regular{
-    font-weight:700px ;
+    font-weight:400px ;
     font-size: 12px;
     line-height: 18px;
 }
 .caption-medium{
-    font-weight:700px ;
+    font-weight:500px ;
     font-size: 12px;
     line-height: 18px;
 }
 .caption-semibold{
-    font-weight:700px ;
+    font-weight:600px ;
     font-size: 12px;
     line-height: 18px;
 }
 .caption-bold{
-    font-weight:700px ;
+    font-weight:1000px ;
     font-size: 12px;
     line-height: 18px;
 }

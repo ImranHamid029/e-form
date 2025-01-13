@@ -13,6 +13,7 @@ use App\Http\Controllers\FormPengaduanController;
 use App\Http\Controllers\TarikTunaiController;
 use App\Http\Controllers\TentangKamiController;
 use App\Http\Controllers\LoginController;
+use Mews\Captcha\Facades\Captcha;
 
 Route::get('/tes', function () {
     return view('tes');
@@ -42,9 +43,12 @@ Route::resource('/test', TestController::class);
 Route::resource('/mahasiswa',MahasiswaController::class);
 // Login Account officer
 Route::get('/login-admin',[LoginController::class,'index']);
-// Account officer
-Route::get('/admin', [AccountOfficerController::class, 'index']);
 
+// Account officer (Super Admin)
+Route::get('/admin', [AccountOfficerController::class, 'index']);
+Route::get('/manage-account', function () {
+    return view('accountofficer.manage_account');
+});
 
 //Kredit
 Route::get('/kredit', [KreditController::class,'index']);
@@ -67,3 +71,33 @@ Route::get('/form-pengaduan', PengaduanController::class);
 
 // Tentang Kami
 Route::get('/tentang-kami', TentangKamiController::class);
+
+//Popup
+Route::get('/popup1', function () {
+    return view('popup.popup1');
+});
+Route::get('/popup2', function () {
+    return view('popup.popup2');
+});
+Route::get('/error', function () {
+    return view('popup.disturbance');
+});
+
+//Status
+Route::get('/chack-status', function(){
+    return view('status.chack_status');
+});
+Route::get('/view-status', function(){
+    return view('status.view_status');
+});
+
+//Captcha
+Route::get('/generate-captcha', function () {
+    return Captcha::create();
+});
+
+// Teller
+Route::get('/teller', function () {
+    return view('accountofficer.teller.dashboard_teller');
+});
+
