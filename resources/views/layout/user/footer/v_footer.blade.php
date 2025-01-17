@@ -1,19 +1,7 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
 
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="style.css">
-
-</head>
-<body>
-   
 <footer class="footer-area">
     
-    <div class="container2" style="padding: 24px 0">
+    <div class="footer-container" style="padding: 24px 0">
         <div class="row" >
             <!-- Area 1: Logo dan Alamat -->
             <div class="col-md-3 footer-section">
@@ -47,6 +35,7 @@
                 <p><strong style="color:#fff">Perizinan dan Pengawasan</strong></p>
                 <p>PT Bank Lampung Berizin & diawasi oleh Otoritas Jasa Keuangan serta merupakan peserta penjaminan Lembaga Penjamin Simpanan (LPS).</p>
             </div>
+            
         </div>
         <div class="row">
             <div class="col-md-3 footer-section">
@@ -58,9 +47,3 @@
         
     </div>
 </footer>
-
-
-
-
-</body>
-</html>

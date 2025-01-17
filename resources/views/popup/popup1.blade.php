@@ -1,15 +1,5 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popup Pengaduan</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}"> <!-- Tambahkan jika ada file CSS -->
-</head>
-<link rel="stylesheet" href="style.css">
-<body>
-    
+@extends('layout\user\app')
+@section('content')
         <div class="popup-area">
             <div class="popup-container d-block">
                     <div class="top-area-popup">
@@ -19,7 +9,7 @@
                 
                 <div class="popup-content">
                     <div>
-                        <h4 class="h4-semibold">Pengaduan Online Berhasil Dikirim!</h4> <!-- Sesuaikan dengan database -->
+                        <h4 class="h4-semibold">Data Pengajuan Kredit Berhasil Dikirim!</h4> <!-- Sesuaikan dengan database -->
                     </div>
 
                     <div class="d-flex">
@@ -31,7 +21,7 @@
                     <div>
                         <ul class="caption-regular" style="padding-left:20px;">
                             <li>Simpan nomor resi ini untuk memantau status pengaduan Anda.</li>
-                            <li>Status pengaduan dapat dipantau melalui halaman Cek Status di website kami.</li>
+                            <li>Status Pengajuan dapat dipantau melalui halaman Cek Status di website kami.</li>
                         </ul>
                     </div>
 
@@ -43,10 +33,15 @@
                         
                         <p class="caption-regular">Terima kasih atas kepercayaan Anda kepada Bank Lampung!</p>
                     </div>
-
-                    <div class="date-area" >
-                        <p class="caption-regular" style="opacity: 0.5;">09.39 WIB, Selasa, 7 Januari 2025</p>
+                    <div>
+                        <div class="logo-popup">
+                            <img src="/img/logo.png" alt="">
+                        </div>
+                        <div class="date-area" >
+                            <p class="caption-regular" style="opacity: 0.5;">09.39 WIB, Selasa, 7 Januari 2025</p>
+                        </div>
                     </div>
+                    
                 </div>
 
                 <div class="btn-area">
@@ -59,7 +54,4 @@
                 </div>
             </div>
         </div>
-    
-</body>
-</html>
-
+@endsection

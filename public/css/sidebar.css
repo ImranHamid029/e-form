@@ -1,17 +1,18 @@
+
 .sidebar {
-    width: 250px;
-    height: 1000px;
-    background: rgba(255, 255, 255, 0.2); 
+    width: 350px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.5); 
     color: black;
     position: fixed;
     top: 0; 
     left: 0; 
     display: flex;
     flex-direction: column;
-    padding: 24px 0;
+    padding: 32px 0;
     backdrop-filter: blur(10px); 
     border-right: 1px solid rgba(255, 255, 255, 0.3);
-    transform: translateX(-100%); 
+    transform: translateX(-70%); 
     transition: transform 0.3s ease-in-out; 
     z-index: 9999; 
 }
@@ -40,21 +41,26 @@
 .sidebar ul li {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
+    padding: 18px 36px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 .sidebar ul li:hover {
-    background-color: #f1f1f1;
+    background-color: none;
 }
 .sidebar ul li a {
     text-decoration: none;
     color: black;
     font-size: 18px;
-    margin-left: 10px;
+    margin-left: 16px;
     display: block;
     flex-grow: 1;
 }
+.sidebar ul li .icon{
+    filter: contrast();
+}
+
+
 .sidebar ul li a:hover{
     color:#2062E5;
 }
@@ -64,19 +70,45 @@
 }
 .sidebar .logout {
     margin-top: auto;
-    padding: 64px 0;
 }
+
 
 .hamburger {
     position: fixed;
-    top: 20px;
-    left: 20px; /* Awalnya di pojok kiri layar */
-    font-size: 1.5em;
+    top: 32px;
+    left: 54px; /* Awalnya di pojok kiri layar */
     cursor: pointer;
     z-index: 10000; /* Pastikan lebih tinggi dari sidebar */
     color: #000;
     transition: transform 0.3s ease-in-out, right 0.3s ease-in-out; /* Animasi bergerak */
 }
 .hamburger.in-sidebar {
-    transform: translateX(200px); /* Menyesuaikan dengan pergerakan sidebar */
+    transform: translateX(230px); /* Menyesuaikan dengan pergerakan sidebar */
+}
+
+.profile{
+    width:55px;
+    width: 55px;
+    border-radius: 50%;
+}
+.profile img{
+    width:100%;
+    
+    border-radius: 50%;
+}
+.profile-area{
+    height: 90px;
+    padding-left:24px;
+    display: flex;
+    cursor: pointer;
+    align-items: start;
+}
+.name-area{
+    display: block; 
+    padding-left: 12px;
+    cursor: pointer;
+}
+.name-area a:hover {
+    
+    font-size: 18px;
 }

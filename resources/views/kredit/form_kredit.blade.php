@@ -1,4 +1,4 @@
-@extends('layout\v_layout')
+@extends('layout\user\app')
 @section('content')
 
 <form action="#" method="POST" enctype="multipart/form-data" id="regForm">
@@ -20,8 +20,8 @@
               </div>
             </div>
 
-            <div class="d-flex justify-content-between">
-              <div class="form-container" style="flex: 1; padding-right: 24px;">
+            <div class="form-container2 d-flex justify-content-between">
+              <div class="form-container" style="flex: 1;  width:50%;">
 
                 <div class="form-container">
                   <label for="tempat_lahir">Tempat Lahir<span class="required">*</span></label>
@@ -49,7 +49,8 @@
                 </div>
               </div>
 
-              <div class="form-container" style="flex: 1;">
+              <div class="form-container " style="flex: 1;width:50%; ">
+                
                 <div class="form-container">
                   <label for="nik">NIK <span class="required">*</span></label>
                   <div class="input-area">
@@ -73,6 +74,7 @@
                     <span class="invalid-icon" style="display: none;">&#x2716;</span>
                   </div>
                 </div>
+
               </div>
             </div>
 
@@ -84,8 +86,8 @@
               </div>
             </div>
 
-            <div class="d-flex justify-content-between">
-              <div class="form-container" style="flex: 1; padding-right: 24px;">
+            <div class="form-container2 d-flex justify-content-between">
+              <div class="form-container" style="flex: 1; width:50%;">
                 <div class="form-container">
                   <label for="provinsi">Provinsi <span class="required">*</span></label>
                   <select id="provinsi" class="form-input" required>
@@ -105,7 +107,7 @@
                 </div>
               </div>
 
-              <div class="form-container" style="flex: 1;">
+              <div class="form-container" style="flex: 1;width:50%;">
                 <div class="form-container">
                   <label for="kecamatan">Kecamatan<span class="required">*</span></label>
                   <select id="kecamatan" class="form-input" required>
@@ -158,8 +160,8 @@
               </div>
             </div>
 
-            <div class="d-flex justify-content-between">
-              <div class="form-container" style="flex: 1; padding-right: 24px;">
+            <div class="form-container2 d-flex justify-content-between">
+              <div class="form-container" style="flex: 1; width:50%;">
                 <div class="form-container">
                   <label for="provinsi">Provinsi <span class="required">*</span></label>
                   <select id="provinsi" class="form-input" required>
@@ -179,7 +181,7 @@
                 </div>
               </div>
 
-              <div class="form-container" style="flex: 1;">
+              <div class="form-container" style="flex: 1; width:50%;">
                 <div class="form-container">
                   <label for="kecamatan">Kecamatan<span class="required">*</span></label>
                   <select id="kecamatan" class="form-input" required>
@@ -199,8 +201,8 @@
               </div>
             </div>
 
-            <div class="d-flex justify-content-between">
-              <div class="form-container" style="flex: 1; padding-right: 24px;">
+            <div class="form-container2 d-flex justify-content-between">
+              <div class="form-container" style="flex: 1; width:50%;">
                 <div class="form-container">
                   <label for="status_perusahaan">Status Perusahaan <span class="required">*</span></label>
                   <select id="status_perusahaan" class="form-input" required>
@@ -220,9 +222,9 @@
                 </div>
               </div>
 
-              <div class="form-container" style="flex: 1;">
+              <div class="form-container" style="flex: 1; width:50%;">
                 <div class="form-container">
-                  <label for="jangka_waktu">Jangka Waktu <span class="required">*</span></label>
+                  <label for="jangka_waktu">Tenor <span class="required">*</span></label>
                   <select id="jangka_waktu" class="form-input" required>
                     <option value="" disabled selected>Pilih Jangka Waktu</option>
                     <option value="1">1</option>

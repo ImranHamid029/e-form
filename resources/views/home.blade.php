@@ -1,10 +1,6 @@
-@extends('layout\v_layout')
+@extends('layout\user\app')
 @section('content')
-
-
-<body>
- 
-    <!-- ##### Features Area Start ###### -->
+<!-- ##### Features Area Start ###### -->
 <section class="features-area ">
     <div class="container2" style="padding-bottom:120px; ">
         <div class="home-container">
@@ -28,10 +24,8 @@
 
                 <!-- Gambar di Kanan -->
                 <div class="col-12 col-md-6 d-flex justify-content-center">
-                    <div class="image" >
-                        <a href="/">
-                            <img id="dynamic-image" src="img/img41.png" class="img-fluid" alt="Bank Lampung">
-                        </a>
+                    <div >
+                        
                     </div>
                 </div>
             </div>
@@ -111,7 +105,7 @@
 
 </div>
 </section>
-</body> 
+
 <!-- <script>
     var images = [
         "img/img1.png",

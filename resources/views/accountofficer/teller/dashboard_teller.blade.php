@@ -1,14 +1,6 @@
-@extends('layout\layout_admin')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>e-Form Bank Lampung</title>
-<link rel="icon" href="img/logo/logo1.png" type="image/png">
+@extends('layout\teller\app')
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
-</head>
+@section('content')
 <style>
     body {
         display: flex;
@@ -89,5 +81,4 @@
         const ctx = document.getElementById('donateChart').getContext('2d');
         new Chart(ctx, config);
     </script>
-</body>
-</html>
+@endsection

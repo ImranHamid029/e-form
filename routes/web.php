@@ -45,10 +45,18 @@ Route::resource('/mahasiswa',MahasiswaController::class);
 Route::get('/login-admin',[LoginController::class,'index']);
 
 // Account officer (Super Admin)
-Route::get('/admin', [AccountOfficerController::class, 'index']);
-Route::get('/manage-account', function () {
-    return view('accountofficer.manage_account');
+Route::get('/admin', function () {
+    return view('accountofficer.adminsuper.index');
 });
+    Route::get('/add-account', function () {
+        return view('accountofficer.adminsuper.add_account');
+    });
+    Route::get('/manage-account', function () {
+        return view('accountofficer.adminsuper.manage_account');
+    });
+    Route::get('/edit-account', function () {
+        return view('accountofficer.adminsuper.edit_account');
+    });
 
 //Kredit
 Route::get('/kredit', [KreditController::class,'index']);
@@ -79,6 +87,9 @@ Route::get('/popup1', function () {
 Route::get('/popup2', function () {
     return view('popup.popup2');
 });
+Route::get('/popup3', function () {
+    return view('popup.popup3');
+});
 Route::get('/error', function () {
     return view('popup.disturbance');
 });
@@ -99,5 +110,63 @@ Route::get('/generate-captcha', function () {
 // Teller
 Route::get('/teller', function () {
     return view('accountofficer.teller.dashboard_teller');
+});
+    //Pengajuan Kredit
+    Route::get('/data-pengajuan-kredit', function () {
+        return view('accountofficer.teller.kredit.data_pengajuan_kredit');
+    });
+    Route::get('/detail-data-pengajuan-kredit', function () {
+        return view('accountofficer.teller.kredit.detail_data_pengajuan_kredit');
+    });
+    //Tarik Tunai
+    Route::get('/data-tarik-tunai', function () {
+        return view('accountofficer.teller.tarik.data_tarik');
+    });
+    Route::get('/detail-data-tarik-tunai', function () {
+        return view('accountofficer.teller.tarik.detail_data_tarik_tunai');
+    });
+    //Setor Tunai
+    Route::get('/data-setor-tunai', function () {
+        return view('accountofficer.teller.setor.data_setor_tunai');
+    });
+    Route::get('/detail-data-setor-tunai', function () {
+        return view('accountofficer.teller.setor.detail_data_setor_tunai');
+    });
+    //History 
+    Route::get('/history-teller', function () {
+        return view('accountofficer.teller.history.history_teller');
+    });
+
+//Pengaduan online(Admin)
+Route::prefix('accountofficer')->name('accountofficer.')->group(function () {
+    Route::get('/complaint', [AccountOfficerController::class, 'complaint'])->name('complaint');
+});
+
+//Profile
+Route::get('/profile', function () {
+    return view('accountofficer.profile.profile');
+});
+Route::get('/edit-password', function () {
+    return view('accountofficer.profile.edit_password');
+});
+Route::get('/confirm-password', function () {
+    return view('accountofficer.profile.confirm_password');
+});
+
+
+//History
+Route::get('/history-admin', function () {
+    return view('accountofficer.history.history_admin');
+});
+
+//CS Helpdesk
+Route::get('/cs-helpdesk', function () {
+    return view('accountofficer.cs.dashboard_cs');
+});
+Route::get('/detail-complaint', function () {
+    return view('accountofficer.cs.detail_complaint');
+});
+Route::get('/respons', function () {
+    return view('accountofficer.cs.respons');
 });
 

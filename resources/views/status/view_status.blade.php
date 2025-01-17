@@ -1,12 +1,6 @@
-@extends('layout\v_layout')
+@extends('layout\user\app')
 @section('content')
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
+
 <section class="features-area" >
     <div class="status-container-area">
 

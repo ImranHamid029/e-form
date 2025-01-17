@@ -1,4 +1,4 @@
-@extends('layout\v_footer')
+@extends('layout\user\footer\v_footer')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +7,7 @@
     
     <title>e-Form Bank Lampung</title>
     <link rel="icon" href="img/logo/logo1.png" type="image/png">
-
+    <link rel="stylesheet" href="style.css">
   
 </head>
 <body style="background-image: url('img/bg1.png'), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));">
@@ -15,7 +15,7 @@
     <div class="container3">
         <!-- Bagian Gambar -->
         <div class="image-side">
-            <img src="img/img27.png" alt="Gambar">
+            <img src="/img/img27.png" alt="Gambar">
         </div>
 
         <!-- Bagian Form -->

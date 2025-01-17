@@ -5,21 +5,17 @@ a:focus {
   transition-duration: 500ms;
   text-decoration: none;
   outline: 0 solid transparent;
-  color: #000000;
-  font-weight: 700;
-  font-size: 16px; }
+   }
 
 h1,h2,h3,h4{
     padding:24px 0;
 }
 
-p {
-  
-  font-size: 18px;
+/* p {
     font-weight:400px ;
     font-size: 18px;
     line-height: 28px;
-}
+} */
 
 /* Heading 1 - Regular */
 .h1-regular {
@@ -196,7 +192,7 @@ p {
     font-size: 16px;
     line-height: 24px;
 }
-p .body-md-bold{
+.body-md-bold{
     font-weight:700px ;
     font-size: 16px;
     line-height: 24px;
@@ -251,7 +247,6 @@ p .body-md-bold{
 
 /* Medium */
 .font-medium {
-    
     font-weight: 500; /* Medium */
 }
 

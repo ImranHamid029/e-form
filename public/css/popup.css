@@ -50,7 +50,10 @@
     justify-content:space-between;
     align-items: center;
     padding:24px;
+    gap:24px;
     display: flex;
+    height: auto;
+    justify-content: center;
 }
 .single-btn-area{
     display: flex;
@@ -108,4 +111,26 @@
     z-index: 9999;
     backdrop-filter: blur(8px); 
     -webkit-backdrop-filter: blur(8px);
+}
+
+.popup-area-confirm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex; /* Mengaktifkan flexbox */
+    justify-content: center; /* Menyelaraskan secara horizontal */
+    align-items: center; /* Menyelaraskan secara vertikal */
+    z-index: 1000; /* Pastikan di atas elemen lain */
+}
+
+.popup-container-confirm {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan untuk efek */
 }

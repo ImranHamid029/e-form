@@ -1,4 +1,4 @@
-@extends('layout\v_layout')
+@extends('layout\user\app')
 @section('content')
 
 <form action="#" method="POST" enctype="multipart/form-data" id="regForm">

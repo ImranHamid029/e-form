@@ -1,14 +1,5 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popup Pengaduan</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}"> <!-- Tambahkan jika ada file CSS -->
-</head>
-<link rel="stylesheet" href="style.css">
-<body>
+@extends('layout\user\app')
+@section('content')
     <section class="features-area">
         <div class="popup-error">
             <div class="popup-area-error">
@@ -23,10 +14,18 @@
                             atau coba beberapa saat lagi. Jika masalah berlanjut, 
                             <span class="caption-semibold" style="color:black;">hubungi layanan pelanggan kami</span> melalui kontak resmi Bank Lampung.</p>
                     </div>
-
-                    <div class="popup-content">
-                        <p class="caption-bold"style="color:black">Telepon: (0721) 484261 <br>Email: info@banklampung.co.id</p>
+                    <div style="width:100%;display: flex; justify-content: space-between; ">
+                        <div class="logo-popup">
+                            <img src="/img/logo.png" alt="" >
+                        </div>
+                        <div class="popup-content" style="text-align: right;">
+                            <p class="caption-bold">
+                                Telepon: (0721) 484261 <br>Email: info@banklampung.co.id
+                            </p>
+                        </div>
                     </div>
+
+                    
                 </div>
                 <div class="single-btn-area">
                     <div>
@@ -37,6 +36,5 @@
         </div>   
            
     </section>
-</body>
-</html>
+@endsection
 

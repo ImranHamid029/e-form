@@ -1,0 +1,204 @@
+.add-account-container {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center; 
+}
+
+.add-account {
+    display: flex;
+    justify-content: flex-start;    
+}
+
+.add-account-btn {
+    padding: 10px 20px;
+    background-color: #2062E5; 
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 240px;
+    height: 52px;
+    text-align: center;
+}
+
+.add-account-btn:hover {
+    color: #2062E5;
+border: 2px solid#2062E5;
+text-align: center;
+text-align: center;
+font-size: 18px;
+background-color: #fff;
+}
+
+/* Table CRUD Admin */
+.office-table .btn-edit, .office-table .btn-delete {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 110px;
+  height: 52px;
+  margin: 5px auto; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+}
+
+.office-table td {
+  text-align: center; 
+  vertical-align: middle; 
+}
+  
+.office-table .btn-edit a, 
+.office-table .btn-delete a {
+    color: #fff;
+    text-decoration: none;
+    width: 100%; 
+    display: inline-block;
+}
+
+/* Edit Button */
+  .office-table .btn-edit {
+    background-color: #F37121;
+    color: white;
+}
+  
+  .office-table .btn-edit:hover{
+    background-color: #fff;
+    border: 1px solid #F37121;
+    color: #F37121;
+  }
+  .office-table .btn-edit:hover a{
+    color: #F37121;
+  }
+
+
+
+  /* Delete Button */
+  .office-table .btn-delete {
+    background-color: #EE202E;
+    color: white;
+  }
+  
+  .office-table .btn-delete:hover {
+    background-color: #fff;
+    border: 1px solid #e53935;
+    color: #e53935;
+  }
+  .office-table .btn-delete:hover a{
+    color: #e53935;
+  }
+
+
+
+  .back{
+    display: flex;
+    align-items: start;
+  }
+  .sub{
+    display: flex;
+    align-items: end;
+  }
+
+  .btn-rejected{
+    font-weight: bold;
+    width:110px;
+    height: 52px;
+    color: #fff;
+    background-color: #EE202E;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+    line-height: 52px; 
+    text-decoration: none; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+  }
+  .btn-rejected:hover{
+    font-weight: bold;
+    width:110px;
+    height: 52px;
+    color: #EE202E;
+    background-color: #fff;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+    line-height: 52px; 
+    text-decoration: none; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+    border: 1px solid #EE202E;
+  }
+  .btn-blue{
+    font-weight: bold;
+    width:110px;
+    height: 52px;
+    color: #fff;
+    background-color: #2062E5;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+    line-height: 52px; 
+    text-decoration: none; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+  }
+  .btn-blue:hover{
+    font-weight: bold;
+    width:110px;
+    height: 52px;
+    color: #2062E5;
+    background-color: #fff;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+    line-height: 52px; 
+    text-decoration: none; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+    border: 1px solid #2062E5 ;
+  }
+
+  .btn-accepted{
+    font-weight: bold;
+    width:110px;
+    height: 52px;
+    color: #fff;
+    background-color: #1FC21F;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+    line-height: 52px; 
+    text-decoration: none; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+  }
+  .btn-accepted:hover{
+    font-weight: bold;
+    width:110px;
+    height: 52px;
+    color: #1FC21F;
+    background-color: #fff;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+    line-height: 52px; 
+    text-decoration: none; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+    border: 1px solid #1FC21F ;
+  }
+
+  .btn-area3{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding:24px 0;
+  }

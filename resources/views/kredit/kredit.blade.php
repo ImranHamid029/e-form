@@ -1,4 +1,4 @@
-@extends('layout\v_layout')
+@extends('layout\user\app')
 @section('content')
 <section class="features-area ">
 
