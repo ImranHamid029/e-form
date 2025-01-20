@@ -103,6 +103,12 @@
     cursor: pointer;
     align-items: start;
 }
+.profile-area-respons{
+    height: 90px;
+    display: flex;
+    cursor: pointer;
+    align-items: start;
+}
 .name-area{
     display: block; 
     padding-left: 12px;

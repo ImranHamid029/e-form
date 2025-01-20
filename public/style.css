@@ -1421,8 +1421,11 @@ canvas {
   gap: 20px;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top:64px;
   gap:48px;
+  background-color: #F9FAFB;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 64px;
+  padding: 32px;
 }
 
 .cards {

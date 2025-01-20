@@ -1,4 +1,4 @@
-@extends('layout\cs_helpdesk\app')
+@extends('layout\helpdesk\app')
 
 @section('content')
 <div class="features-area">

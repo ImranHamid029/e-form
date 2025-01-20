@@ -23,10 +23,6 @@
                 <a href="/teller" class="body-sm-bold">Dashbaord</a>
             </li>
             <li >
-                <img src="/img/icon/ic4.svg" class="icon">
-                <a href="/data-pengajuan-kredit" class="body-sm-bold">Pengajuan Kredit</a>
-            </li>
-            <li >
                 <img src="/img/icon/ic6.svg" class="icon">
                 <a href="/data-setor-tunai" class="body-sm-bold">Setor Tunai</a>
             </li>

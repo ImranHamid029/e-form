@@ -1,4 +1,4 @@
-@extends('layout\cs_helpdesk\app')
+@extends('layout\helpdesk\app')
 @section('content')
 
 <div class="features-area">
@@ -15,17 +15,15 @@
                             <p>Nama Lengkap : Rizqi Ahmad Ghozali</p>
                             <p>No Hp        : 0812-345-678</p>
                             <p>Email        : rizqigh@gmail.com</p>
-                        </div>
-                    </div>
-
-                    <div class="detail-data-text-area">
-                        <div class="detail-info">
+                            <br>
                             <p class="body-md-bold"><strong>Laporan Keluhan</strong></p>
                             <p>Laporan : Proses Setor Tunai selalu 
                             tertunda ketika saya ingin melakukannya 
                             karena website yang selalu down.</p>
                         </div>
                     </div>
+
+                    
 
                 </div>
             

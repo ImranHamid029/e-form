@@ -1,4 +1,4 @@
-@extends('layout\teller\app')
+@extends('layout\cs\app')
 
 @section('content')
 <div class="features-area">
@@ -29,7 +29,7 @@
                     <p class="caption-regular"><strong>No Resi : </strong> 13414235</p>
                     <p class="caption-regular"><strong>Nama :</strong> Imran Sukron Hamid</p>
                     <p class="caption-regular"><strong>No. Telp :</strong> 081234567890 </p>
-                    <p class="caption-regular"><strong>Status :</strong> Proses</p>
+                    <p class="caption-regular"><strong>Status :</strong> Disetujui</p>
                 </div>
                 <div class="cards-footer">
                     <img src="img/logo/logo2.png" alt="">
@@ -46,7 +46,7 @@
                     <p class="caption-regular"><strong>No Resi : </strong> 2141431513</p>
                     <p class="caption-regular"><strong>Nama :</strong> Akmal Adnan</p>
                     <p class="caption-regular"><strong>No. Telp :</strong> 081234567890 </p>
-                    <p class="caption-regular"><strong>Status :</strong> Proses</p>
+                    <p class="caption-regular"><strong>Status :</strong> Disetujui</p>
                 </div>
                 <div class="cards-footer">
                     <img src="img/logo/logo2.png" alt="">
