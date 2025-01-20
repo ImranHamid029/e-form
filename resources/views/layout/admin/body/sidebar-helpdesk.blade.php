@@ -20,13 +20,13 @@
         <ul>            
             <li >
                 <img src="/img/icon/ic8.svg" class="icon">
-                <a href="/admin" class="body-sm-bold">Dashbaord</a>
+                <a href="/helpdesk-dashboard" class="body-sm-bold">Dashbaord</a>
             </li>
            
 
             <li >
                 <img src="/img/icon/ic5.svg" class="icon">
-                <a href="#" class="body-sm-bold">History</a>
+                <a href="/history-complaint" class="body-sm-bold">History</a>
             </li>
             
 

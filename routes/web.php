@@ -111,13 +111,6 @@ Route::get('/generate-captcha', function () {
 Route::get('/teller', function () {
     return view('accountofficer.teller.dashboard_teller');
 });
-    //Pengajuan Kredit
-    Route::get('/data-pengajuan-kredit', function () {
-        return view('accountofficer.teller.kredit.data_pengajuan_kredit');
-    });
-    Route::get('/detail-data-pengajuan-kredit', function () {
-        return view('accountofficer.teller.kredit.detail_data_pengajuan_kredit');
-    });
     //Tarik Tunai
     Route::get('/data-tarik-tunai', function () {
         return view('accountofficer.teller.tarik.data_tarik');
@@ -154,21 +147,33 @@ Route::get('/confirm-password', function () {
 });
 
 
-//History
-Route::get('/history-admin', function () {
-    return view('accountofficer.history.history_admin');
-});
-
-//CS Helpdesk
-Route::get('/cs-helpdesk', function () {
-    return view('accountofficer.cs.dashboard_cs');
+//Helpdesk
+Route::get('/helpdesk-dashboard', function () {
+    return view('accountofficer.helpdesk.dashboard');
 });
 Route::get('/detail-complaint', function () {
-    return view('accountofficer.cs.detail_complaint');
+    return view('accountofficer.helpdesk.detail_complaint');
 });
 Route::get('/respons', function () {
-    return view('accountofficer.cs.respons');
+    return view('accountofficer.helpdesk.respons');
 });
+
+
+//Customer Service
+
+Route::get('/data-pengajuan-kredit', function () {
+    return view('accountofficer.cs.dashboard-cs');
+});
+    //Kredit
+    Route::get('/detail-data-pengajuan-kredit', function () {
+        return view('accountofficer.cs.detail_data_pengajuan_kredit');
+
+    });
+    //History
+    Route::get('/history-kredit', function () {
+        return view('accountofficer.cs.history');
+
+    });
 
 //validation Data
 Route::get('/validation', function () {
@@ -177,3 +182,32 @@ Route::get('/validation', function () {
 Route::get('/validate', function () {
     return view('popup.validate');
 });
+
+//History
+Route::get('/history-admin', function () {
+    return view('accountofficer.history.history_admin');
+});
+
+    //History Setor Tunai
+    Route::get('/history-setor-tunai', function () {
+        return view('accountofficer.history.history_setor_tunai');
+    });
+    //History Tarik Tunai
+    Route::get('/history-tarik-tunai', function () {
+        return view('accountofficer.history.history_tarik_tunai');
+    });
+    //History Kredit Accepted
+    Route::get('/history-kredit-accepted', function () {
+        return view('accountofficer.history.history_kredit_accepted');
+    });
+    //History Kredit rejected
+    Route::get('/history-kredit-rejected', function () {
+        return view('accountofficer.history.history_kredit_rejected');
+    });
+    //History Complaint
+    Route::get('/history-complaint', function () {
+        return view('accountofficer.history.history_complaint');
+    });
+    Route::get('/detail-history-complaint', function () {
+        return view('accountofficer.helpdesk.detail_history_complaint');
+    });

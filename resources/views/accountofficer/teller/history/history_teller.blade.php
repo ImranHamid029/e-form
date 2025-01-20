@@ -5,7 +5,7 @@
         <h2 class="text-center mb-4">Riwayat Pengajuan</h2>
         <div class="row justify-content-center">
             <!-- Pengajuan Kredit -->
-            <div class="col-md-4 mb-4">
+            <!-- <div class="col-md-4 mb-4">
                 <div class="card history-card">
                     <div class="card-body text-center">
                         <h5 class="card-title">Pengajuan Kredit</h5>
@@ -14,7 +14,7 @@
                         <a href="{{ url('/history/kredit/ditolak') }}" class="btn-rejected">Ditolak</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Setor Tunai -->
             <div class="col-md-4 mb-4">
@@ -22,7 +22,7 @@
                     <div class="card-body text-center">
                         <h5 class="card-title">Setor Tunai</h5>
                         <p class="card-text">History data transaksi Setor tunai yang telah selesai.</p>
-                        <a href="{{ url('/history/setor-tunai') }}" class="btn-blue">Lihat Data</a>
+                        <a href="/history-setor-tunai" class="btn-blue">Lihat Data</a>
                     </div>
                 </div>
             </div>

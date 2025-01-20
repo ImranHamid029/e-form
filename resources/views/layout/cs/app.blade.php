@@ -5,7 +5,7 @@
 </head>
 <body>
     @include('layout.admin.body.navbar')
-    @include('layout.admin.body.sidebar-cs-helpdesk')
+    @include('layout.admin.body.sidebar-cs')
     @yield('content')
 </body>
 
