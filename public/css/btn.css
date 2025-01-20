@@ -132,6 +132,40 @@ background-color: #fff;
     white-space: nowrap;
     border: 1px solid #EE202E;
   }
+
+
+  .btn-confirm{
+    font-weight: bold;
+    width:110px;
+    height: 52px;
+    color: #fff;
+    background-color: #2062E5;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+    line-height: 52px; 
+    text-decoration: none; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+  }
+  .btn-confirm:hover{
+    font-weight: bold;
+    width:110px;
+    height: 52px;
+    color: #2062E5;
+    background-color: #fff;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+    line-height: 52px; 
+    text-decoration: none; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    white-space: nowrap;
+    border: 1px solid #2062E5;
+  }
+
   .btn-blue{
     font-weight: bold;
     width:110px;

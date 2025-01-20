@@ -170,3 +170,10 @@ Route::get('/respons', function () {
     return view('accountofficer.cs.respons');
 });
 
+//validation Data
+Route::get('/validation', function () {
+    return view('popup.validation');
+});
+Route::get('/validate', function () {
+    return view('popup.validate');
+});

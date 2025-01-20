@@ -6,8 +6,8 @@
                         <div class="row h-100 align-items-center" style="height:96px;">
                             <div class="col-12 d-flex justify-content-between" style="height:96px;">
                                 <!-- Logo Area -->
-                                <div class="admin-name" style="white-space: nowrap;">
-                                    <img src="/img/logo.png" width="232px" height="113" alt="Logo">
+                                <div class="admin-name" style="width: 152px;hight:82px;">
+                                    <img src="/img/logo2.png" width="232px" height="113" alt="Logo">
                                 </div>
                                 <!-- Menu -->
                                 <div class="classy-menu d-flex justify-content-between" style="height:96px;">
