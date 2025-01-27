@@ -42,12 +42,12 @@
                     </div>
                     <div class="btn-area3" >
                         <div>
-                            <a href="javascript:void(0);" id="tanggapiBtn" class="btn-blue" onclick="goBack();">Kembali</a>
+                            <a href="javascript:void(0);" class="btn-blue" onclick="goBack();">Kembali</a>
                         </div>
                         
                         <div style="display: flex; gap: 10px;">
-                            <a href="" id="tanggapiBtn" class="btn-accepted">Setujui</a>
-                            <a href="" id="tanggapiBtn" class="btn-rejected">Tolak</a>
+                            <a href="" class="btn-accepted">Setujui</a>
+                            <a href=""  class="btn-rejected">Tolak</a>
                         </div>
                     </div>
 

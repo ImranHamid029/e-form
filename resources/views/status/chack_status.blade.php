@@ -5,7 +5,7 @@
 <section class="features-area" id="features-area">
     <div class="container-status" id="container-status">
         <h4 class="h4-semibold">Masukan Nomor Resi</h4>
-        <input type="text" style="border: 1px solid #A6A6A6; height:52px; width: 600px;" placeholder="XXX-XXX-XXX" required>
+        <input type="text" placeholder="XXX-XXX-XXX" required>
         
 
         <div class="captcha-container mt-3">
@@ -14,7 +14,7 @@
                 <img src="{{ url('/generate-captcha') }}" alt="Captcha Image" id="captcha-image">
                 <button type="button" onclick="refreshCaptcha()">Refresh</button>
             </div>
-            <input type="text" name="captcha" id="captcha" placeholder="Masukkan kode captcha" style="border: 1px solid #A6A6A6; height: 40px; width: 300px;" required>
+            <input type="text" name="captcha" id="captcha" placeholder="Masukkan kode captcha" required>
         </div>
 
         
@@ -49,7 +49,7 @@
     }
 </script>
 
-<main></main>
+
 
 
 @endsection

@@ -1,5 +1,7 @@
 @extends('layout\user\app')
 @section('content')
+<!-- <link rel="stylesheet" href="{{ asset('style.css') }}"> -->
+
         <div class="popup-area">
             <div class="popup-container d-block">
                     <div class="top-area-popup">
@@ -9,7 +11,7 @@
                 
                 <div class="popup-content">
                     <div>
-                        <h4 class="h4-semibold">Data Pengajuan Kredit Berhasil Dikirim!</h4> <!-- Sesuaikan dengan database -->
+                        <h4 class="h4-semibold">Pengajuan Kredit Berhasil Dikirim!</h4> <!-- Sesuaikan dengan database -->
                     </div>
 
                     <div class="d-flex">

@@ -1,13 +1,13 @@
 @extends('layout\user\app')
 @section('content')
-
+<section class="features-area ">
 <form action="#" method="POST" enctype="multipart/form-data" id="regForm">
   @csrf
-  <div class="form-group d-block justify-content-center">
+  <div class=" d-block justify-content-center">
     <div class="form-area">
       <h1 class="h1-bold text-center" style="width:100%;">FORM SETOR TUNAI</h1>
-      <div class="col-12 pl-4">
-        <div class="card mt-4 border mb-4 shadow-sm mx-0">
+      <div class="col-12">
+        <div class="card  border  shadow-sm mx-0">
           <div class="card-body">
 
             <div class="form-container">
@@ -107,13 +107,14 @@
           </div>
         </div>
       </div>
-        <div class="col-12 text-center mt-3">
+        <div class="col-12 text-center btn-area">
           <button type="submit" class="btn-custom" id="submitButton">Kirim</button>
         </div>
     </div>
   </div>
 
 </form>
+</section>
 <script>
   document.getElementById("submitButton").addEventListener("click", function () {
     const form = document.getElementById("regForm");

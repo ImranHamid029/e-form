@@ -27,7 +27,7 @@
     <!-- Content 2 -->
     <div class="container2">
         <div class="d-flex flex-column align-items-center justify-content-center text-center">
-            <div style="width: 800px;">
+            <div >
                 <h1 class="text-center h1-semibold">Update diri Jadi lebih maju</h1>
                 <p class="text-center">
                     Kini, Segalanya Lebih Maju dan Praktis 

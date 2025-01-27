@@ -1,5 +1,6 @@
 @extends('layout\user\app')
 @section('content')
+<!-- <link rel="stylesheet" href="{{ asset('style.css') }}"> -->
     <section class="features-area">
         <div class="popup-area">
             <div class="popup-container d-block">
@@ -10,7 +11,7 @@
                 
                 <div class="popup-content">
                     <div>
-                        <h4 class="h4-medium">Berkas <strong>Stor/Tarik Tunai</strong> Berhasil Dibuat!</h4> <!-- Sesuaikan dengan database -->
+                        <h4 class="h4-medium">Berkas <strong>Tarik Tunai</strong> Berhasil Dibuat!</h4> <!-- Sesuaikan dengan database -->
                     </div>
 
                     <div class="d-flex">

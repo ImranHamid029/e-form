@@ -4,7 +4,7 @@
 <section class="features-area" >
     <div class="status-container-area">
 
-        <div class="container-status">
+        <div class="container-status2">
             <div class="top-area-status">
                 <h2 class="h2-bold">STATUS PENGAJUAN KREDIT</h2> 
             </div>

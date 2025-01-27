@@ -1,5 +1,7 @@
 @extends('layout\user\app')
 @section('content')
+<!-- <link rel="stylesheet" href="{{ asset('style.css') }}"> -->
+    <section class="features-area">
         <div class="popup-area">
             <div class="popup-container d-block">
                     <div class="top-area-popup">
@@ -9,17 +11,32 @@
                 
                 <div class="popup-content">
                     <div>
-                        <h4 class="h4-semibold">Data Pengajuan Kredit Berhasil Dikirim!</h4> <!-- Sesuaikan dengan database -->
+                        <h4 class="h4-medium">Berkas <strong>Setor Tunai</strong> Berhasil Dibuat!</h4> <!-- Sesuaikan dengan database -->
+                    </div>
+
+                    <div class="d-flex">
+                        <p class="body-md-medium">
+                            Nomor Antrian: <span class="h5-bold">B1</span>
+                        </p>
                     </div>
 
                     <div>
-                        <p class="caption-regular">
-                            Untuk informasi lebih lanjut, tim kami akan menghubungi 
-                            Anda melalui email atau nomor telepon yang telah Anda berikan.
-                        </p>
-                        
-                        <p class="caption-regular">Terima kasih atas kepercayaan Anda kepada Bank Lampung!</p>
+                        <ul class="caption-regular info-transaction" style="padding-left:20px;">
+                            <li>Kantor Oprasional:</li>
+                            <li>Penerima</li>
+                            <li>Pengirim</li>
+                            <li>Jumlah</li>
+                        </ul>
                     </div>
+                    <div>
+                        <p>Catatan : </p>
+                        <ol>
+                            <li class="caption-regular">Silakan tunjukkan pop-up ini atau file yang telah diunduh ke perangkat Anda kepada petugas teller.</li>
+                            <li class="caption-regular">Silakan bawa <strong>KTP</strong> serta <strong>berkas yang dibutuhkan</strong> (buku tabungan dll) ke teller Bank Lampung sebelum pukul 15.00 WIB pada hari ini.</li>
+                            <li class="caption-regular">Pastikan nomor antrian Anda sesuai dengan teller yang anda tuju saat dipanggil.</li>
+                        </ol>
+                    </div>
+
                     <div>
                         <div class="logo-popup">
                             <img src="/img/logo.png" alt="">
@@ -41,4 +58,6 @@
                 </div>
             </div>
         </div>
+    </section>
 @endsection
+

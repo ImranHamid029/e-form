@@ -16,14 +16,14 @@
                 </div>
             </div>
         </div>
-    </section>   
+      
         <form action="#" method="POST" enctype="multipart/form-data" id="regForm" >
             @csrf
-            <div class="form-group2 d-block justify-content-center">
+            <div class=" d-block justify-content-center">
                 <div class="form-area">
                 <h4 class="h4-semibold text-center" style="width:100%;">HARAP ISI DENGAN HURUF CETAK</h4>
-                <div class="col-12 pl-4">
-                <div class="card mt-4 border mb-4 shadow-sm mx-0">
+                <div class="col-12 ">
+                <div class="card border shadow-sm mx-0">
                     <div class="card-body">
 
                     
@@ -64,17 +64,17 @@
                     </div>
 
                     
-                    <div class="col-12 text-center mt-3">
-                        <button type="submit" class="btn-custom" id="submitButton">Kirim</button>
-                    </div>
 
+                    </div>
+                    <div class="col-12 text-center btn-area">
+                        <button type="submit" class="btn-custom" id="submitButton">Kirim</button>
                     </div>
                 </div>
                 </div>
                 </div>
             </div>
         </form>
-
+        </section> 
 <main></main>
 
 

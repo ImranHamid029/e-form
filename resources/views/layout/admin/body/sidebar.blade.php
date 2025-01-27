@@ -25,27 +25,27 @@
             </li>
             <li >
                 <img src="/img/icon/ic4.svg" class="icon">
-                <a href="#" class="body-sm-bold">Pengajuan Kredit</a>
+                <a href="/credit" class="body-sm-bold">Pengajuan Kredit</a>
             </li>
             <li >
                 <img src="/img/icon/ic3.svg" class="icon">
-                <a href="{{ route('accountofficer.complaint') }} " class="body-sm-bold">Pengaduan Online</a>
+                <a href="/complaint" class="body-sm-bold">Pengaduan Online</a>
             </li>
             <li >
                 <img src="/img/icon/ic6.svg" class="icon">
-                <a href="#" class="body-sm-bold">Setor Tunai</a>
+                <a href="/data-setor-tunai" class="body-sm-bold">Setor Tunai</a>
             </li>
             <li >
                 <img src="/img/icon/ic2.svg" class="icon">
-                <a href="#" class="body-sm-bold">Tarik Tunai</a>
+                <a href="/data-tarik-tunai" class="body-sm-bold">Tarik Tunai</a>
             </li>
             <li >
                 <img src="/img/icon/ic5.svg" class="icon">
-                <a href="#" class="body-sm-bold">History</a>
+                <a href="/history" class="body-sm-bold">History</a>
             </li>
             <li >
                 <img src="/img/icon/ic1.svg" class="icon">
-                <a href="#" class="body-sm-bold">Manage Account</a>
+                <a href="/manage-account" class="body-sm-bold">Manage Account</a>
             </li>
 
 

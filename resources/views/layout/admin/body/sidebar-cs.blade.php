@@ -11,7 +11,7 @@
                 <img src="/img/bg-img/16.jpg" alt="Logo">
             </div>
             <div class="name-area">
-                <a class="body-sm-bold">Name Admin</a><br>
+                <a href="/profile" class="body-sm-bold">Name Admin</a><br>
                 <a class="caption-regular">Role Admin</a>
             </div>
         </div>
@@ -20,7 +20,7 @@
         <ul>            
             <li >
                 <img src="/img/icon/ic8.svg" class="icon">
-                <a href="/data-pengajuan-kredit" class="body-sm-bold">Dashbaord</a>
+                <a href="/credit" class="body-sm-bold">Dashbaord</a>
             </li>
            
 
@@ -38,7 +38,14 @@
             </ul>
         </div>
     </div>
+<!-- Modal -->
+<div id="profileModal" class="modal">
 
+       <div id="profileContent">
+           <!-- Konten dari /profile akan dimuat di sini -->
+       </div>
+       
+</div>
     <script>
         
         const hamburger = document.getElementById('hamburger');
@@ -50,3 +57,34 @@
             hamburger.classList.toggle('in-sidebar');
         });
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("profileModal");
+
+    // Klik link untuk membuka modal
+    document.querySelector("a[href='/profile']").addEventListener("click", function (e) {
+        e.preventDefault();
+        fetch('/profile') // Ambil konten dari route
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("profileContent").innerHTML = data;
+                modal.style.display = "block"; // Tampilkan modal
+
+                // Pasang ulang event listener untuk tombol close
+                const close = document.querySelector(".close");
+                close.addEventListener("click", () => {
+                    modal.style.display = "none";
+                });
+            })
+            .catch(error => console.error('Error loading profile:', error));
+    });
+
+    // Tutup modal jika klik di luar 
+    window.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
+
+</script>

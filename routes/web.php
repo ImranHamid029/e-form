@@ -43,6 +43,9 @@ Route::resource('/test', TestController::class);
 Route::resource('/mahasiswa',MahasiswaController::class);
 // Login Account officer
 Route::get('/login-admin',[LoginController::class,'index']);
+Route::get('/logout', function () {
+    return view('accountofficer.logout_validation');
+});
 
 // Account officer (Super Admin)
 Route::get('/admin', function () {
@@ -57,6 +60,24 @@ Route::get('/admin', function () {
     Route::get('/edit-account', function () {
         return view('accountofficer.adminsuper.edit_account');
     });
+    Route::get('/history', function () {
+        return view('accountofficer.adminsuper.history');
+    });
+
+
+    // Route::get('/complaint', function () {
+    //     return view('accountofficer.helpdesk.complaint');
+    // });
+    // Route::get('/credit', function () {
+    //     return view('accountofficer.helpdesk.credit');
+    // });
+    // Route::get('/cash-deposit', function () {
+    //     return view('accountofficer.helpdesk.cash_deposit');
+    // });
+    // Route::get('/cash-withdrawal', function () {
+    //     return view('accountofficer.helpdesk.cash_withdrawal');
+    // });
+    
 
 //Kredit
 Route::get('/kredit', [KreditController::class,'index']);
@@ -130,11 +151,6 @@ Route::get('/teller', function () {
         return view('accountofficer.teller.history.history_teller');
     });
 
-//Pengaduan online(Admin)
-Route::prefix('accountofficer')->name('accountofficer.')->group(function () {
-    Route::get('/complaint', [AccountOfficerController::class, 'complaint'])->name('complaint');
-});
-
 //Profile
 Route::get('/profile', function () {
     return view('accountofficer.profile.profile');
@@ -148,7 +164,7 @@ Route::get('/confirm-password', function () {
 
 
 //Helpdesk
-Route::get('/helpdesk-dashboard', function () {
+Route::get('/complaint', function () {
     return view('accountofficer.helpdesk.dashboard');
 });
 Route::get('/detail-complaint', function () {
@@ -161,7 +177,7 @@ Route::get('/respons', function () {
 
 //Customer Service
 
-Route::get('/data-pengajuan-kredit', function () {
+Route::get('/credit', function () {
     return view('accountofficer.cs.dashboard-cs');
 });
     //Kredit
@@ -211,3 +227,21 @@ Route::get('/history-admin', function () {
     Route::get('/detail-history-complaint', function () {
         return view('accountofficer.helpdesk.detail_history_complaint');
     });
+
+
+//Ticket
+
+Route::get('/kredit-ticket', function () {
+    return view('tiket.kredit.kredit_tiket');
+});
+Route::get('/setor-ticket', function () {
+    return view('tiket.setor.setor_tunai_tiket');
+});
+Route::get('/tarik-ticket', function () {
+    return view('tiket.tarik.tarik_tunai_tiket');
+});
+
+//404
+Route::get('/404', function () {
+    return view('404');
+});

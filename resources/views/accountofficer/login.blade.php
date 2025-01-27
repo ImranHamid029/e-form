@@ -7,7 +7,7 @@
     
     <title>e-Form Bank Lampung</title>
     <link rel="icon" href="img/logo/logo1.png" type="image/png">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
   
 </head>
 <body style="background-image: url('img/bg1.png'), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));">
@@ -41,7 +41,8 @@
             </form>
         </div>
     </div>
+    
 </section>
-    <main></main>
+<main></main>
 </body>
 </html>

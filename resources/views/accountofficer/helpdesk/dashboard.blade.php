@@ -29,6 +29,7 @@
                     <p class="caption-regular"><strong>No Resi:</strong> 1234567890</p>
                     <p class="caption-regular"><strong>Nama:</strong> Imran Sukron Hamid</p>
                     <p class="caption-regular"><strong>No Tlp:</strong> 08123456789</p>
+                    <p class="caption-regular"><strong>Status</strong> Menunggu</p>
                 </div>
                 <div class="cards-footer">
                     <img src="img/logo/logo2.png" alt="">
@@ -45,6 +46,7 @@
                     <p class="caption-regular"><strong>No Resi:</strong> 0987654321</p>
                     <p class="caption-regular"><strong>Nama:</strong> Akmal Adnan Djayasinga</p>
                     <p class="caption-regular"><strong>No Tlp:</strong> 08234567890</p>
+                    <p class="caption-regular"><strong>Status</strong> Menunggu</p>
                 </div>
                 <div class="cards-footer">
                     <img src="img/logo/logo2.png" alt="">
@@ -61,6 +63,7 @@
                     <p class="caption-regular"><strong>No Resi:</strong> 1122334455</p>
                     <p class="caption-regular"><strong>Nama:</strong> Rizky Ahmad Gzozali</p>
                     <p class="caption-regular"><strong>No Tlp:</strong> 08345678901</p>
+                    <p class="caption-regular"><strong>Status</strong> Menunggu</p>
                 </div>
                 <div class="cards-footer">
                     <img src="img/logo/logo2.png" alt="">
@@ -77,6 +80,7 @@
                     <p class="caption-regular"><strong>No Resi:</strong> 1122334455</p>
                     <p class="caption-regular"><strong>Nama:</strong> David Mel Gibson</p>
                     <p class="caption-regular"><strong>No Tlp:</strong> 08345678901</p>
+                    <p class="caption-regular"><strong>Status</strong> Menunggu</p>
                 </div>
                 <div class="cards-footer">
                     <img src="img/logo/logo2.png" alt="">

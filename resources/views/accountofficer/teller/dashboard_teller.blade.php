@@ -23,13 +23,9 @@
                 <h4>Tarik Tunai</h4>
             </div>
             
-            <div class="label-box" style="background-color: #9370DB">
-                <h1>288</h1> 
-                <h4>Pengajuan Kredit</h4>
-            </div>
             
-        </div>
-        <div class="labels-container-teller-bottom">
+        
+        
             <div class="label-box" style="background-color: #FFAE00">
                 <h1>427</h1>
                 <h4>Setor Tunai</h4>
@@ -43,17 +39,17 @@
         const data = {
             labels: ['Tarik Tunai', 'Pengajuan Kredit', 'Setor Tunai'], // Kategori donasi
             datasets: [{
-                data: [615, 551, 288, 427], 
+                data: [615, 427], 
                 backgroundColor: [
                     ' #1FC21F', 
                      
-                    ' #9370DB', 
+                    
                     ' #FFAE00'
                 ],
                 borderColor: [
                     ' #1FC21F',
                     
-                    ' #9370DB',
+                   
                     ' #FFAE00'
                 ],
                 borderWidth: 1

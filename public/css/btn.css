@@ -236,3 +236,10 @@ background-color: #fff;
     align-items: center;
     padding:24px 0;
   }
+
+  @media (max-width: 480px){
+    .btn-custom{
+      width:150px !important;
+      font-size: 14px !important;
+    }
+  }

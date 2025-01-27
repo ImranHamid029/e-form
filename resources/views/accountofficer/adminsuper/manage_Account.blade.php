@@ -19,7 +19,7 @@
         <div class="container2">
             <div class="add-account-container">
                 <div class="add-account">
-                    <a class="add-account-btn" href="/add-account">Tambah Akun</a>
+                    <a class="btn-custom" href="/add-account">Tambah Akun</a>
                 </div>
             </div>
         </div>

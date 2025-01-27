@@ -2,41 +2,30 @@
 @section('content')
 <div class="features-area">
     <div class="container mt-5">
-        <h2 class="text-center mb-4">Riwayat Pengajuan</h2>
-        <div class="row justify-content-center">
-            <!-- Pengajuan Kredit -->
-            <!-- <div class="col-md-4 mb-4">
-                <div class="card history-card">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Pengajuan Kredit</h5>
-                        <p class="card-text">Pilih status pengajuan kredit yang ingin Anda lihat.</p>
-                        <a href="{{ url('/history/kredit/disetujui') }}" class="btn-accepted">Disetujui</a>
-                        <a href="{{ url('/history/kredit/ditolak') }}" class="btn-rejected">Ditolak</a>
-                    </div>
-                </div>
-            </div> -->
-
+        <h2 class="text-center mb-4 h2-bold">Riwayat Transaksi</h2>
+        <div class="justify-content-center d-flex" style="gap :32px;">
+           
             <!-- Setor Tunai -->
-            <div class="col-md-4 mb-4">
-                <div class="card history-card">
+            
+                <div class="cards history-card" style="width:400px;">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Setor Tunai</h5>
+                        <h5 class="card-title h5-bold">Setor Tunai</h5>
                         <p class="card-text">History data transaksi Setor tunai yang telah selesai.</p>
                         <a href="/history-setor-tunai" class="btn-blue">Lihat Data</a>
                     </div>
                 </div>
-            </div>
+            
 
             <!-- Tarik Tunai -->
-            <div class="col-md-4 mb-4">
-                <div class="card history-card">
+            
+                <div class="cards history-card " style="width:400px;">
                     <div class="card-body text-center">
-                        <h5 class="card-title">Tarik Tunai</h5>
+                        <h5 class="card-title h5-bold">Tarik Tunai</h5>
                         <p class="card-text">History data transaksi Tarik Tunai yang telah selesai.</p>
-                        <a href="{{ url('/history/tarik-tunai') }}" class="btn-blue">Lihat Data</a>
+                        <a href="/history-tarik-tunai" class="btn-blue">Lihat Data</a>
                     </div>
                 </div>
-            </div>
+           
         </div>
     </div>
 </div>

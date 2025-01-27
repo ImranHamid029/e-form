@@ -19,7 +19,7 @@
                         <div class="section-heading" >
                             <h3 class="h3-medium" style="padding:32px 0;">Kredit Aneka Usaha</h3>
                         </div>
-                        <p>Apa itu Kredit Aneka Usaha? <br>
+                        <p class="body-lg-regular">Apa itu Kredit Aneka Usaha? <br>
                     Kredit yang diberikan kepada pengusaha 
                     perorangan maupun kelompok untuk membiayai 
                     kebutuhan usaha produktif baik investasi maupun 
@@ -58,21 +58,21 @@
                 <div class="col-12 col-sm-6 col-lg-6">
                     <div style="padding-bottom:24px;">
                         <h3 class="h3-semibold">Fleksibilitas penuh</h3>
-                        <p>Atur kebutuhan pembiayaanmu sesuai dengan
+                        <p class="body-lg-regular">Atur kebutuhan pembiayaanmu sesuai dengan
                             rencana tanpa rasa khawatir. Pinjaman kami 
                             hadir untuk mendukung kebutuhanmu, kapan saja 
                             dan di mana saja.</p>
                     </div>
                     <div style="padding-bottom:24px;">
                         <h3 class="h3-semibold">Manfaat Maksimal</h3>
-                        <p>Pinjaman yang mudah dan terjangkau! Nikmati 
+                        <p class="body-lg-regular">Pinjaman yang mudah dan terjangkau! Nikmati 
                             berbagai keuntungan, mulai dari bunga kompetitif, 
                             tenor fleksibel, hingga proses yang cepat untuk 
                             mendukung impianmu.</p>
                     </div>
                     <div>
                         <h3 class="h3-semibold">Kontrol dalam Genggaman</h3>
-                        <p>Dengan fitur pelacakan pembayaran real-time, 
+                        <p class="body-lg-regular">Dengan fitur pelacakan pembayaran real-time, 
                             kelola angsuran pinjamanmu langsung dari aplikasi kami. 
                             Transparan, mudah, dan selalu di bawah kendalimu.</p>
                     </div>
