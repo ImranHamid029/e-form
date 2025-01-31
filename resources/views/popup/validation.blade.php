@@ -2,12 +2,18 @@
 @extends('layout\user\app')
 @section('content')
 <!-- Popup Konfirmasi -->
-<div id="confirmationPopup" class="popup-area-confirm" style=" z-index:99999;">
+<div id="confirmationPopup" class="popup-area-confirm" style="z-index: 99999;">
     <div class="popup-container-confirm">
-        <p class="body-lg-semibold text-center">Apakah anda yakin data sudah benar?</p>
-        <div class="btn-area d-flex  align-items-center mt-3">
-            <button type="button" class="btn-confirm">Ya</button>
-            <button type="button" class="btn-rejected" onclick="hidePopup()">Tidak</button>
+        <p class="body-lg-semibold text-center">Apakah Anda yakin data sudah benar?</p>
+        <div class="btn-area d-flex align-items-center mt-3">
+            <form action="{{ $storeRoute }}" method="POST" id="confirmForm">
+                @csrf
+                @foreach ($formData ?? [] as $key => $value)
+                    <input type="hidden" name="{{ $key }}" value="{{ $value }}">
+                @endforeach
+                <button type="submit" class="btn-confirm" id="confirmButton">Ya</button>
+            </form>
+            <button type="submit" class="btn-rejected" onclick="closePopup()">Tidak</button>
         </div>
     </div>
 </div>
