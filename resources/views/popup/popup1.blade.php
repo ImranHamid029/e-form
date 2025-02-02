@@ -1,8 +1,6 @@
-@extends('layout\user\app')
-@section('content')
-<!-- <link rel="stylesheet" href="{{ asset('style.css') }}"> -->
-
-        <div class="popup-area">
+<link rel="stylesheet" href="{{ asset('style.css') }}">
+    <section class="features-area">
+        <div id="successPopup" class="popup-area">
             <div class="popup-container d-block">
                     <div class="top-area-popup">
                         <h2 class="h2-bold">Terima Kasih</h2>
@@ -16,7 +14,7 @@
 
                     <div class="d-flex">
                         <p class="body-md-medium">
-                            Nomor Resi: <span class="h5-bold">AB123456789YZ</span>
+                            Nomor Resi: <span class="h5-bold" id="resiNumber"></span>
                         </p>
                     </div>
 
@@ -40,20 +38,22 @@
                             <img src="/img/logo.png" alt="">
                         </div>
                         <div class="date-area" >
-                            <p class="caption-regular" style="opacity: 0.5;">09.39 WIB, Selasa, 7 Januari 2025</p>
+                            <p class="caption-regular" style="opacity: 0.5;" id="currentDateTime">
+                                {{ now()->format('H:i WIB, l, j F Y') }}
+                            </p>
                         </div>
                     </div>
                     
                 </div>
 
                 <div class="btn-area">
-                    <div>
-                        <button class="btn-custom">Download</button> <!-- Tambahkan aksi pada tombol -->
-                    </div>
-                    <div>
-                        <button class="btn-custom">Kembali</button> <!-- Tambahkan aksi pada tombol -->
-                    </div>
+                    <a id="downloadButton" 
+                        href="{{ route('kredit.pdf', ['uniqueResi' => $uniqueResi ?? 'unknown']) }}" 
+                        class="btn-custom" target="_blank">
+                        Download
+                    </a>
+                    <button id="backButton" class="btn-custom">Kembali</button>
                 </div>
             </div>
         </div>
-@endsection
+    </section>

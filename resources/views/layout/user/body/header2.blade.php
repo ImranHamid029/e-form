@@ -29,7 +29,7 @@
                                                             <ul class="dropdown">
                                                                 <li><a href="/kredit" data-full-text="Kredit Aneka Usaha" class="body-lg-semibold">Kredit Aneka Usaha</a></li>
                                                                 <li><a href="/pengaduan" data-full-text="Pengaduan Online" class="body-lg-semibold">Pengaduan Online</a></li>
-                                                                <li><a href="/check-status" class="body-lg-semibold">Cek Status</a></li>
+                                                                <li><a href="/status/check" data-full-text="Check Status" class="body-lg-semibold">Cek Status</a></li>
                                                             </ul>
                                                         </li>
                                                         <li>

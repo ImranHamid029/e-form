@@ -73,7 +73,10 @@ input[type="number"]:focus, input[type="text"]:focus, select:focus, input[type="
 }
 
 .invalid {
-  border-color: red !important;; 
+  border-color: red !important;
+}
+select.invalid {
+  border-color:orange !important;
 }
 
 .required {
@@ -263,6 +266,7 @@ input[type="number"]:focus, input[type="text"]:focus, select:focus, input[type="
   width: 200px;
   height: 52px;
   white-space: nowrap;
+  margin-bottom: 24px;
 }
 
 .btn-custom:hover {
@@ -486,7 +490,7 @@ ul li a:hover {
 .features-area{
   width:100%;
   display: block;
-  padding: 135px 150px 135px 150px;
+  padding: 225px 150px 100px 150px;
   margin:auto;
 
   
@@ -1195,7 +1199,7 @@ canvas {
   100% { transform: rotate(360deg); }
 }
 
-.captcah button{
+.captcha button{
   color: #000000;
 }
 

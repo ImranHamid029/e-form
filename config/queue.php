@@ -67,6 +67,14 @@ return [
             'block_for' => null,
         ],
 
+        'mongodb' => [
+            'driver' => 'database',
+            'table' => 'jobs', // MongoDB collection for queue jobs
+            'connection' => 'mongodb',
+            'queue' => 'default',
+            'retry_after' => 90,
+        ],
+
     ],
 
     /*

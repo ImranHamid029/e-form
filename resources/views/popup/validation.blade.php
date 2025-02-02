@@ -1,6 +1,5 @@
-<!-- <link rel="stylesheet" href="{{ asset('style.css') }}"> -->
-@extends('layout\user\app')
-@section('content')
+<link rel="stylesheet" href="{{ asset('style.css') }}">
+
 <!-- Popup Konfirmasi -->
 <div id="confirmationPopup" class="popup-area-confirm" style="z-index: 99999;">
     <div class="popup-container-confirm">
@@ -17,4 +16,3 @@
         </div>
     </div>
 </div>
-@endsection
