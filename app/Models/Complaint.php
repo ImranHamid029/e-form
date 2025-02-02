@@ -4,16 +4,17 @@ namespace App\Models;
 
 use Jenssegers\Mongodb\Eloquent\Model;
 
-
-class Pengaduan extends Model
+class Complaint extends Model
 {
     protected $connection = 'mongodb';
-    protected $collection = 'pengaduan';
-    
+    protected $collection = 'complaint';
     protected $fillable = [
-        'nama_lengkap', 
-        'no_hp', 'email', 
-        'laporan',
-    ];
+        'fullName',              
+        'phoneNumber',    
+        'email',                 
+        'complaint',             
 
+        'response',
+        'status',
+    ];
 }

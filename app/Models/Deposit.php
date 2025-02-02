@@ -4,13 +4,25 @@ namespace App\Models;
 
 use Jenssegers\Mongodb\Eloquent\Model;
 
-class Setor extends Model
+class Deposit extends Model
 {
     protected $connection = 'mongodb';
-    protected $collection = 'setor_tunai';
+    protected $collection = 'deposit';
 
     protected $fillable = [
-        'no_rekening',
-        'nama_pemilik',
+        'queueNumber',
+        'selectService',
+        'accountNumber',
+        'bankBranch',
+        'accountOwner',
+        'fullName',
+        'phoneNumber',
+        'job',
+        'companyName',
+        'amount',
+        'amountInWords',
+        'status',
     ];
+    
+    protected $primaryKey = '_id';
 }

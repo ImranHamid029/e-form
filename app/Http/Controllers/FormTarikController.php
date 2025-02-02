@@ -28,15 +28,17 @@ class FormTarikController extends Controller
             'amount'            => 'required|numeric',
             'amountInWords'     => 'required|string',
         ]);
-
-        $lastQueueWithdraw = Withdraw::orderBy('queueNumber', 'desc')->first();
-        $lastQueueNumber = $lastQueueWithdraw ? intval(substr($lastQueueWithdraw->queueNumber, 1)) : 0;
+    
+        // Gunakan count() daripada orderBy()
+        $lastQueueNumber = Withdraw::count();
         $nextQueueNumber = 'TA' . ($lastQueueNumber + 1);
-
+    
         $validatedData['queueNumber'] = $nextQueueNumber;
-
+    
         Withdraw::create($validatedData);
 
+        session()->forget('selectService');
+    
         session([
             'queueNumber'    => $nextQueueNumber,
             'bankBranch'     => $request->bankBranch,
@@ -44,9 +46,11 @@ class FormTarikController extends Controller
             'accountType'    => $request->accountType,
             'amount'         => $request->amount,
         ]);
-        
+    
+        \Log::info('Queue Created:', ['queueNumber' => $nextQueueNumber]);
+    
         return view('popup.popup2');
-    }
+    }    
 
     public function validation(Request $request)
     {
@@ -72,7 +76,7 @@ class FormTarikController extends Controller
         $withdraw = Withdraw::where('queueNumber', $queueNumber)->firstOrFail(); 
             
         $pdf = PDF::loadView('tiket.tarik.tarik_tunai_tiket', compact('withdraw'));
-            
+
         return $pdf->stream('Bukti_Tarik_Nasabah.pdf');
     }
 }
