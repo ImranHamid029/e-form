@@ -1,9 +1,9 @@
 @extends('layout\user\app')
 @section('content')
-
+<section class="features-area ">
 <form action="{{ route('tarik.validation') }}" method="POST" enctype="multipart/form-data" id="regForm">
   @csrf
-  <div class="form-group d-block justify-content-center">
+  <div class="d-block justify-content-center">
     <div class="form-area">
       <h1 class="h1-bold text-center" style="width:100%;">FORM TARIK TUNAI</h1>
       <div class="col-12 pl-4">
@@ -50,15 +50,20 @@
                       </div>
 
                   
-                      <div class="form-container" style="flex: 1;">    
-                          <label for="currency" class="caption-regular">Mata Uang<span class="required">*</span></label>
-                          <select id="currency" name="currency" class="form-input" required>
-                            <option value="" disabled selected>Mata Uang</option>
-                            <option value="rupiah">Rupiah</option>
-                            <option value="valutaAsing">Valuta Asing</option>
-                            <option value="lainnya">Lainnya...</option>
-                          </select> 
-                      </div>
+                      <div class="form-container" style="flex: 1;">   
+                        <label for="currency" class="caption-regular">Mata Uang<span class="required">*</span></label>
+
+                        <div class="select-container">
+                            <select id="currency" name="currency" class="form-input" required>
+                                <option value="" disabled selected>Mata Uang</option>
+                                <option value="rupiah">Rupiah</option>
+                                <option value="valutaAsing">Valuta Asing</option>
+                                <option value="lainnya">Lainnya...</option>
+                            </select>
+                            <span class="invalid-select" style="display: none;">!</span> 
+                        </div> 
+                    </div>
+
                   </div>
 
 
@@ -80,7 +85,7 @@
               </div>
           </div>
       </div>
-        <div class="col-12 text-center mt-3" >
+        <div class="col-12 text-center" >
           <button type="submit" class="btn-custom" id="submitButton">Kirim</button>
         </div>
     </div>
@@ -104,8 +109,11 @@
 </div>
 
 <main></main>
+
+</section>
+
 <script>
-document.addEventListener("DOMContentLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
     const submitButton = document.getElementById("submitButton");
     const validationModal = document.getElementById("validationModal");
     const validationContent = document.getElementById("validationContent");
@@ -116,21 +124,41 @@ document.addEventListener("DOMContentLoaded", () => {
     submitButton.addEventListener("click", (e) => {
         e.preventDefault(); // Cegah form submit langsung
 
-        // Ambil konten validation popup
-        fetch("{{ route('tarik.validation') }}", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value,
-            },
-            body: JSON.stringify(Object.fromEntries(new FormData(document.getElementById("regForm")))),
-        })
+        const form = document.getElementById("regForm");
+        const inputs = form.querySelectorAll("input[required],select[required],textarea[required]"); // Target semua input dan textarea
+        let isValid = true;
+
+        // Validasi form
+        inputs.forEach(input => {
+            const invalidIcon = input.nextElementSibling; // Icon invalid
+
+            if (!input.value.trim()) {
+                input.classList.add("invalid");
+                if (invalidIcon) invalidIcon.style.display = "inline-block";
+                isValid = false;
+            } else {
+                input.classList.remove("invalid");
+                if (invalidIcon) invalidIcon.style.display = "none";
+            }
+        });
+
+        // Jika form valid, lanjutkan dengan fetch untuk validasi
+        if (isValid) {
+            fetch("{{ route('tarik.validation') }}", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value,
+                },
+                body: JSON.stringify(Object.fromEntries(new FormData(form))),
+            })
             .then((response) => response.text())
             .then((data) => {
                 validationContent.innerHTML = data; // Isi modal validation
                 validationModal.style.display = "block"; // Tampilkan modal
             })
             .catch((error) => console.error("Error loading validation popup:", error));
+        } 
     });
 
     // Event untuk tombol "Ya" pada popup validation
@@ -139,23 +167,21 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault(); // Cegah submit langsung
 
             // Kirim data form untuk proses penyimpanan
+            const confirmForm = document.getElementById("confirmForm");
             fetch("{{ route('tarik.store') }}", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                     "X-CSRF-TOKEN": document.querySelector('input[name="_token"]').value,
                 },
-                body: JSON.stringify(Object.fromEntries(new FormData(document.getElementById("confirmForm")))),
+                body: JSON.stringify(Object.fromEntries(new FormData(confirmForm))),
             })
             .then((response) => response.text())
             .then((html) => {
                 // Tutup popup validation
-                const validationModal = document.getElementById("validationModal");
                 validationModal.style.display = "none";
 
                 // Tampilkan popup2
-                const popup2Modal = document.getElementById("popup2Modal");
-                const popup2Content = document.getElementById("popup2Content");
                 popup2Content.innerHTML = html; // Isi konten popup2
                 popup2Modal.style.display = "block"; // Tampilkan modal popup2
 
@@ -185,6 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
 </script>
 
 @endsection

@@ -73,7 +73,10 @@ input[type="number"]:focus, input[type="text"]:focus, select:focus, input[type="
 }
 
 .invalid {
-  border-color: red !important;; 
+  border-color: red !important;
+}
+select.invalid {
+  border-color: orange !important;
 }
 
 .required {
@@ -97,9 +100,28 @@ input[type="number"]:focus, input[type="text"]:focus, select:focus, input[type="
   cursor: pointer;
   border-radius: 50%; 
   text-align: center;
-  
+  line-height: 20px; 
    
 }
+.invalid-select {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: orange;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 50%; 
+  text-align: center;
+  line-height: 20px;  
+  align-items: center; 
+}
+
+
 .input-area {
   position: relative;
   display: flex;
@@ -112,16 +134,21 @@ input[type="number"]:focus, input[type="text"]:focus, select:focus, input[type="
   box-sizing: border-box;
 }
 
-.input-area input:invalid + .invalid-icon {
+.input-area input:invalid + select.invalid + .invalid-icon {
   display: inline-block;
 }
-  input[type="number"].invalid, 
+.select-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+  /* input[type="number"].invalid, 
   input[type="text"].invalid, 
   input[type="email"].invalid, 
   input[type="date"].invalid,
   textarea.invalid {
-    border-color: red;
-  }
+    border:2px solid red;
+  } */
   
   input.invalid + .invalid-icon, 
   textarea.invalid + .invalid-icon {
@@ -263,6 +290,7 @@ input[type="number"]:focus, input[type="text"]:focus, select:focus, input[type="
   width: 200px;
   height: 52px;
   white-space: nowrap;
+  margin-bottom: 24px;
 }
 
 .btn-custom:hover {
@@ -486,7 +514,7 @@ ul li a:hover {
 .features-area{
   width:100%;
   display: block;
-  padding: 135px 150px 135px 150px;
+  padding: 225px 150px 100px 150px;
   margin:auto;
 
   
