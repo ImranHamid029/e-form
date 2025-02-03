@@ -43,11 +43,14 @@
 
                 <div class="form-container">
                   <label for="gender">Jenis Kelamin <span class="required">*</span></label>
-                  <select id="gender" name="gender" class="form-input" required>
-                    <option value="" disabled selected>Pilih Jenis Kelamin</option>
-                    <option value="Man">Laki-Laki</option>
-                    <option value="Woman">Perempuan</option>
-                  </select>
+                  <div class="select-container">
+                    <select id="gender" name="gender" class="form-input" required>
+                      <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                      <option value="Man">Laki-Laki</option>
+                      <option value="Woman">Perempuan</option>
+                    </select>
+                    <span class="invalid-select" style="display: none;">!</span> 
+                  </div>
                 </div>
               </div>
 
@@ -92,34 +95,43 @@
               <div class="form-container" style="flex: 1; width:50%;">
                 <div class="form-container">
                   <label for="residentialProvince">Provinsi <span class="required">*</span></label>
-                  <select id="residentialProvince" name="residentialProvince" class="form-input" required>
-                    <option value="" disabled selected>Pilih Provinsi</option>
-                    @foreach ($provinces as $item)
-                      <option value="{{ $item->name }}">{{ $item->name }}</option>
-                    @endforeach
-                  </select>
+                  <div class="select-container"> 
+                    <select id="residentialProvince" name="residentialProvince" class="form-input" required>
+                      <option value="" disabled selected>Pilih Provinsi</option>
+                      @foreach ($provinces as $item)
+                        <option value="{{ $item->name }}">{{ $item->name }}</option>
+                      @endforeach
+                    </select>
+                    <span class="invalid-select" style="display: none;">!</span> 
+                  </div>
                 </div>
 
                 <div class="form-container">
                   <label for="residentialCity">Kabupaten/Kota <span class="required">*</span></label>
-                  <select id="residentialCity" name="residentialCity" class="form-input" required>
-                    <option value="" disabled selected>Pilih Kabupaten/Kota</option>
-                    @foreach ($cities as $item)
-                      <option value="{{ $item->name }}">{{ $item->name }}</option>
-                    @endforeach
-                  </select>
+                  <div class="select-container">
+                    <select id="residentialCity" name="residentialCity" class="form-input" required>
+                      <option value="" disabled selected>Pilih Kabupaten/Kota</option>
+                      @foreach ($cities as $item)
+                        <option value="{{ $item->name }}">{{ $item->name }}</option>
+                      @endforeach
+                    </select>
+                    <span class="invalid-select" style="display: none;">!</span> 
+                  </div>
                 </div>
               </div>
 
               <div class="form-container" style="flex: 1;width:50%;">
                 <div class="form-container">
                   <label for="residentialDistrict">Kecamatan<span class="required">*</span></label>
-                  <select id="residentialDistrict" name="residentialDistrict" class="form-input" required>
-                    <option value="" disabled selected>Pilih Kecamatan</option>
-                    @foreach ($districts as $item)
-                      <option value="{{ $item->name }}">{{ $item->name }}</option>
-                    @endforeach
-                  </select>
+                  <div class="select-container">
+                    <select id="residentialDistrict" name="residentialDistrict" class="form-input" required>
+                      <option value="" disabled selected>Pilih Kecamatan</option>
+                      @foreach ($districts as $item)
+                        <option value="{{ $item->name }}">{{ $item->name }}</option>
+                      @endforeach
+                    </select>
+                    <span class="invalid-select" style="display: none;">!</span> 
+                  </div>
                 </div>
 
                 <div class="form-container">
@@ -169,34 +181,43 @@
               <div class="form-container" style="flex: 1; width:50%;">
                 <div class="form-container">
                   <label for="businessProvince">Provinsi <span class="required">*</span></label>
-                  <select id="businessProvince" name="businessProvince" class="form-input" required>
-                    <option value="" disabled selected>Pilih Provinsi</option>
-                    @foreach ($provinces as $item)
-                      <option value="{{ $item->name }}">{{ $item->name }}</option>
-                    @endforeach
-                  </select>
+                  <div class="select-container">  
+                    <select id="businessProvince" name="businessProvince" class="form-input" required>
+                      <option value="" disabled selected>Pilih Provinsi</option>
+                      @foreach ($provinces as $item)
+                        <option value="{{ $item->name }}">{{ $item->name }}</option>
+                      @endforeach
+                    </select>
+                    <span class="invalid-select" style="display: none;">!</span> 
+                  </div>
                 </div>
 
                 <div class="form-container">
                   <label for="businessCity">Kabupaten/Kota <span class="required">*</span></label>
-                  <select id="businessCity" name="businessCity" class="form-input" required>
-                    <option value="" disabled selected>Pilih Kabupaten/Kota</option>
-                    @foreach ($cities as $item)
-                      <option value="{{ $item->name }}">{{ $item->name }}</option>
-                    @endforeach
-                  </select>
+                  <div class="select-container">
+                    <select id="businessCity" name="businessCity" class="form-input" required>
+                      <option value="" disabled selected>Pilih Kabupaten/Kota</option>
+                      @foreach ($cities as $item)
+                        <option value="{{ $item->name }}">{{ $item->name }}</option>
+                      @endforeach
+                    </select>
+                    <span class="invalid-select" style="display: none;">!</span> 
+                  </div>
                 </div>
               </div>
 
               <div class="form-container" style="flex: 1; width:50%;">
                 <div class="form-container">
                   <label for="businessDistrict">Kecamatan<span class="required">*</span></label>
-                  <select id="businessDistrict" name="businessDistrict" class="form-input" required>
-                    <option value="" disabled selected>Pilih Kecamatan</option>
-                    @foreach ($districts as $item)
-                      <option value="{{ $item->name }}">{{ $item->name }}</option>
-                    @endforeach
-                  </select>
+                  <div class="select-container">
+                    <select id="businessDistrict" name="businessDistrict" class="form-input" required>
+                      <option value="" disabled selected>Pilih Kecamatan</option>
+                      @foreach ($districts as $item)
+                        <option value="{{ $item->name }}">{{ $item->name }}</option>
+                      @endforeach
+                    </select>
+                    <span class="invalid-select" style="display: none;">!</span> 
+                  </div>
                 </div>
 
                 <div class="form-container">
@@ -213,36 +234,45 @@
               <div class="form-container" style="flex: 1; width:50%;">
                 <div class="form-container">
                   <label for="businessPlaceStatus">Status Perusahaan <span class="required">*</span></label>
-                  <select id="businessPlaceStatus" name="businessPlaceStatus" class="form-input" required>
-                    <option value="" disabled selected>Pilih Status Perusahaan</option>
-                    <option value="sendiri">Milik Sendiri</option>
-                    <option value="keluarga">Milik Keluarga</option>
-                    <option value="sewa">Sewa</option>
-                    <option value="lainnya">Lainnya</option>
-                  </select>
+                  <div class="select-container"> 
+                    <select id="businessPlaceStatus" name="businessPlaceStatus" class="form-input" required>
+                      <option value="" disabled selected>Pilih Status Perusahaan</option>
+                      <option value="sendiri">Milik Sendiri</option>
+                      <option value="keluarga">Milik Keluarga</option>
+                      <option value="sewa">Sewa</option>
+                      <option value="lainnya">Lainnya</option>
+                    </select>
+                    <span class="invalid-select" style="display: none;">!</span> 
+                  </div>
                 </div>
 
                 <div class="form-container">
                   <label for="businessSector">Bidang Usaha <span class="required">*</span></label>
-                  <select id="businessSector" name="businessSector" class="form-input" required>
-                    <option value="" disabled selected>Pilih Bidang Usaha</option>
-                    <option value="f&b">F&B</option>
-                    <option value="penambangan">Penambangan atau Penggalian</option>
-                    <option value="penginapan">Penginapan</option>
-                    <option value="lainnya">Lainnya</option>
-                  </select>
+                  <div class="select-container">
+                    <select id="businessSector" name="businessSector" class="form-input" required>
+                      <option value="" disabled selected>Pilih Bidang Usaha</option>
+                      <option value="f&b">F&B</option>
+                      <option value="penambangan">Penambangan atau Penggalian</option>
+                      <option value="penginapan">Penginapan</option>
+                      <option value="lainnya">Lainnya</option>
+                    </select>
+                    <span class="invalid-select" style="display: none;">!</span> 
+                  </div>
                 </div>
               </div>
 
               <div class="form-container" style="flex: 1; width:50%;">
                 <div class="form-container">
                   <label for="loanTerm">Jangka Waktu <span class="required">*</span></label>
-                  <select id="loanTerm" name="loanTerm" class="form-input" required>
-                    <option value="" disabled selected>Pilih Jangka Waktu</option>
-                    <option value="6">6 Months</option>
-                    <option value="9">9 Months</option>
-                    <option value="12">12 Months</option>
-                  </select>
+                  <div class="select-container">
+                    <select id="loanTerm" name="loanTerm" class="form-input" required>
+                      <option value="" disabled selected>Pilih Jangka Waktu</option>
+                      <option value="6">6 Months</option>
+                      <option value="9">9 Months</option>
+                      <option value="12">12 Months</option>
+                    </select>
+                    <span class="invalid-select" style="display: none;">!</span> 
+                  </div>
                 </div>
 
                 <div class="form-container">

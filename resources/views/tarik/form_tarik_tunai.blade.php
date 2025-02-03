@@ -12,12 +12,15 @@
 
                   <div class="form-container">
                       <label for="bankBranch">Kantor Oprasional <span class="required">*</span></label>
-                      <select name="bankBranch" id="bankBranch" required class="form-input" style="display: block; width: 100%;" required>
-                          <option value="" disabled selected>Kantor Oprasional</option>
-                          @foreach ($offices as $item)
-                              <option value="{{ $item->office_name }}">{{ $item->office_name }}</option>
-                          @endforeach
-                      </select>
+                      <div class="select-container">
+                        <select name="bankBranch" id="bankBranch" required class="form-input" style="display: block; width: 100%;" required>
+                            <option value="" disabled selected>Kantor Oprasional</option>
+                            @foreach ($offices as $item)
+                                <option value="{{ $item->office_name }}">{{ $item->office_name }}</option>
+                            @endforeach
+                        </select>
+                        <span class="invalid-select" style="display: none;">!</span> 
+                    </div>
                   </div>
 
                   <div class="form-container">
@@ -40,13 +43,16 @@
                   <div class="d-flex justify-content-between">
                       <div class="form-container" style="flex: 1; padding-right: 24px;">                            
                           <label for="accountType" class="caption-regular">Jenis Rekening<span class="required">*</span></label>
-                          <select id="accountType" name="accountType" value="Tarik Tunai" class="form-input" required>
-                            <option value="" disabled selected>Jenis Rekening</option>
-                            <option value="tabungan">Tabungan</option>
-                            <option value="giro">Giro</option>
-                            <option value="pinjaman">Pinjaman</option>
-                            <option value="lainnya">Lainnya...</option>
-                          </select>
+                          <div class="select-container">
+                            <select id="accountType" name="accountType" value="Tarik Tunai" class="form-input" required>
+                                <option value="" disabled selected>Jenis Rekening</option>
+                                <option value="tabungan">Tabungan</option>
+                                <option value="giro">Giro</option>
+                                <option value="pinjaman">Pinjaman</option>
+                                <option value="lainnya">Lainnya...</option>
+                            </select>
+                            <span class="invalid-select" style="display: none;">!</span> 
+                        </div>
                       </div>
 
                   

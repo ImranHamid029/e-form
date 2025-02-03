@@ -12,14 +12,17 @@
 
             <div class="form-container">
               <label for="selectService" class="caption-regular">Pilih Layanan <span class="required">*</span></label>
-              <select id="selectService" name="selectService" value="Setor Tunai" class="form-input" required>
-                <option value="" disabled selected>Pilih Layanan</option>
-                <option value="tabungan">Tabungan</option>
-                <option value="giro">Giro</option>
-                <option value="deposito">Deposito</option>
-                <option value="pinjaman">Pinjaman</option>
-                <option value="lainnya">Lainnya...</option>
-              </select>
+              <div class="select-container">
+                <select id="selectService" name="selectService" value="Setor Tunai" class="form-input" required>
+                  <option value="" disabled selected>Pilih Layanan</option>
+                  <option value="tabungan">Tabungan</option>
+                  <option value="giro">Giro</option>
+                  <option value="deposito">Deposito</option>
+                  <option value="pinjaman">Pinjaman</option>
+                  <option value="lainnya">Lainnya...</option>
+                </select>
+                <span class="invalid-select" style="display: none;">!</span> 
+              </div>
             </div>
 
             <!-- Penerima dan Penyetor -->
@@ -38,12 +41,15 @@
 
                 <div class="form-container">
                   <label for="bankBranch">Kantor Oprasional <span class="required">*</span></label>
-                  <select name="bankBranch" id="bankBranch" required class="form-input" style="display: block; width: 100%;">
-                      <option value="" disabled selected>Kantor Oprasional</option>
-                      @foreach ($offices as $item)
-                          <option value="{{ $item->office_name }}">{{ $item->office_name }}</option>
-                      @endforeach
-                  </select>
+                  <div class="select-container">
+                    <select name="bankBranch" id="bankBranch" required class="form-input" style="display: block; width: 100%;">
+                        <option value="" disabled selected>Kantor Oprasional</option>
+                        @foreach ($offices as $item)
+                            <option value="{{ $item->office_name }}">{{ $item->office_name }}</option>
+                        @endforeach
+                    </select>
+                    <span class="invalid-select" style="display: none;">!</span> 
+                  </div>
                 </div>
 
                 <div class="form-container">
@@ -85,7 +91,7 @@
 
                 <div class="form-container">
                   <label for="companyName">Nama Perusahaan</label>
-                  <input id="companyName" name="companyName" type="text" style="border: 1px solid #A6A6A6; height:34px; display: block; width: 100%;" placeholder="Nama Perusahaan" required>
+                  <input id="companyName" name="companyName" type="text" style="border: 1px solid #A6A6A6; height:34px; display: block; width: 100%;" placeholder="Nama Perusahaan">
                 </div>
               </div>
             </div>

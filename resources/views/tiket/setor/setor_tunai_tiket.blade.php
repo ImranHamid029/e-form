@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Setor Tunai PDF</title>
     <style>
-        
+         body {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px; 
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
         .container-ticket {
             width: 780px;
             margin: 0px auto;
@@ -16,22 +22,27 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .header-ticket {
-            text-align: center;
             margin-bottom: 20px;
+        }
+        .header-ticket h3{
+            text-align:center;
         }
         .header-ticket img {
             left:0;
             height: 50px;
         }
         .resi-ticket {
-            text-align: center;
             background-color: #1F2B7B;
             color: #fff;
-            font-weight: bold;
-            font-size: 18px;
-            padding: 10px;
             border-radius: 10px;
-            margin-bottom: 20px;
+            text-align: center;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .resi-ticket h2 {
+            padding:20px 0;
         }
         .h2-bold {
             font-weight: 700; /* SemiBold */
