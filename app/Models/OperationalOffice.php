@@ -10,5 +10,4 @@ class OperationalOffice extends Model
     protected $connection = 'mongodb';
     protected $collection = 'oprational_office';
     protected $fillable =['office_name'];
-
 }

@@ -1,6 +1,5 @@
-@extends('layout\user\app')
-@section('content')
-<!-- <link rel="stylesheet" href="{{ asset('style.css') }}"> -->
+
+<link rel="stylesheet" href="{{ asset('style.css') }}">
     <section class="features-area">
         <div id="successPopup" class="popup-area">
             <div class="popup-container d-block">
@@ -12,7 +11,7 @@
                 <div class="popup-content">
                     <div>
                         <h4 class="h4-medium">
-                            Berkas <strong>{{ session('selectService', session('accountType', 'Setor/Tarik Tunai')) }}</strong> Berhasil Dibuat!
+                            Berkas <strong>Setor Tunai</strong> Berhasil Dibuat!
                         </h4>
                     </div>
 
@@ -29,7 +28,7 @@
                             <li><span>Jenis Rekening</span>: 
                                 @if (session('selectService')) 
                                     {{ session('selectService') }} <!-- Menampilkan 'Setor Tunai' -->
-                                @else (session('accountType')) 
+                                @elseif (session('accountType')) 
                                     {{ session('accountType') }} <!-- Menampilkan 'Tarik Tunai' -->
                                 @endif
                             </li>
@@ -59,15 +58,23 @@
                 </div>
 
                 <div class="btn-area">
-                @if (session('selectService'))
-                    <a id="downloadButton" href="{{ route('setor.pdf', ['queueNumber' => session('queueNumber')]) }}" class="btn-custom" target="_blank">Download</a>
-                @else (session('accountType'))
-                    <a id="downloadButton" href="{{ route('tarik.pdf', ['queueNumber' => session('queueNumber')]) }}" class="btn-custom" target="_blank">Download</a>
-                @endif
-                <button id="backButton" class="btn-custom">Kembali</button>
+                    @if (session('selectService'))
+                        <a id="downloadButton" 
+                        href="{{ route('setor.pdf', ['queueNumber' => session('queueNumber')]) }}" 
+                        class="btn-custom" target="_blank">
+                        Download
+                        </a>
+                    @elseif (session('accountType'))
+                        <a id="downloadButton" 
+                        href="{{ route('tarik.pdf', ['queueNumber' => session('queueNumber')]) }}" 
+                        class="btn-custom" target="_blank">
+                        Download
+                        </a>
+                    @endif
+                    <button id="backButton" class="btn-custom">Kembali</button>
                 </div>
             </div>
         </div>
     </section>
-@endsection
+
 

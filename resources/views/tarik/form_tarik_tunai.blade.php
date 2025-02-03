@@ -1,4 +1,4 @@
-@extends('layout\user\app')
+@extends('layout/user/app')
 @section('content')
 <section class="features-area ">
 <form action="{{ route('tarik.validation') }}" method="POST" enctype="multipart/form-data" id="regForm">

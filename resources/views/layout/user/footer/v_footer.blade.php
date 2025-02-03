@@ -6,7 +6,7 @@
             <!-- Area 1: Logo dan Alamat -->
             <div class="col-md-3 footer-section">
                 <div class="logo-bank-lampung">
-                    <img src="img/logo2.png" width="137px" height="50" alt="Bank Lampung">
+                    <img src="/img/logo2.png" width="137px" height="50" alt="Bank Lampung">
                 </div>
                 <div>
                     <p>Jl. Wolter Monginsidi No.182,<br> Bandar Lampung 35116 Indonesia.</p>

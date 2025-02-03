@@ -1,5 +1,5 @@
 <title>e-Form Bank Lampung</title>
-<link rel="icon" href="img/logo/logo1.png" type="image/png">
+<link rel="icon" href="/img/logo/logo1.png" type="image/png">
 <meta charset="UTF-8">
 <meta name="description" content="">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">

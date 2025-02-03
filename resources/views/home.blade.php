@@ -7,7 +7,7 @@
             <div class="row align-items-center justify-between">
             <!-- Teks Selamat Datang di Kiri -->
                 <div class="col-12 col-md-6 mb-4" >
-                    <div class="single-features-area wow fadeInUp" data-wow-delay="100ms" style="color:#fff">
+                    <div class="single-features-area-home wow fadeInUp" data-wow-delay="100ms" style="color:#fff">
                         <!-- Section Heading -->
                         <div class="section-heading">
                             <h1 class="h1-bold">Selamat datang di e-Form Bank Lampung!</h1>

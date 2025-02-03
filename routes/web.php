@@ -18,7 +18,7 @@ use App\Http\Controllers\TentangKamiController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HelpdeskController;
-use Mews\Captcha\Facades\Captcha;
+use Mews\Captcha\Captcha;
 
 Route::get('/tes', function () {
     return view('tes');
@@ -52,21 +52,21 @@ Route::get('/kredit', [KreditController::class,'index']);
 Route::get('/form-kredit', [FormKreditController::class, 'create'])->name('kredit.create');
 Route::post('/form-kredit/store', [FormKreditController::class, 'store'])->name('kredit.store');
 Route::post('/form-kredit/validation', [FormKreditController::class, 'validation'])->name('kredit.validation');
-Route::get('/form-kredit/pdf/{uniqueResi}', [FormKreditController::class, 'downloadPDF'])->name('kredit.pdf');
+Route::get('/download-pdf/kredit/{uniqueResi}', [FormKreditController::class, 'downloadPDF'])->name('kredit.pdf');
 
 //Setor Tunai
 Route::get('/setortunai',[SetorController::class, 'index']);
 Route::get('/form-setor-tunai', [FormSetorController::class, 'create'])->name('setor.create');
 Route::post('/form-setor-tunai/store', [FormSetorController::class, 'store'])->name('setor.store');
 Route::post('/form-setor-tunai/validation', [FormSetorController::class, 'validation'])->name('setor.validation');
-Route::get('/form-setor-tunai/pdf/{queueNumber}', [FormSetorController::class, 'downloadPDF'])->name('setor.pdf');
+Route::get('/download-pdf/setor/{queueNumber}', [FormSetorController::class, 'downloadPDF'])->name('setor.pdf');
 
 //Tarik Tunai
 Route::get('/tariktunai',[TarikTunaiController::class, 'index']);
 Route::get('/form-tarik-tunai', [FormTarikController::class, 'create'])->name('tarik.create');
 Route::post('/form-tarik-tunai/store', [FormTarikController::class, 'store'])->name('tarik.store');
 Route::post('/form-tarik-tunai/validation', [FormTarikController::class, 'validation'])->name('tarik.validation');
-Route::get('/form-tarik-tunai/pdf/{queueNumber}', [FormTarikController::class, 'downloadPDF'])->name('tarik.pdf');
+Route::get('/download-pdf/tarik/{queueNumber}', [FormTarikController::class, 'downloadPDF'])->name('tarik.pdf');
 
 //Pengaduan
 Route::get('/pengaduan',[PengaduanController::class, 'index']);
@@ -74,9 +74,13 @@ Route::post('/pengaduan/store', [PengaduanController::class, 'store'])->name('pe
 Route::post('/pengaduan/validation', [PengaduanController::class, 'validation'])->name('pengaduan.validation');
 
 // Status
-Route::post('/check-status', [StatusController::class, 'index']);
-Route::get('/check-status', [StatusController::class, 'showCheckForm'])->name('status.check.form');
-Route::post('/check-status', [StatusController::class, 'check'])->name('status.check');
+Route::get('/generate-captcha', function () {
+    return Captcha::create('default');
+});
+Route::get('/refresh-captcha', [StatusController::class, 'refreshCaptcha'])->name('refresh.captcha');
+Route::get('/status/check', [StatusController::class, 'showCheckForm'])->name('status.check.form');
+Route::post('/status/check', [StatusController::class, 'check'])->name('status.check');
+Route::get('/status/view/{type}/{id}', [StatusController::class, 'viewStatus'])->name('status.view');
 
 // Tentang Kami
 Route::get('/tentang-kami', TentangKamiController::class);
