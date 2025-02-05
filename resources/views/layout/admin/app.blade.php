@@ -6,20 +6,23 @@
 <body>
     @include('layout.admin.body.navbar')
 
-    {{-- Sidebar dinamis berdasarkan role --}}
     @php
-        $role = Auth::user()->role ?? 'guest';
-    @endphp
+    $role = Auth::user()->role ?? 'guest';
 
-    @if ($role === 'adminsuper')
-        @include('layout.admin.body.sidebar')
-    @elseif ($role === 'csbl')
-        @include('layout.admin.body.sidebar-cs')
-    @elseif ($role === 'helpdeskbl')
-        @include('layout.admin.body.sidebar-helpdesk')
-    @elseif ($role === 'tellerbl')
-        @include('layout.admin.body.sidebar-teller')
-    @endif
+    // Menyimpan role pengguna dalam session
+    session(['user_role' => $role]);
+@endphp
+
+@if (session('user_role') === 'adminsuper')
+    @include('layout.admin.body.sidebar')
+@elseif (session('user_role') === 'csbl')
+    @include('layout.admin.body.sidebar-cs')
+@elseif (session('user_role') === 'helpdeskbl')
+    @include('layout.admin.body.sidebar-helpdesk')
+@elseif (session('user_role') === 'tellerbl')
+    @include('layout.admin.body.sidebar-teller')
+@endif
+
 
     @yield('content')
 </body>

@@ -10,49 +10,94 @@ use App\Models\User;
 class LoginController extends Controller
 {
     public function index()
-    {
-        return view('accountofficer.login');
+{
+    // Cek apakah pengguna sudah login
+    if (Auth::check()) {
+        $user = Auth::user(); // Ambil user yang sudah login
+
+        // Redirect berdasarkan role
+        switch ($user->role) {
+            case 'adminsuper':
+                return redirect()->route('adminsuper.index'); // Arahkan ke halaman adminsuper
+            case 'csbl':
+                return redirect()->route('cs.dashboard'); // Arahkan ke halaman CS
+            case 'helpdeskbl':
+                return redirect()->route('helpdesk.dashboard'); // Arahkan ke halaman helpdesk
+            case 'tellerbl':
+                return redirect()->route('teller.dashboard'); // Arahkan ke halaman teller
+            default:
+                return redirect()->route('login')->withErrors(['login_error' => 'Role tidak dikenali']);
+        }
     }
 
-    public function login(Request $request)
-    {
-        \Log::info($request->all());
-    
-        // Validasi input
-        $request->validate([
-            'username' => 'required',
-            'password' => 'required',
-        ]);
-    
-        // Cari user berdasarkan username
-        $user = User::where('username', $request->username)->first();
-    
-        // Periksa apakah user ditemukan
-        if ($user && preg_match('/(\d{3})/', $request->password, $matches)) {
-            $officeCode = $matches[1]; // Ambil kode kantor dari password
-    
-            Auth::login($user);
-    
-            // Simpan officeCode di session
-            session(['officeCode' => $officeCode]);
-    
-            // Redirect berdasarkan role
-            switch ($user->role) {
-                case 'adminsuper':
-                    return redirect()->route('adminsuper.index');
-                case 'csbl':
-                    return redirect()->route('cs.dashboard');
-                case 'helpdeskbl':
-                    return redirect()->route('helpdesk.dashboard');
-                case 'tellerbl':
-                    return redirect()->route('teller.dashboard');
-                default:
-                    return redirect()->route('login')->withErrors(['login_error' => 'Role tidak dikenali']);
-            }
+    return view('accountofficer.login');
+}
+
+
+
+public function login(Request $request)
+{
+    // Cek apakah pengguna sudah login
+    if (Auth::check()) {
+        $user = Auth::user(); // Ambil user yang sudah login
+
+        // Redirect berdasarkan role jika sudah login
+        switch ($user->role) {
+            case 'adminsuper':
+                return redirect()->route('adminsuper.index');
+            case 'csbl':
+                return redirect()->route('cs.dashboard');
+            case 'helpdeskbl':
+                return redirect()->route('helpdesk.dashboard');
+            case 'tellerbl':
+                return redirect()->route('teller.dashboard');
+            default:
+                return redirect()->route('login')->withErrors(['login_error' => 'Role tidak dikenali']);
         }
-    
-        return back()->withErrors(['login_error' => 'Username atau password salah']);
     }
+
+    // Log input request
+    \Log::info($request->all());
+
+    // Validasi input
+    $request->validate([
+        'username' => 'required',
+        'password' => 'required',
+    ]);
+
+    // Cari user berdasarkan username
+    $user = User::where('username', $request->username)->first();
+
+    // Periksa apakah user ditemukan dan validasi password
+    if ($user && preg_match('/(\d{3})/', $request->password, $matches)) {
+        $officeCode = $matches[1]; // Ambil kode kantor dari password
+
+        // Login user
+        Auth::login($user);
+
+        // Simpan officeCode di session
+        session(['officeCode' => $officeCode]);
+
+        // Redirect berdasarkan role
+        switch ($user->role) {
+            case 'adminsuper':
+                return redirect()->route('adminsuper.index');
+            case 'csbl':
+                return redirect()->route('cs.dashboard');
+            case 'helpdeskbl':
+                return redirect()->route('helpdesk.dashboard');
+            case 'tellerbl':
+                return redirect()->route('teller.dashboard');
+            default:
+                return redirect()->route('login')->withErrors(['login_error' => 'Role tidak dikenali']);
+        }
+    }
+
+    // Jika username atau password salah
+    return back()->withErrors(['login_error' => 'Username atau password salah']);
+}
+
+
     
     public function updatePassword(Request $request)
     {
@@ -100,24 +145,21 @@ class LoginController extends Controller
         return response()->json(['success' => true, 'profileImage' => asset("storage/$path")]);
     }    
 
-    public function logout(Request $request)
-    {
-        // Log out the user
-        auth()->logout();
-    
-        // Invalidate the session
-        $request->session()->invalidate();
-    
-        // Regenerate the session token to prevent reuse
-        $request->session()->regenerateToken();
-    
-        // Jika permintaan AJAX, kirimkan respons JSON
-        if ($request->ajax()) {
-            return response()->json(['message' => 'Logout berhasil'], 200);
-        }
-    
-        // Redirect ke halaman login
-        return redirect()->route('login');
-    }
+    // Controller Logout
+public function logout(Request $request)
+{
+    // Log out the user
+    auth()->logout();
+
+    // Invalidate the session
+    $request->session()->invalidate();
+
+    // Regenerate the session token to prevent reuse
+    $request->session()->regenerateToken();
+
+    // Redirect ke halaman login
+    return redirect()->route('login');
+}
+
     
 }

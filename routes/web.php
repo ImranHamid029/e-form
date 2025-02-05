@@ -111,14 +111,15 @@ Route::middleware(['auth', 'role:csbl'])->group(function () {
     Route::get('/cs', function () {
         return view('accountofficer.cs.dashboard_cs');
     })->name('cs.dashboard');
+    Route::get('/cs', [CSController::class, 'index'])->name('cs.dashboard');
+    Route::get('/cs/{id}', [CSController::class, 'show'])->name('applicant.detail');
+    Route::post('/cs/{id}/update-status', [CSController::class, 'updateStatus'])->name('applicant.update_status');
+    Route::get('/history-kredit', [CSController::class, 'history'])->name('history');
+    Route::get('/history-kredit/{id}/{from_history?}', [CSController::class, 'show'])->name('history.detail');
+    Route::get('/history-kredit-accepted', [CSController::class, 'historyAccepted'])->name('history.accepted');
+    Route::get('/history-kredit-rejected', [CSController::class, 'historyRejected'])->name('history.rejected');
 });
-Route::get('/cs', [CSController::class, 'index'])->name('cs.dashboard');
-Route::get('/cs/{id}', [CSController::class, 'show'])->name('applicant.detail');
-Route::post('/cs/{id}/update-status', [CSController::class, 'updateStatus'])->name('applicant.update_status');
-Route::get('/history-kredit', [CSController::class, 'history'])->name('history');
-Route::get('/history-kredit/{id}/{from_history?}', [CSController::class, 'show'])->name('history.detail');
-Route::get('/history-kredit-accepted', [CSController::class, 'historyAccepted'])->name('history.accepted');
-Route::get('/history-kredit-rejected', [CSController::class, 'historyRejected'])->name('history.rejected');
+
 
 
 
@@ -128,18 +129,19 @@ Route::middleware(['auth', 'role:helpdeskbl'])->group(function () {
     Route::get('/helpdesk', function () {
         return view('accountofficer.helpdesk.dashboard_helpdesk');
     })->name('helpdesk.dashboard');
+    // Route Dashboard Helpdesk
+    Route::get('/helpdesk', [HelpdeskController::class, 'index'])->name('helpdesk.dashboard');
+    Route::get('/helpdesk/show-more', [HelpdeskController::class, 'showMoreComplaint'])->name('helpdesk.showMore');
+    // Route Pengaduan
+    Route::get('/helpdesk/complaint/{id}', [HelpdeskController::class, 'show'])->name('complaint.detail');
+    Route::get('/helpdesk/respond/{id}', [HelpdeskController::class, 'showResponseForm'])->name('helpdesk.respond');
+    Route::post('/helpdesk/respond/{id}', [HelpdeskController::class, 'respond'])->name('helpdesk.storeResponse');
+    // Route Riwayat Pengaduan
+    Route::get('/helpdesk/history', [HelpdeskController::class, 'history'])->name('history.complaint');
+    Route::get('/helpdesk/history/show-more', [HelpdeskController::class, 'showMoreHistory'])->name('history.complaint.showMore');
+    Route::get('/helpdesk/history/{id}', [HelpdeskController::class, 'showHistoryDetail'])->name('detail.history.complaint');
+
 });
-// Route Dashboard Helpdesk
-Route::get('/helpdesk', [HelpdeskController::class, 'index'])->name('helpdesk.dashboard');
-Route::get('/helpdesk/show-more', [HelpdeskController::class, 'showMoreComplaint'])->name('helpdesk.showMore');
-// Route Pengaduan
-Route::get('/helpdesk/complaint/{id}', [HelpdeskController::class, 'show'])->name('complaint.detail');
-Route::get('/helpdesk/respond/{id}', [HelpdeskController::class, 'showResponseForm'])->name('helpdesk.respond');
-Route::post('/helpdesk/respond/{id}', [HelpdeskController::class, 'respond'])->name('helpdesk.storeResponse');
-// Route Riwayat Pengaduan
-Route::get('/helpdesk/history', [HelpdeskController::class, 'history'])->name('history.complaint');
-Route::get('/helpdesk/history/show-more', [HelpdeskController::class, 'showMoreHistory'])->name('history.complaint.showMore');
-Route::get('/helpdesk/history/{id}', [HelpdeskController::class, 'showHistoryDetail'])->name('detail.history.complaint');
 
 
 
@@ -147,20 +149,20 @@ Route::middleware(['auth', 'role:tellerbl'])->group(function () {
     Route::get('/teller', function () {
         return view('accountofficer.teller.dashboard_teller');
     })->name('teller.dashboard');
-});
-Route::get('/teller', [TellerController::class, 'index'])->name('teller.dashboard');
-Route::get('/teller/withdraw', [TellerController::class, 'withdraw'])->name('withdraw.dashboard');
-Route::get('/teller/withdraw/{id}', [TellerController::class, 'show'])->name('withdraw.detail');
-Route::post('/teller/withdraw/{id}/update-status', [TellerController::class, 'updateStatus'])->name('withdraw.update_status');
-Route::get('/teller/deposit', [TellerController::class, 'deposit'])->name('deposit.dashboard');
-Route::get('/teller/deposit/{id}', [TellerController::class, 'showDeposit'])->name('deposit.detail');
-Route::post('/teller/deposit/{id}/update-status', [TellerController::class, 'updateStatusDeposit'])->name('deposit.update_status');
-Route::get('/teller/history', [TellerController::class, 'history'])->name('history');
-Route::get('/teller/history/withdraw', [TellerController::class, 'historyWithdraw'])->name('history.withdraw');
-Route::get('/teller/history/deposit', [TellerController::class, 'historyDeposit'])->name('history.deposit');
-Route::get('/teller/history/withdraw/{id}/{from_history?}', [TellerController::class, 'show'])->name('history.withdraw.detail');
-Route::get('/teller/history/deposit/{id}/{from_history?}', [TellerController::class, 'showDeposit'])->name('history.deposit.detail');
+    Route::get('/teller', [TellerController::class, 'index'])->name('teller.dashboard');
+    Route::get('/teller/withdraw', [TellerController::class, 'withdraw'])->name('withdraw.dashboard');
+    Route::get('/teller/withdraw/{id}', [TellerController::class, 'show'])->name('withdraw.detail');
+    Route::post('/teller/withdraw/{id}/update-status', [TellerController::class, 'updateStatus'])->name('withdraw.update_status');
+    Route::get('/teller/deposit', [TellerController::class, 'deposit'])->name('deposit.dashboard');
+    Route::get('/teller/deposit/{id}', [TellerController::class, 'showDeposit'])->name('deposit.detail');
+    Route::post('/teller/deposit/{id}/update-status', [TellerController::class, 'updateStatusDeposit'])->name('deposit.update_status');
+    Route::get('/teller/history', [TellerController::class, 'history'])->name('history');
+    Route::get('/teller/history/withdraw', [TellerController::class, 'historyWithdraw'])->name('history.withdraw');
+    Route::get('/teller/history/deposit', [TellerController::class, 'historyDeposit'])->name('history.deposit');
+    Route::get('/teller/history/withdraw/{id}/{from_history?}', [TellerController::class, 'show'])->name('history.withdraw.detail');
+    Route::get('/teller/history/deposit/{id}/{from_history?}', [TellerController::class, 'showDeposit'])->name('history.deposit.detail');
 
+});
 
 
 
