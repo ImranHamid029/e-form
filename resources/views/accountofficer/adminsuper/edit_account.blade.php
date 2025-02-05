@@ -50,7 +50,7 @@
 
 
                         <div class="btn-area d-flex justify-between align-items-center mt-3">
-                            <a href="/manage-account" class="btn-custom">Kembali</a>
+                            <a href="/admin/manage-accounts" class="btn-custom">Kembali</a>
                             <button type="submit" class="btn-custom" id="submitButton">Tambah</button>
                         </div>
 

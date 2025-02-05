@@ -20,6 +20,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HelpdeskController;
 use App\Http\Controllers\CSController;
 use App\Http\Controllers\TellerController;
+use App\Http\Controllers\AccountController;
 use Mews\Captcha\Facades\Captcha;
 
 Route::get('/tes', function () {
@@ -102,12 +103,20 @@ Route::middleware(['auth', 'role:adminsuper'])->group(function () {
     Route::get('/admin', function () {
         return view('accountofficer.adminsuper.index');
     })->name('adminsuper.index');
+
+    Route::get('/admin/manage-accounts', [AccountController::class, 'index'])->name('manage-accounts');  // Menambahkan name route
+    Route::get('/admin/add-account', [AccountController::class, 'create'])->name('add-account');  // Menambahkan name route
+    Route::post('/admin/add-account', [AccountController::class, 'store']);
+    Route::get('/admin/edit-account/{id}', [AccountController::class, 'edit'])->name('edit-account');  // Menambahkan name route
+    Route::post('/admin/edit-account/{id}', [AccountController::class, 'update']);
+    Route::delete('/admin/delete-account/{id}', [AccountController::class, 'destroy'])->name('delete-account');  // Menambahkan name route
 });
 
 
 
 
-Route::middleware(['auth', 'role:csbl'])->group(function () {
+
+Route::middleware(['auth', 'role:csbl,adminsuper'])->group(function () {
     Route::get('/cs', function () {
         return view('accountofficer.cs.dashboard_cs');
     })->name('cs.dashboard');
@@ -125,7 +134,7 @@ Route::middleware(['auth', 'role:csbl'])->group(function () {
 
 
 
-Route::middleware(['auth', 'role:helpdeskbl'])->group(function () {
+Route::middleware(['auth', 'role:helpdeskbl,adminsuper'])->group(function () {
     Route::get('/helpdesk', function () {
         return view('accountofficer.helpdesk.dashboard_helpdesk');
     })->name('helpdesk.dashboard');
@@ -145,12 +154,15 @@ Route::middleware(['auth', 'role:helpdeskbl'])->group(function () {
 
 
 
-Route::middleware(['auth', 'role:tellerbl'])->group(function () {
+Route::middleware(['auth', 'role:tellerbl,adminsuper'])->group(function () {
     Route::get('/teller', function () {
         return view('accountofficer.teller.dashboard_teller');
     })->name('teller.dashboard');
     Route::get('/teller', [TellerController::class, 'index'])->name('teller.dashboard');
     Route::get('/teller/withdraw', [TellerController::class, 'withdraw'])->name('withdraw.dashboard');
+
+    Route::get('/teller/withdraw/search', [WithdrawController::class, 'index'])->name('withdraw.search');
+
     Route::get('/teller/withdraw/{id}', [TellerController::class, 'show'])->name('withdraw.detail');
     Route::post('/teller/withdraw/{id}/update-status', [TellerController::class, 'updateStatus'])->name('withdraw.update_status');
     Route::get('/teller/deposit', [TellerController::class, 'deposit'])->name('deposit.dashboard');

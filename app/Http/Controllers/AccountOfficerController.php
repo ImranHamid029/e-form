@@ -15,9 +15,6 @@ class AccountOfficerController extends Controller
         return view('accountofficer.index');
     }
 
-    public function complaint()
-    {
-        return view('accountofficer.complaint');
-    }
+    
 }
 
