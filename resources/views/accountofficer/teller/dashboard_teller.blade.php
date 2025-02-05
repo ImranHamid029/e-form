@@ -7,7 +7,7 @@
     }
 </style>
 <body>
-<h1 class="text-center" style="padding-top:189px;">Grafik Blababla</h1>
+<h1 class="text-center" style="padding-top:189px;">Data Keseluruhan</h1>
     
     
     <div class="canvas-container">

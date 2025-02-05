@@ -27,7 +27,7 @@
                 </div>
                 <div class="btn-area3">
                     <div>
-                        <a href="javascript:void(0);" id="btnBack" class="btn-blue" onclick="goBack();">Kembali</a>
+                        <a href="javascript:void(0);" onclick="window.history.back(); " class="btn-blue">Kembali</a>
                     </div>
 
                     @if (!isset($from_history) || $from_history != true) <!-- Jika bukan dari history, tampilkan tombol -->
@@ -55,12 +55,6 @@
                 });
             }
 
-            let btnBack = document.getElementById("btnBack");
-            if (btnBack) {
-                btnBack.addEventListener("click", function () {
-                    goBack();
-                });
-            }
         });
 
         function showPopup(status) {

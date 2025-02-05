@@ -5,7 +5,7 @@
 
 <!-- Sidebar -->
 <div class="sidebar" id="sidebar">
-<div class="profile-area">
+    <div class="profile-area">
         <div class="profile">
             @php
                 $user = Auth::user();
@@ -34,8 +34,8 @@
     <div class="logout">
         <ul>
             <li>
-                <img src="/img/icon/ic7.svg">
-                <button type="button" class="body-sm-bold logout-btn" onclick="showLogoutPopup()" style="background: none; border: none; color: inherit; cursor: pointer;">
+                <img src="/img/icon/ic7.svg" class="icon">
+                <button type="button" class="body-sm-bold logout-btn" onclick="showLogoutPopup()" style="background: none; border: none; color: inherit; cursor: pointer; margin-left:24px;">
                     Keluar
                 </button>
             </li>

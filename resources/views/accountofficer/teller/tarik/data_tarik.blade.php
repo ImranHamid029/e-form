@@ -20,7 +20,7 @@
     <div class="cards-container">
         @foreach($withdraws as $index => $withdraw)
             <a href="{{ route('withdraw.detail', $withdraw->id) }}" class="cards-link cards-item"
-                style="{{ $index >= 3 ? 'display: none;' : '' }}">
+                style="{{ $index >= 4 ? 'display: none;' : '' }}">
                 <div class="cards">
                     <div class="cards-header">
                         <p class="body-lg-bold">Data Nasabah</p>
@@ -29,8 +29,11 @@
                         <p class="caption-regular"><strong>No Antrian :</strong> {{ $withdraw->queueNumber }}</p>
                         <p class="caption-regular"><strong>No Rekening :</strong> {{ $withdraw->accountNumber }}</p>
                         <p class="caption-regular"><strong>Pemilik Rekening :</strong> {{ $withdraw->ownerName }}</p>
-                        <p class="caption-regular"><strong>Status:</strong> 
-                            <span class="status-label">{{ $withdraw->status }}</span>
+                        <p class="caption-regular">
+                            <strong>Status:</strong> 
+                            <span class="status-label {{ $withdraw->status == 'Menunggu' ? 'status-pending' : ($withdraw->status == 'Selesai' ? 'status-complete' : '') }}">
+                            {{ $withdraw->status }}
+                            </span>
                         </p>
                     </div>
                     <div class="cards-footer">
@@ -40,7 +43,7 @@
             </a>
         @endforeach
 
-        @if(count($withdraws) > 3)
+        @if(count($withdraws) > 4)
         <div class="show-more">
             <a href="javascript:void(0);" id="toggleButton" class="caption-regular">Show More ...</a>
         </div>
@@ -56,7 +59,7 @@
         if (isExpanded) {
             // Kembali ke tampilan hanya 3 kartu
             cards.forEach((item, index) => {
-                item.style.display = index < 3 ? 'block' : 'none';
+                item.style.display = index < 4 ? 'block' : 'none';
             });
             this.textContent = 'Show More ...';
         } else {

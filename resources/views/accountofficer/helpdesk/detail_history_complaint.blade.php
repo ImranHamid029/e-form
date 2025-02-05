@@ -33,8 +33,20 @@
                         </div>
                     </div>
                 </div>
+                
+            </div>
+            <div class="btn-area3">
+                <div>
+                    <a href="javascript:void(0);" onclick="window.history.back(); " class="btn-blue">Kembali</a>
+                </div>
+                <div>
+
+                </div>
+
             </div>
         </div>
+        
     </div>
+    
 </div>
 @endsection

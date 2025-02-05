@@ -20,7 +20,7 @@
     <div class="cards-container">
         @foreach($deposits as $index => $deposit)
             <a href="{{ route('deposit.detail', $deposit->id) }}" class="cards-link cards-item"
-                style="{{ $index >= 3 ? 'display: none;' : '' }}">
+                style="{{ $index >= 4 ? 'display: none;' : '' }}">
                 <div class="cards">
                     <div class="cards-header">
                         <p class="body-lg-bold">Data Nasabah</p>
@@ -29,8 +29,11 @@
                         <p class="caption-regular"><strong>No Antrian :</strong> {{ $deposit->queueNumber }}</p>
                         <p class="caption-regular"><strong>Penerima :</strong> {{ $deposit->accountOwner }}</p>
                         <p class="caption-regular"><strong>Pengirim :</strong> {{ $deposit->fullName }}</p>
-                        <p class="caption-regular"><strong>Status:</strong> 
-                            <span class="status-label">{{ $deposit->status }}</span>
+                        <p class="caption-regular">
+                            <strong>Status:</strong> 
+                            <span class="status-label {{ $deposit->status == 'Menunggu' ? 'status-pending' : ($deposit->status == 'Selesai' ? 'status-complete' : '') }}">
+                            {{ $deposit->status }}
+                            </span>
                         </p>
                     </div>
                     <div class="cards-footer">
@@ -40,7 +43,7 @@
             </a>
         @endforeach
 
-        @if(count($deposits) > 3)
+        @if(count($deposits) > 4)
         <div class="show-more">
             <a href="javascript:void(0);" id="toggleButton" class="caption-regular">Show More ...</a>
         </div>
@@ -56,7 +59,7 @@
         if (isExpanded) {
             // Kembali ke tampilan hanya 3 kartu
             cards.forEach((item, index) => {
-                item.style.display = index < 3 ? 'block' : 'none';
+                item.style.display = index < 4 ? 'block' : 'none';
             });
             this.textContent = 'Show More ...';
         } else {
