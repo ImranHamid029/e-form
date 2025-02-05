@@ -19,76 +19,50 @@
                     </div>
                 </div>
             </div>
-            <div class="btn-respons-area">
-                <a href="javascript:void(0)" id="tanggapiBtn" class="btn-custom" data-id="{{ $complaint->id }}">Tanggapi</a>
+            <div class="btn-area3">
+                <div>
+                        <a href="javascript:void(0);" onclick="window.history.back(); " class="btn-blue">Kembali</a>
+                </div>
+                <div>
+                    <a href="#" class="btn-custom" id="tanggapiBtn">Tanggapi</a>
+
+                </div>
+                
             </div>
+            
         </div>
     </div>
+                    
+
 </div>
-
-<!-- Modal Response akan muncul di bawah -->
-<div id="responsContainer"></div>
-
+<!-- Modal -->
+<div id="tanggapiModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        @include('accountofficer.helpdesk.respons')
+    </div>
+</div>
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const tanggapiBtn = document.getElementById("tanggapiBtn");
-    const responsContainer = document.getElementById("responsContainer");
+   document.getElementById("tanggapiBtn").addEventListener("click", function(event) {
+    event.preventDefault();
     
-    tanggapiBtn.addEventListener("click", function (e) {
-        e.preventDefault();
-        let complaintId = this.getAttribute("data-id");
+    var modal = document.getElementById("tanggapiModal");
+    console.log(modal); // Menambahkan log untuk memastikan modal ditemukan
+    modal.style.display = "block";
 
-        fetch(`/helpdesk/respond/${complaintId}`)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.text();
-            })
-            .then(data => {
-                responsContainer.innerHTML = data;
-                const form = document.getElementById("responsForm");
-
-                if (form) {
-                    form.addEventListener("submit", handleSubmit);
-                } else {
-                    console.error("Form tidak ditemukan dalam respons modal.");
-                }
-            })
-            .catch(error => {
-                console.error("Error loading response form:", error);
-                alert("Terjadi kesalahan saat memuat konten.");
-            });
+    // Ambil tombol close setelah modal ditampilkan
+    var closeBtn = modal.querySelector(".close");
+    closeBtn.addEventListener("click", function() {
+        modal.style.display = "none";
     });
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        const form = event.target;
-        const formData = new FormData(form);
-        const complaintId = form.getAttribute("data-id");
-        
-        fetch(`/helpdesk/respond/${complaintId}`, {
-            method: "POST",
-            headers: {
-                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
-                'Accept': 'application/json'
-            },
-            body: formData
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert("Response berhasil dikirim!");
-                window.location.href = "{{ route('helpdesk.dashboard') }}";
-            } else {
-                alert("Terjadi kesalahan. Coba lagi.");
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error);
-            alert("Terjadi kesalahan. Coba lagi.");
-        });
-    }
+    // Menutup modal jika pengguna mengklik di luar modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
 });
+
+
 </script>
-@endsection

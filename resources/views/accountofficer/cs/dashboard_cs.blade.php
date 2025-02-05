@@ -25,9 +25,13 @@
                         <p class="caption-regular"><strong>Nama:</strong> {{ $applicant->fullName }}</p>
                         <p class="caption-regular"><strong>NIK:</strong> {{ $applicant->nik }}</p>
                         <p class="caption-regular"><strong>No Tlp:</strong> {{ $applicant->phoneNumber }}</p>
-                        <p class="caption-regular"><strong>Status:</strong> 
-                            <span class="status-label">{{ $applicant->status }}</span>
+                        <p class="caption-regular">
+                            <strong>Status:</strong> 
+                            <span class="status-label {{ $complaint->status == 'Menunggu' ? 'status-pending' : ($complaint->status == 'Selesai' ? 'status-complete' : '') }}">
+                            {{ $aplicant->status }}
+                            </span>
                         </p>
+
                     </div>
                     <div class="cards-footer">
                         <img src="/img/logo/logo2.png" alt="">

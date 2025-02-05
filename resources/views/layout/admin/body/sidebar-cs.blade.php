@@ -6,13 +6,17 @@
 
 <!-- Sidebar -->
 <div class="sidebar" id="sidebar">
-    <div class="profile-area">
+<div class="profile-area">
         <div class="profile">
-            <img src="/img/bg-img/16.jpg" alt="Logo">
+            @php
+                $user = Auth::user();
+                $profileImage = $user->profileImage ? asset($user->profileImage) : asset('/img/default-profile.png');
+            @endphp
+            <img id="sidebarProfileImage" src="{{ $profileImage }}" alt="Foto Profil">
         </div>
         <div class="name-area">
-            <a href="/profile" class="body-sm-bold">Name Admin</a><br>
-            <a class="caption-regular">Role Admin</a>
+            <a href="#" class="body-sm-bold" onclick="showProfileModal(event)">{{ $user->username }}</a><br>
+            <a class="caption-regular">{{ ucfirst($user->role) }}</a>
         </div>
     </div>
     
@@ -36,8 +40,8 @@
     <div class="logout">
         <ul>
             <li>
-                <img src="/img/icon/ic7.svg">
-                <button type="button" class="body-sm-bold logout-btn" onclick="showLogoutPopup()" style="background: none; border: none; color: inherit; cursor: pointer;">
+                <img src="/img/icon/ic7.svg" class="icon">
+                <button type="button" class="body-sm-bold logout-btn" onclick="showLogoutPopup()" style="background: none; border: none; color: inherit; cursor: pointer; margin-left:24px;">
                     Keluar
                 </button>
             </li>
