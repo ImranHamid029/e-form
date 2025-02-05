@@ -24,7 +24,6 @@
                     <div>
                         <ul class="caption-regular info-transaction" style="padding-left:20px;">
                             <li><span>Kantor Operasional</span>: {{ session('bankBranch') }}</li>
-                            <li><span>No. Rekening</span>: {{ session('accountNumber') }}</li>
                             <li><span>Jenis Rekening</span>: 
                                 @if (session('selectService')) 
                                     {{ session('selectService') }} <!-- Menampilkan 'Setor Tunai' -->
@@ -32,6 +31,7 @@
                                     {{ session('accountType') }} <!-- Menampilkan 'Tarik Tunai' -->
                                 @endif
                             </li>
+                            <li><span>No. Rekening</span>: {{ session('accountNumber') }}</li>
                             <li><span>Jumlah</span>: Rp. {{ number_format(session('amount', 0), 2, ',', '.') }}</li>
                         </ul>
                     </div>

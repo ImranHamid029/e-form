@@ -11,7 +11,7 @@
                     <div class="card-body text-center">
                         <h5 class="card-title h5-bold">Setor Tunai</h5>
                         <p class="card-text">History data transaksi Setor tunai yang telah selesai.</p>
-                        <a href="/history-setor-tunai" class="btn-blue">Lihat Data</a>
+                        <a href="{{ route('history.deposit') }}" class="btn-blue">Lihat Data</a>
                     </div>
                 </div>
             
@@ -22,7 +22,7 @@
                     <div class="card-body text-center">
                         <h5 class="card-title h5-bold">Tarik Tunai</h5>
                         <p class="card-text">History data transaksi Tarik Tunai yang telah selesai.</p>
-                        <a href="/history-tarik-tunai" class="btn-blue">Lihat Data</a>
+                        <a href="{{ route('history.withdraw') }}" class="btn-blue">Lihat Data</a>
                     </div>
                 </div>
            

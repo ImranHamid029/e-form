@@ -1,98 +1,125 @@
 <!-- Ikon Hamburger -->
 <div class="hamburger" id="hamburger">
-            <img class="fas fa-bars"src="/img/icon/ic10.svg" alt="">
-        </div>
-    
-
-    <!-- Sidebar -->
-    <div class="sidebar" id="sidebar">
-        <div class="profile-area">
-            <div class="profile">
-                <img src="/img/bg-img/16.jpg" alt="Logo">
-            </div>
-            <div class="name-area">
-                <a href="/profile" class="body-sm-bold">Name Admin</a><br>
-                <a class="caption-regular" style="font-size:12px;">Role Admin</a>
-            </div>
-        </div>
-        
-        
-        <ul>            
-            <li >
-                <img src="/img/icon/ic8.svg" class="icon">
-                <a href="/teller" class="body-sm-bold">Dashbaord</a>
-            </li>
-            <li >
-                <img src="/img/icon/ic6.svg" class="icon">
-                <a href="/data-setor-tunai" class="body-sm-bold">Setor Tunai</a>
-            </li>
-            <li >
-                <img src="/img/icon/ic2.svg" class="icon">
-                <a href="/data-tarik-tunai" class="body-sm-bold">Tarik Tunai</a>
-            </li>
-            <li >
-                <img src="/img/icon/ic5.svg" class="icon">
-                <a href="/history-teller" class="body-sm-bold">History</a>
-            </li>
-            
-
-
-        </ul>
-        <div class="logout">
-            <ul>
-                <li><img src="/img/icon/ic7.svg" ><a href="#keluar" class="body-sm-bold">Keluar</a></li>
-            </ul>
-        </div>
-    </div>
-<!-- Modal -->
-<div id="profileModal" class="modal">
-
-       <div id="profileContent">
-           <!-- Konten dari /profile akan dimuat di sini -->
-       </div>
-       
+    <img class="fas fa-bars"src="/img/icon/ic10.svg" alt="">
 </div>
 
-<!-- JavaScript -->
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <div class="profile-area">
+        <div class="profile">
+            <img src="/img/bg-img/16.jpg" alt="Logo">
+        </div>
+        <div class="name-area">
+            <a href="/profile" class="body-sm-bold">Name Admin</a><br>
+            <a class="caption-regular" style="font-size:12px;">Role Admin</a>
+        </div>
+    </div>
+    
+    
+    <ul>            
+        <li >
+            <img src="/img/icon/ic8.svg" class="icon">
+            <a href="/teller" class="body-sm-bold">Dashbaord</a>
+        </li>
+        <li >
+            <img src="/img/icon/ic6.svg" class="icon">
+            <a href="/teller/deposit" class="body-sm-bold">Setor Tunai</a>
+        </li>
+        <li >
+            <img src="/img/icon/ic2.svg" class="icon">
+            <a href="/teller/withdraw" class="body-sm-bold">Tarik Tunai</a>
+        </li>
+        <li >
+            <img src="/img/icon/ic5.svg" class="icon">
+            <a href="/teller/history" class="body-sm-bold">History</a>
+        </li>
+        
+
+
+    </ul>
+    <!-- Tombol Logout -->
+    <div class="logout">
+        <ul>
+            <li>
+                <img src="/img/icon/ic7.svg">
+                <button type="button" class="body-sm-bold logout-btn" onclick="showLogoutPopup()" style="background: none; border: none; color: inherit; cursor: pointer;">
+                    Keluar
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Include Popup Logout -->
+@include('accountofficer.logout_validation')
+
+<!-- Include Profile Modal -->
+@include('accountofficer.profile.profile')
+
+<!-- Form Logout -->
+<form id="logoutForm" action="{{ route('logout') }}" method="POST" style="display: none;">
+    @csrf
+</form>
+
+<!-- Script Sidebar -->
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const modal = document.getElementById("profileModal");
+    const hamburger = document.getElementById('hamburger');
+    const sidebar = document.getElementById('sidebar');
 
-    // Klik link untuk membuka modal
-    document.querySelector("a[href='/profile']").addEventListener("click", function (e) {
-        e.preventDefault();
-        fetch('/profile') // Ambil konten dari route
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("profileContent").innerHTML = data;
-                modal.style.display = "block"; // Tampilkan modal
-
-                // Pasang ulang event listener untuk tombol close
-                const close = document.querySelector(".close");
-                close.addEventListener("click", () => {
-                    modal.style.display = "none";
-                });
-            })
-            .catch(error => console.error('Error loading profile:', error));
+    hamburger.addEventListener('click', () => {
+        sidebar.classList.toggle('visible');
+        hamburger.classList.toggle('in-sidebar');
     });
+</script>
 
-    // Tutup modal jika klik di luar 
-    window.addEventListener("click", (e) => {
-        if (e.target === modal) {
+<!-- Script Modal Profile -->
+<script>
+    function showProfileModal(event) {
+        event.preventDefault();
+        document.getElementById("profileModal").style.display = "block";
+    }
+
+    // Tutup modal jika klik di luar area modal
+    window.addEventListener("click", (event) => {
+        const modal = document.getElementById("profileModal");
+        if (event.target === modal) {
             modal.style.display = "none";
         }
     });
-});
 
+    // Tambahkan event listener untuk tombol close
+    document.addEventListener("DOMContentLoaded", () => {
+        const closeBtn = document.querySelector("#profileModal .close");
+        if (closeBtn) {
+            closeBtn.addEventListener("click", () => {
+                document.getElementById("profileModal").style.display = "none";
+            });
+        }
+    });
 </script>
-    <script>
-        
-        const hamburger = document.getElementById('hamburger');
-        const sidebar = document.getElementById('sidebar');
 
-        
-        hamburger.addEventListener('click', () => {
-            sidebar.classList.toggle('visible');
-            hamburger.classList.toggle('in-sidebar');
+<!-- Script Modal Logout -->
+<script>
+    function showLogoutPopup() {
+        document.getElementById("logoutPopup").style.display = "flex";
+    }
+
+    function hidePopup() {
+        document.getElementById("logoutPopup").style.display = "none";
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelector(".btn-confirm").addEventListener("click", () => {
+            document.getElementById("logoutForm").submit();
         });
-    </script>
+    });
+
+    // Tutup popup logout jika klik di luar area popup
+    window.addEventListener("click", (event) => {
+        const popup = document.getElementById("logoutPopup");
+        if (event.target === popup) {
+            popup.style.display = "none";
+        }
+    });
+</script>

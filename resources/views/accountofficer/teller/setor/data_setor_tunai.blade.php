@@ -19,80 +19,57 @@
     </div>
 
     <div class="cards-container">
+        @foreach($deposits as $index => $deposit)
+            <a href="{{ route('deposit.detail', $deposit->id) }}" class="cards-link cards-item"
+                style="{{ $index >= 3 ? 'display: none;' : '' }}">
+                <div class="cards">
+                    <div class="cards-header">
+                        <p class="body-lg-bold">Data Nasabah</p>
+                    </div>
+                    <div class="cards-content">
+                        <p class="caption-regular"><strong>No Antrian :</strong> {{ $deposit->queueNumber }}</p>
+                        <p class="caption-regular"><strong>Penerima :</strong> {{ $deposit->accountOwner }}</p>
+                        <p class="caption-regular"><strong>Pengirim :</strong> {{ $deposit->fullName }}</p>
+                        <p class="caption-regular"><strong>Status:</strong> 
+                            <span class="status-label">{{ $deposit->status }}</span>
+                        </p>
+                    </div>
+                    <div class="cards-footer">
+                        <img src="/img/logo/logo2.png" alt="">
+                    </div>
+                </div>
+            </a>
+        @endforeach
 
-        <a href="/detail-data-setor-tunai" class="cards-link">
-            <div class="cards">
-                <div class="cards-header">
-                    <p class="body-lg-bold">Data Nasabah</p>
-                </div>
-                <div class="cards-content">
-                    <p class="caption-regular"><strong>No Antrian :</strong> 1</p>
-                    <p class="caption-regular"><strong>Penerima :</strong>  Rizqi Ahmad Ghozali</p>
-                    <p class="caption-regular"><strong>Pengirim :</strong> Imran Sukron Hamid</p>
-                    <p class="caption-regular"><strong>Status :</strong> Menunggu</p>
-                </div>
-                <div class="cards-footer">
-                    <img src="img/logo/logo2.png" alt="">
-                </div>
-            </div>
-        </a>
-
-        <a href="/" class="cards-link">
-            <div class="cards">
-                <div class="cards-header">
-                    <p class="body-lg-bold">Data Nasabah</p>
-                </div>
-                <div class="cards-content">
-                    <p class="caption-regular"><strong>No Antrian :</strong> 1</p>
-                    <p class="caption-regular"><strong>Penerima :</strong>  Rizqi Ahmad Ghozali</p>
-                    <p class="caption-regular"><strong>Pengirim :</strong> Imran Sukron Hamid</p>
-                    <p class="caption-regular"><strong>Status :</strong> Menunggu</p>
-                </div>
-                <div class="cards-footer">
-                    <img src="img/logo/logo2.png" alt="">
-                </div>
-            </div>
-        </a>
-
-        <a href="/" class="cards-link">
-            <div class="cards">
-                <div class="cards-header">
-                    <p class="body-lg-bold">Data Nasabah</p>
-                </div>
-                <div class="cards-content">
-                    <p class="caption-regular"><strong>No Antrian :</strong> 1</p>
-                    <p class="caption-regular"><strong>Penerima :</strong>  Rizqi Ahmad Ghozali</p>
-                    <p class="caption-regular"><strong>Pengirim :</strong> Imran Sukron Hamid</p>
-                    <p class="caption-regular"><strong>Status :</strong> Menunggu</p>
-                </div>
-                <div class="cards-footer">
-                    <img src="img/logo/logo2.png" alt="">
-                </div>
-            </div>
-        </a>
-
-        <a href="/" class="cards-link">
-            <div class="cards">
-                <div class="cards-header">
-                    <p class="body-lg-bold">Data Nasabah</p>
-                </div>
-                <div class="cards-content">
-                    <p class="caption-regular"><strong>No Antrian :</strong> 1</p>
-                    <p class="caption-regular"><strong>Penerima :</strong>  Rizqi Ahmad Ghozali</p>
-                    <p class="caption-regular"><strong>Pengirim :</strong> Imran Sukron Hamid</p>
-                    <p class="caption-regular"><strong>Status :</strong> Menunggu</p>
-                </div>
-                <div class="cards-footer">
-                    <img src="img/logo/logo2.png" alt="">
-                </div>
-            </div>
-        </a>
-        
-        
+        @if(count($deposits) > 3)
         <div class="show-more">
-            <a href="" class="caption-regular">Show More ...</a>
+            <a href="javascript:void(0);" id="toggleButton" class="caption-regular">Show More ...</a>
         </div>
+        @endif
     </div>
 </div>
+
+<script>
+    document.getElementById('toggleButton')?.addEventListener('click', function () {
+        let cards = document.querySelectorAll('.cards-item');
+        let isExpanded = this.getAttribute('data-expanded') === 'true';
+
+        if (isExpanded) {
+            // Kembali ke tampilan hanya 3 kartu
+            cards.forEach((item, index) => {
+                item.style.display = index < 3 ? 'block' : 'none';
+            });
+            this.textContent = 'Show More ...';
+        } else {
+            // Tampilkan semua kartu
+            cards.forEach(item => {
+                item.style.display = 'block';
+            });
+            this.textContent = 'Show Less';
+        }
+
+        this.setAttribute('data-expanded', !isExpanded);
+    });
+</script>
 
 @endsection
