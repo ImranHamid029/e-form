@@ -1,37 +1,33 @@
-@extends('layout\teller\app')
+@extends('layout\cs\app')
 
 @section('content')
 <div class="features-area">
     <div class="content2">
-        <h1 class="h1-bold text-center">Data Setor Tunai</h1>
-    
+        <h1 class="h1-bold text-center">Data Pengajuan Kredit</h1>
     </div>
 
     <div class="container-bar">
-    
-            <div >
-                
-            </div>
-            <div class="searchbar">
-                <label for="">Search</label>
-                <input type="text" placeholder="Search...">
-            </div>
+        <div></div>
+        <div class="searchbar">
+            <label for="">Search</label>
+            <input type="text" placeholder="Search...">
+        </div>
     </div>
 
     <div class="cards-container">
-        @foreach($doneDeposits as $index => $deposit)
-            <a href="{{ route('history.deposit.detail', ['id' => $deposit->id, 'from_history' => 1]) }}" class="cards-link cards-item" 
+        @foreach($applicants as $index => $applicant)
+            <a href="{{ route('applicant.detail', $applicant->id) }}" class="cards-link cards-item"
                 style="{{ $index >= 3 ? 'display: none;' : '' }}">
                 <div class="cards">
                     <div class="cards-header">
                         <p class="body-lg-bold">Data Nasabah</p>
                     </div>
                     <div class="cards-content">
-                        <p class="caption-regular"><strong>Jenis Layanan :</strong> {{ $deposit->selectService }}</p>
-                        <p class="caption-regular"><strong>Penerima :</strong> {{ $deposit->accountOwner }}</p>
-                        <p class="caption-regular"><strong>Pengirim :</strong> {{ $deposit->fullName }}</p>
+                        <p class="caption-regular"><strong>Nama:</strong> {{ $applicant->fullName }}</p>
+                        <p class="caption-regular"><strong>NIK:</strong> {{ $applicant->nik }}</p>
+                        <p class="caption-regular"><strong>No Tlp:</strong> {{ $applicant->phoneNumber }}</p>
                         <p class="caption-regular"><strong>Status:</strong> 
-                            <span class="status-label">{{ $deposit->status }}</span>
+                            <span class="status-label">{{ $applicant->status }}</span>
                         </p>
                     </div>
                     <div class="cards-footer">
@@ -41,7 +37,7 @@
             </a>
         @endforeach
 
-        @if(count($doneDeposits) > 3)
+        @if(count($applicants) > 3)
         <div class="show-more">
             <a href="javascript:void(0);" id="toggleButton" class="caption-regular">Show More ...</a>
         </div>
@@ -71,5 +67,4 @@
         this.setAttribute('data-expanded', !isExpanded);
     });
 </script>
-
 @endsection

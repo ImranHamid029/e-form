@@ -18,7 +18,9 @@ use App\Http\Controllers\TentangKamiController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\HelpdeskController;
-use Mews\Captcha\Captcha;
+use App\Http\Controllers\CSController;
+use App\Http\Controllers\TellerController;
+use Mews\Captcha\Facades\Captcha;
 
 Route::get('/tes', function () {
     return view('tes');
@@ -91,6 +93,9 @@ Route::get('/tentang-kami', TentangKamiController::class);
 Route::get('/login-admin', [LoginController::class, 'index'])->name('login');
 Route::post('/login-admin', [LoginController::class, 'login'])->name('login.submit');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout'); 
+Route::post('/update-password', [LoginController::class, 'updatePassword'])->name('update.password');
+Route::post('/update-photo-image', [LoginController::class, 'updatePhoto'])->name('profile.update.photo');
+
 
 // Middleware untuk memastikan hanya pengguna yang sudah login yang dapat mengakses halaman sesuai role
 Route::middleware(['auth', 'role:adminsuper'])->group(function () {
@@ -107,6 +112,14 @@ Route::middleware(['auth', 'role:csbl'])->group(function () {
         return view('accountofficer.cs.dashboard_cs');
     })->name('cs.dashboard');
 });
+Route::get('/cs', [CSController::class, 'index'])->name('cs.dashboard');
+Route::get('/cs/{id}', [CSController::class, 'show'])->name('applicant.detail');
+Route::post('/cs/{id}/update-status', [CSController::class, 'updateStatus'])->name('applicant.update_status');
+Route::get('/history-kredit', [CSController::class, 'history'])->name('history');
+Route::get('/history-kredit/{id}/{from_history?}', [CSController::class, 'show'])->name('history.detail');
+Route::get('/history-kredit-accepted', [CSController::class, 'historyAccepted'])->name('history.accepted');
+Route::get('/history-kredit-rejected', [CSController::class, 'historyRejected'])->name('history.rejected');
+
 
 
 
@@ -115,7 +128,7 @@ Route::middleware(['auth', 'role:helpdeskbl'])->group(function () {
     Route::get('/helpdesk', function () {
         return view('accountofficer.helpdesk.dashboard_helpdesk');
     })->name('helpdesk.dashboard');
-}); 
+});
 // Route Dashboard Helpdesk
 Route::get('/helpdesk', [HelpdeskController::class, 'index'])->name('helpdesk.dashboard');
 Route::get('/helpdesk/show-more', [HelpdeskController::class, 'showMoreComplaint'])->name('helpdesk.showMore');
@@ -135,6 +148,19 @@ Route::middleware(['auth', 'role:tellerbl'])->group(function () {
         return view('accountofficer.teller.dashboard_teller');
     })->name('teller.dashboard');
 });
+Route::get('/teller', [TellerController::class, 'index'])->name('teller.dashboard');
+Route::get('/teller/withdraw', [TellerController::class, 'withdraw'])->name('withdraw.dashboard');
+Route::get('/teller/withdraw/{id}', [TellerController::class, 'show'])->name('withdraw.detail');
+Route::post('/teller/withdraw/{id}/update-status', [TellerController::class, 'updateStatus'])->name('withdraw.update_status');
+Route::get('/teller/deposit', [TellerController::class, 'deposit'])->name('deposit.dashboard');
+Route::get('/teller/deposit/{id}', [TellerController::class, 'showDeposit'])->name('deposit.detail');
+Route::post('/teller/deposit/{id}/update-status', [TellerController::class, 'updateStatusDeposit'])->name('deposit.update_status');
+Route::get('/teller/history', [TellerController::class, 'history'])->name('history');
+Route::get('/teller/history/withdraw', [TellerController::class, 'historyWithdraw'])->name('history.withdraw');
+Route::get('/teller/history/deposit', [TellerController::class, 'historyDeposit'])->name('history.deposit');
+Route::get('/teller/history/withdraw/{id}/{from_history?}', [TellerController::class, 'show'])->name('history.withdraw.detail');
+Route::get('/teller/history/deposit/{id}/{from_history?}', [TellerController::class, 'showDeposit'])->name('history.deposit.detail');
+
 
 
 

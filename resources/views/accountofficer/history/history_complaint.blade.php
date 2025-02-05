@@ -1,96 +1,45 @@
-@extends('layout\helpdesk\app')
+@extends('layout.helpdesk.app')
 
 @section('content')
 <div class="features-area">
     <div class="content2">
-        <h1 class="h1-bold text-center">Data Pengaduan Online Nasabah</h1>
-    
+        <h1 class="h1-bold text-center">Riwayat Pengaduan Nasabah</h1>
     </div>
 
     <div class="container-bar">
-    
-            <div>
-                
-            </div>
-            <div class="searchbar">
-                <label for="">Search</label>
-                <input type="text" placeholder="Search...">
-            </div>
+        <div class="searchbar">
+            <label for="">Search</label>
+            <input type="text" placeholder="Search...">
+        </div>
     </div>
 
     <div class="cards-container">
-
-        <a href="/detail-history-complaint" class="cards-link">
-            <div class="cards">
-                <div class="cards-header">
-                    <p class="body-lg-bold">Data Nasabah</p>
-                </div>
-                <div class="cards-content">
-                    <p class="caption-regular"><strong>No Resi:</strong> 1234567890</p>
-                    <p class="caption-regular"><strong>Nama:</strong> Imran Sukron Hamid</p>
-                    <p class="caption-regular"><strong>No Tlp:</strong> 08123456789</p>
-                    <p class="caption-regular"><strong>Status</strong> Selesai</p>
-                </div>
-                <div class="cards-footer">
-                    <img src="img/logo/logo2.png" alt="">
-                </div>
-            </div>
-        </a>
-
-        <a href="/detail-history-complaint" class="cards-link">
-            <div class="cards">
-                <div class="cards-header">
-                    <p class="body-lg-bold">Data Nasabah</p>
-                </div>
-                <div class="cards-content">
-                    <p class="caption-regular"><strong>No Resi:</strong> 0987654321</p>
-                    <p class="caption-regular"><strong>Nama:</strong> Akmal Adnan Djayasinga</p>
-                    <p class="caption-regular"><strong>No Tlp:</strong> 08234567890</p>
-                    <p class="caption-regular"><strong>Status</strong> Selesai</p>
-                </div>
-                <div class="cards-footer">
-                    <img src="img/logo/logo2.png" alt="">
-                </div>
-            </div>
-        </a>
-
-        <a href="/detail-history-complaint" class="cards-link">
-            <div class="cards">
-                <div class="cards-header">
-                    <p class="body-lg-bold">Data Nasabah</p>
-                </div>
-                <div class="cards-content">
-                    <p class="caption-regular"><strong>No Resi:</strong> 1122334455</p>
-                    <p class="caption-regular"><strong>Nama:</strong> Rizky Ahmad Gzozali</p>
-                    <p class="caption-regular"><strong>No Tlp:</strong> 08345678901</p>
-                    <p class="caption-regular"><strong>Status</strong> Selesai</p>
-                </div>
-                <div class="cards-footer">
-                    <img src="img/logo/logo2.png" alt="">
-                </div>
-            </div>
-        </a>
-
-        <a href="/detail-history-complaint" class="cards-link">
-            <div class="cards">
-                <div class="cards-header">
-                    <p class="body-lg-bold">Data Nasabah</p>
-                </div>
-                <div class="cards-content">
-                    <p class="caption-regular"><strong>No Resi:</strong> 1122334455</p>
-                    <p class="caption-regular"><strong>Nama:</strong> David Mel Gibson</p>
-                    <p class="caption-regular"><strong>No Tlp:</strong> 08345678901</p>
-                    <p class="caption-regular"><strong>Status</strong> Selesai</p>
-                </div>
-                <div class="cards-footer">
-                    <img src="img/logo/logo2.png" alt="">
-                </div>
-            </div>
-        </a>
-        
-        <div class="show-more">
-            <a href="" class="caption-regular">Show More ...</a>
-        </div>
+        @foreach ($history as $index => $item)
+            @if($item->status == 'Selesai' && $index < 3)
+                <a href="{{ route('detail.history.complaint', $item->id) }}" class="cards-link">
+                    <div class="cards">
+                        <div class="cards-header">
+                            <p class="body-lg-bold">Data Nasabah</p>
+                        </div>
+                        <div class="cards-content">
+                            <p class="caption-regular"><strong>Nama:</strong> {{ $item->fullName }}</p>
+                            <p class="caption-regular"><strong>No Tlp:</strong> {{ $item->phoneNumber }}</p>
+                            <p class="caption-regular"><strong>Email:</strong> {{ $item->email }}</p>
+                            <p class="caption-regular"><strong>Status:</strong> <span class="status-label">{{ $item->status }}</span></p>
+                        </div>
+                        <div class="cards-footer">
+                            <img src="/img/logo/logo2.png" alt="">
+                        </div>
+                    </div>
+                </a>
+            @endif
+        @endforeach
     </div>
+    
+    @if(count($history) > 3)
+        <div class="show-more">
+            <a href="{{ route('history.showMore') }}" id="showMoreButton" class="caption-regular">Show More ...</a>
+        </div>
+    @endif
 </div>
 @endsection

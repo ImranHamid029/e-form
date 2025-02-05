@@ -1,65 +1,54 @@
-@extends('layout\cs\app')
-
+@extends('layout/cs/app')
 @section('content')
+
 <div class="features-area">
     <div class="content2">
         <h1 class="h1-bold text-center">Data Pengajuan Kredit</h1>
-    
     </div>
 
     <div class="container-bar">
-    
-            <div >
-                
-            </div>
-            <div class="searchbar">
-                <label for="">Search</label>
-                <input type="text" placeholder="Search...">
-            </div>
-    </div>
-
-    <div class="cards-container">
-
-        <a href="/detail-data-pengajuan-kredit" class="cards-link">
-            <div class="cards">
-                <div class="cards-header">
-                    <p class="body-lg-bold">Data Nasabah</p>
-                </div>
-                <div class="cards-content">
-                    <p class="caption-regular"><strong>No Resi : </strong> 13414235</p>
-                    <p class="caption-regular"><strong>Nama :</strong> Imran Sukron Hamid</p>
-                    <p class="caption-regular"><strong>No. Telp :</strong> 081234567890 </p>
-                    <p class="caption-regular"><strong>Status :</strong> Ditolak</p>
-                </div>
-                <div class="cards-footer">
-                    <img src="img/logo/logo2.png" alt="">
-                </div>
-            </div>
-        </a>
-
-        <a href="/detail-data-pengajuan-kredit" class="cards-link">
-            <div class="cards">
-                <div class="cards-header">
-                    <p class="body-lg-bold">Data Nasabah</p>
-                </div>
-                <div class="cards-content">
-                    <p class="caption-regular"><strong>No Resi : </strong> 2141431513</p>
-                    <p class="caption-regular"><strong>Nama :</strong> Akmal Adnan</p>
-                    <p class="caption-regular"><strong>No. Telp :</strong> 081234567890 </p>
-                    <p class="caption-regular"><strong>Status :</strong> Ditolak</p>
-                </div>
-                <div class="cards-footer">
-                    <img src="img/logo/logo2.png" alt="">
-                </div>
-            </div>
-        </a>
-
-        
-        
-        
-        <div class="show-more">
-            <a href="" class="caption-regular">Show More ...</a>
+        <div class="searchbar">
+            <label for="">Search</label>
+            <input type="text" id="searchInput" placeholder="Cari nama...">
         </div>
     </div>
+
+    <div class="cards-container" id="cardsContainer">
+        @foreach ($rejectedApplicants as $applicant)
+        <a href="{{ route('history.detail', ['id' => $applicant->id, 'from_history' => true]) }}" class="cards-link">
+            <div class="cards">
+                <div class="cards-header">
+                    <p class="body-lg-bold">Data Nasabah</p>
+                </div>
+                <div class="cards-content">
+                    <p class="caption-regular"><strong>Nama Lengkap :</strong> {{ $applicant->fullName }}</p>
+                    <p class="caption-regular"><strong>NIK :</strong> {{ $applicant->nik }}</p>
+                    <p class="caption-regular"><strong>No. Telp :</strong> {{ $applicant->phoneNumber }}</p>
+                    <p class="caption-regular"><strong>Status :</strong> Ditolak</p>
+                </div>
+                <div class="cards-footer">
+                    <img src="/img/logo/logo2.png" alt="">
+                </div>
+            </div>
+        </a>
+        @endforeach
+    </div>
 </div>
+
+<script>
+    document.getElementById('searchInput').addEventListener('input', function () {
+        let searchValue = this.value.toLowerCase();
+        let cards = document.querySelectorAll('.cards-link');
+
+        cards.forEach(card => {
+            let name = card.querySelector('.cards-content p:nth-child(2)').innerText.toLowerCase();
+            if (name.includes(searchValue)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+</script>
+
 @endsection

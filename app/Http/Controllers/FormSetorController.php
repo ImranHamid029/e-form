@@ -39,6 +39,8 @@ class FormSetorController extends Controller
     
         $validatedData['queueNumber'] = $nextQueueNumber;
     
+        $validatedData['status'] = 'Menunggu';
+        
         Deposit::create($validatedData);
 
         session()->forget('accountType');

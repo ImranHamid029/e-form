@@ -164,6 +164,7 @@ return [
         Jenssegers\Mongodb\MongodbServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Mews\Captcha\CaptchaServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
         /*
          * Package Service Providers...
          */

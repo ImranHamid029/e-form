@@ -35,6 +35,8 @@ class FormTarikController extends Controller
     
         $validatedData['queueNumber'] = $nextQueueNumber;
     
+        $validatedData['status'] = 'Menunggu';
+
         Withdraw::create($validatedData);
 
         session()->forget('selectService');

@@ -52,6 +52,8 @@ class FormKreditController extends Controller
         $uniqueResi = 'BL' . strtoupper(uniqid());
 
         $validatedData['resiNumber'] = $uniqueResi;
+        
+        $validatedData['status'] = 'Menunggu';
 
         Applicant::create($validatedData);
 

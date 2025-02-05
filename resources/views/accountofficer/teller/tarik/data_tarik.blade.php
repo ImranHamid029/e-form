@@ -19,84 +19,56 @@
     </div>
 
     <div class="cards-container">
+        @foreach($withdraws as $index => $withdraw)
+            <a href="{{ route('withdraw.detail', $withdraw->id) }}" class="cards-link cards-item"
+                style="{{ $index >= 3 ? 'display: none;' : '' }}">
+                <div class="cards">
+                    <div class="cards-header">
+                        <p class="body-lg-bold">Data Nasabah</p>
+                    </div>
+                    <div class="cards-content">
+                        <p class="caption-regular"><strong>No Antrian :</strong> {{ $withdraw->queueNumber }}</p>
+                        <p class="caption-regular"><strong>No Rekening :</strong> {{ $withdraw->accountNumber }}</p>
+                        <p class="caption-regular"><strong>Pemilik Rekening :</strong> {{ $withdraw->ownerName }}</p>
+                        <p class="caption-regular"><strong>Status:</strong> 
+                            <span class="status-label">{{ $withdraw->status }}</span>
+                        </p>
+                    </div>
+                    <div class="cards-footer">
+                        <img src="/img/logo/logo2.png" alt="">
+                    </div>
+                </div>
+            </a>
+        @endforeach
 
-        <a href="/detail-data-tarik-tunai" class="cards-link">
-            <div class="cards">
-                <div class="cards-header">
-                    <p class="body-lg-bold">Data Nasabah</p>
-                </div>
-                <div class="cards-content">
-                    <p class="caption-regular"><strong>No Antrian :</strong> 1</p>
-                    <p class="caption-regular"><strong>No. Rekening :</strong> 08123456789</p>
-                    <p class="caption-regular"><strong>Nama :</strong> Imran Sukron Hamid</p>
-                    <p class="caption-regular"><strong>Status :</strong> Menunggu</p>
-
-                    
-                </div>
-                <div class="cards-footer">
-                    <img src="img/logo/logo2.png" alt="">
-                </div>
-            </div>
-        </a>
-
-        <a href="/" class="cards-link">
-            <div class="cards">
-                <div class="cards-header">
-                    <p class="body-lg-bold">Data Nasabah</p>
-                </div>
-                <div class="cards-content">
-                    <p class="caption-regular"><strong>No Antrian :</strong> 2</p>
-                    <p class="caption-regular"><strong>No. Rekening :</strong> 08234567890</p>
-                    <p class="caption-regular"><strong>Nama :</strong> Akmal Adnan Djayasinga</p>
-                    <p class="caption-regular"><strong>Status :</strong> Menunggu</p>
-
-                </div>
-                <div class="cards-footer">
-                    <img src="img/logo/logo2.png" alt="">
-                </div>
-            </div>
-        </a>
-
-        <a href="/" class="cards-link">
-            <div class="cards">
-                <div class="cards-header">
-                    <p class="body-lg-bold">Data Nasabah</p>
-                </div>
-                <div class="cards-content">
-                    <p class="caption-regular"><strong>No. Antrian :</strong> 3</p>
-                    <p class="caption-regular"><strong>No. Rekening :</strong> 08345678901</p>
-                    <p class="caption-regular"><strong>Nama :</strong> Rizky Ahmad Gzozali</p>
-                    <p class="caption-regular"><strong>Status :</strong> Menunggu</p>
-
-                </div>
-                <div class="cards-footer">
-                    <img src="img/logo/logo2.png" alt="">
-                </div>
-            </div>
-        </a>
-
-        <a href="/" class="cards-link">
-            <div class="cards">
-                <div class="cards-header">
-                    <p class="body-lg-bold">Data Nasabah</p>
-                </div>
-                <div class="cards-content">
-                    <p class="caption-regular"><strong>No. Antrian :</strong> 4</p>                    
-                    <p class="caption-regular"><strong>No. Rekening :</strong> 08345678901</p>
-                    <p class="caption-regular"><strong>Nama :</strong> David Mel Gibson</p>
-                    <p class="caption-regular"><strong>Status :</strong> Menunggu</p>
-
-                </div>
-                <div class="cards-footer">
-                    <img src="img/logo/logo2.png" alt="">
-                </div>
-            </div>
-        </a>
-        
-        
+        @if(count($withdraws) > 3)
         <div class="show-more">
-            <a href="" class="caption-regular">Show More ...</a>
+            <a href="javascript:void(0);" id="toggleButton" class="caption-regular">Show More ...</a>
         </div>
+        @endif
     </div>
 </div>
+
+<script>
+    document.getElementById('toggleButton')?.addEventListener('click', function () {
+        let cards = document.querySelectorAll('.cards-item');
+        let isExpanded = this.getAttribute('data-expanded') === 'true';
+
+        if (isExpanded) {
+            // Kembali ke tampilan hanya 3 kartu
+            cards.forEach((item, index) => {
+                item.style.display = index < 3 ? 'block' : 'none';
+            });
+            this.textContent = 'Show More ...';
+        } else {
+            // Tampilkan semua kartu
+            cards.forEach(item => {
+                item.style.display = 'block';
+            });
+            this.textContent = 'Show Less';
+        }
+
+        this.setAttribute('data-expanded', !isExpanded);
+    });
+</script>
 @endsection

@@ -5,54 +5,80 @@
         <div class="detail-data-container">
             
             <div class="detail-data-content">
-            <span class="close" style="text-align: end; cursor: pointer;">&times;</span>
+                <span class="close" style="text-align: end; cursor: pointer;">&times;</span>
 
-                <div class="detail-data-area">
-                    <form action="#" method="POST" enctype="multipart/form-data" id="regForm">
-                        @csrf
-                        <label for="tanggapan">Tanggapan</label>
+                <form action="{{ route('helpdesk.storeResponse', $complaint->id) }}" method="POST" enctype="multipart/form-data" id="regForm">
+                    @csrf
+                    <div class="detail-data-area">
+                        <label for="response">Tanggapan</label>
                         <div class="input-area">
-                            <textarea name="tanggapan" id="tanggapan" placeholder="Tulis disini" style="height:160px;" required></textarea>
-                            <span class="invalid-icon" style="display: none;">&#x2716;</span>
+                            <textarea name="response" id="response" placeholder="Tulis disini" style="height:160px;" required></textarea>
+                            <span class="invalid-icon" style="display: none; color: red;">&#x2716; Harap isi tanggapan</span>
                         </div>
-                    </form>
-                </div>
-            
-                <div class="btn-respons-area">
-                    <button type="submit" id="submitButton" class="btn-custom">Kirim</button>
-                </div>
+                    </div>
+                
+                    <div class="btn-respons-area">
+                        <button type="submit" id="submitButton" class="btn-custom">Kirim</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
-<script>
-    document.getElementById("submitButton").addEventListener("click", function (event) {
-        event.preventDefault();  // Mencegah form untuk langsung dikirim
 
-        const form = document.getElementById("regForm");
-        const inputs = form.querySelectorAll("input[required], select[required], textarea[required]"); // Target semua input, select, dan textarea
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("regForm");
+    const textarea = document.getElementById("response");
+    const submitButton = document.getElementById("submitButton");
+    const errorMessage = document.querySelector(".invalid-icon");
+
+    submitButton.addEventListener("click", async function (event) {
+        event.preventDefault(); // Prevent form submission
+
         let isValid = true;
 
-        // Periksa validasi untuk setiap elemen
-        inputs.forEach(input => {
-            const invalidIcon = input.nextElementSibling; // Mengambil ikon invalid
-
-            if (!input.value.trim()) {
-                input.classList.add("invalid");
-                if (invalidIcon) invalidIcon.style.display = "inline-block";
-                isValid = false;
-            } else {
-                input.classList.remove("invalid");
-                if (invalidIcon) invalidIcon.style.display = "none";
-            }
-        });
-
-        // Kirim form jika semua elemen valid
-        if (isValid) {
-            alert("Form berhasil dikirim!");
-            form.submit();  // Kirim form jika valid
+        // Validasi input
+        if (!textarea.value.trim()) {
+            textarea.classList.add("invalid");
+            errorMessage.style.display = "inline";
+            isValid = false;
         } else {
-            alert("Tanggapan tidak boleh kosong!");
+            textarea.classList.remove("invalid");
+            errorMessage.style.display = "none";
+        }
+
+        if (isValid) {
+            try {
+                const formData = new FormData(form);
+
+                let response = await fetch(form.action, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                    },
+                    body: formData
+                });
+
+                let data = await response.json();
+
+                if (data.success) {
+                    alert("Response berhasil dikirim!");
+                    window.location.href = "{{ route('helpdesk.dashboard') }}";
+                } else {
+                    alert("Terjadi kesalahan. Coba lagi.");
+                }
+            } catch (error) {
+                console.error("Error:", error);
+                alert("Terjadi kesalahan. Silakan coba lagi.");
+            }
         }
     });
+});
 </script>
+
+<!-- <style>
+    .invalid {
+        border: 1px solid red;
+    }
+</style> -->
