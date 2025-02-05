@@ -22,19 +22,19 @@
         </li>
         <li>
             <img src="/img/icon/ic4.svg" class="icon">
-            <a href="/credit" class="body-sm-bold">Pengajuan Kredit</a>
+            <a href="/cs" class="body-sm-bold">Pengajuan Kredit</a>
         </li>
         <li>
             <img src="/img/icon/ic3.svg" class="icon">
-            <a href="/complaint" class="body-sm-bold">Pengaduan Online</a>
+            <a href="/helpdesk" class="body-sm-bold">Pengaduan Online</a>
         </li>
         <li>
             <img src="/img/icon/ic6.svg" class="icon">
-            <a href="/data-setor-tunai" class="body-sm-bold">Setor Tunai</a>
+            <a href="/teller/deposit" class="body-sm-bold">Setor Tunai</a>
         </li>
         <li>
             <img src="/img/icon/ic2.svg" class="icon">
-            <a href="/data-tarik-tunai" class="body-sm-bold">Tarik Tunai</a>
+            <a href="/teller/withdraw" class="body-sm-bold">Tarik Tunai</a>
         </li>
         <li>
             <img src="/img/icon/ic5.svg" class="icon">

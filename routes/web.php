@@ -99,7 +99,7 @@ Route::post('/update-photo-image', [LoginController::class, 'updatePhoto'])->nam
 
 // Middleware untuk memastikan hanya pengguna yang sudah login yang dapat mengakses halaman sesuai role
 Route::middleware(['auth', 'role:adminsuper'])->group(function () {
-    Route::get('/index', function () {
+    Route::get('/admin', function () {
         return view('accountofficer.adminsuper.index');
     })->name('adminsuper.index');
 });
@@ -164,10 +164,10 @@ Route::get('/teller/history/deposit/{id}/{from_history?}', [TellerController::cl
 
 
 
-// Account officer
-Route::middleware(['auth'])->group(function () {
-    Route::get('/admin', [AccountOfficerController::class, 'index']);
-});
+// // Account officer
+// Route::middleware(['auth'])->group(function () {
+//     Route::get('/admin', [AccountOfficerController::class, 'index']);
+// });
 
 // // Account officer (Super Admin)
 // Route::get('/admin', function () {

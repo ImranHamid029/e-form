@@ -20,7 +20,7 @@
     <ul>            
         <li >
             <img src="/img/icon/ic8.svg" class="icon">
-            <a href="/cs    " class="body-sm-bold">Dashbaord</a>
+            <a href="/cs" class="body-sm-bold">Dashbaord</a>
         </li>
         
 

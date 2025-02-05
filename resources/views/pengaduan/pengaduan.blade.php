@@ -57,7 +57,7 @@
                     <div class="form-container" style="position: relative;">
                         <label for="complaint">Keluhan Anda <span class="required">*</span></label>
                         <div class="input-area">
-                            <textarea id="complaint" name="complaint" placeholder="Keluhan Anda" style="height:100px;"></textarea>
+                            <textarea id="complaint" name="complaint" placeholder="Keluhan Anda" style="height:100px;" required></textarea>
                             <span class="invalid-icon" style="display: none;">&#x2716;</span>
                         </div>
                     </div>
