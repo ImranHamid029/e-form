@@ -46,7 +46,7 @@
         </li>
         <li>
             <img src="/img/icon/ic1.svg" class="icon">
-            <a href="/manage-account" class="body-sm-bold">Manage Account</a>
+            <a href="/admin/manage-accounts" class="body-sm-bold">Manage Account</a>
         </li>
     </ul>
 

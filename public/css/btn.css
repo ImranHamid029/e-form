@@ -51,7 +51,8 @@ background-color: #fff;
 }
   
 .office-table .btn-edit a, 
-.office-table .btn-delete a {
+.office-table .btn-delete a,
+.office-table .btn-delete button {
     color: #fff;
     text-decoration: none;
     width: 100%; 
@@ -86,7 +87,8 @@ background-color: #fff;
     border: 1px solid #e53935;
     color: #e53935;
   }
-  .office-table .btn-delete:hover a{
+  .office-table .btn-delete:hover a,
+  .office-table .btn-delete:hover button{
     color: #e53935;
   }
 

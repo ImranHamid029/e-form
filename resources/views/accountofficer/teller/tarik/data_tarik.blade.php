@@ -13,7 +13,7 @@
             </div>
             <div class="searchbar">
                 <label for="">Search</label>
-                <input type="text" placeholder="Search...">
+                <input type="text" id="searchInput" placeholder="Search..." onkeyup="searchWithdraw()">
             </div>
     </div>
 
@@ -69,5 +69,20 @@
 
         this.setAttribute('data-expanded', !isExpanded);
     });
+</script>
+<script>
+    function searchWithdraw() {
+        let input = document.getElementById("searchInput").value.toLowerCase();
+        let cards = document.querySelectorAll(".cards-link");
+
+        cards.forEach(card => {
+            let queueNumber = card.querySelector(".cards-content p:first-child").textContent.toLowerCase();
+            if (queueNumber.includes(input)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    }
 </script>
 @endsection
