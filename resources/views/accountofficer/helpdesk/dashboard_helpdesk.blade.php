@@ -1,4 +1,4 @@
-@extends('layout\helpdesk\app')
+@extends('layout\admin\app')
 
 @section('content')
 <div class="features-area">
@@ -27,7 +27,12 @@
                         <p class="caption-regular"><strong>Nama:</strong> {{ $complaint->fullName }}</p>
                         <p class="caption-regular"><strong>No Tlp:</strong> {{ $complaint->phoneNumber }}</p>
                         <p class="caption-regular"><strong>Email:</strong> {{ $complaint->email }}</p>
-                        <p class="caption-regular"><strong>Status:</strong> <span class="status-label">{{ $complaint->status }}</span></p>
+                        <p class="caption-regular">
+                            <strong>Status:</strong> 
+                            <span class="status-label {{ $complaint->status == 'Menunggu' ? 'status-pending' : ($complaint->status == 'Selesai' ? 'status-complete' : '') }}">
+                                {{ $complaint->status }}
+                            </span>
+                        </p>
                     </div>
                     <div class="cards-footer">
                         <img src="/img/logo/logo2.png" alt="">

@@ -783,6 +783,19 @@ button {
   
 }
 /* Status Area */
+.status-pending {
+  color: #2062E5; 
+  font-weight: bold;
+}
+
+.status-complete {
+  color: #2DB01F; 
+  font-weight: bold;
+}
+.status-rejected {
+  color: #DF1523;
+  font-weight: bold;
+}
 .container-status {
   background-color: #F9FAFB;
   padding: 0;

@@ -94,24 +94,30 @@
 <!-- Script Modal Logout -->
 <script>
     function showLogoutPopup() {
-        document.getElementById("logoutPopup").style.display = "flex";
+        const popup = document.getElementById("logoutPopup");
+        popup.style.display = "flex";
+        document.body.classList.add("no-scroll"); // Nonaktifkan scroll
     }
 
     function hidePopup() {
-        document.getElementById("logoutPopup").style.display = "none";
+        const popup = document.getElementById("logoutPopup");
+        popup.style.display = "none";
+        document.body.classList.remove("no-scroll"); 
     }
 
     document.addEventListener("DOMContentLoaded", () => {
-        document.querySelector(".btn-confirm").addEventListener("click", () => {
-            document.getElementById("logoutForm").submit();
-        });
+        const confirmBtn = document.querySelector(".btn-confirm");
+        if (confirmBtn) {
+            confirmBtn.addEventListener("click", () => {
+                document.getElementById("logoutForm").submit();
+            });
+        }
     });
 
-    // Tutup popup logout jika klik di luar area popup
-    window.addEventListener("click", (event) => {
+    document.addEventListener("click", (event) => {
         const popup = document.getElementById("logoutPopup");
         if (event.target === popup) {
-            popup.style.display = "none";
+            hidePopup();
         }
     });
 </script>

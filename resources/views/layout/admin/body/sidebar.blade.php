@@ -7,11 +7,15 @@
 <div class="sidebar" id="sidebar">
     <div class="profile-area">
         <div class="profile">
+            @php
+                $user = Auth::user();
+                $profileImage = $user->profileImage ? asset($user->profileImage) : asset('/img/default-profile.png');
+            @endphp
             <img src="/img/bg-img/16.jpg" alt="Logo">
         </div>
         <div class="name-area">
-            <a class="body-sm-bold">Name Admin</a><br>
-            <a class="caption-regular">Role Admin</a>
+        <a href="#" class="body-sm-bold" onclick="showProfileModal(event)">{{ $user->username }}</a><br>
+        <a class="caption-regular">{{ ucfirst($user->role) }}</a>
         </div>
     </div>
 
@@ -79,7 +83,7 @@
     });
 
     logoutButton.addEventListener('click', () => {
-        popup.style.display = 'block';
+        popup.style.display = 'flex';
     });
 
     function hidePopup() {

@@ -1,5 +1,4 @@
-@extends('layout\teller\app')
-
+@extends('layout\admin\app')
 @section('content')
 <style>
     body {

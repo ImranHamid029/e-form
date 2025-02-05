@@ -1,5 +1,4 @@
-@extends('layout\cs\app')
-
+@extends('layout\admin\app')
 @section('content')
 <div class="features-area">
     <div class="content2">

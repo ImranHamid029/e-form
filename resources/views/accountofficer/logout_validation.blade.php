@@ -14,10 +14,12 @@
 <script>
     function showPopup() {
         document.getElementById('logoutPopup').style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Nonaktifkan scrolling
     }
 
     function hidePopup() {
         document.getElementById('logoutPopup').style.display = 'none';
+        document.body.style.overflow = 'auto'; // Aktifkan kembali scrolling
     }
 
     document.getElementById('confirmLogoutBtn').addEventListener('click', function() {
