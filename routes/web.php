@@ -100,9 +100,8 @@ Route::post('/update-photo-image', [LoginController::class, 'updatePhoto'])->nam
 
 // Middleware untuk memastikan hanya pengguna yang sudah login yang dapat mengakses halaman sesuai role
 Route::middleware(['auth', 'role:adminsuper'])->group(function () {
-    Route::get('/admin', function () {
-        return view('accountofficer.adminsuper.index');
-    })->name('adminsuper.index');
+    Route::get('/admin', [AccountOfficerController::class, 'index']);
+
 
     Route::get('/admin/manage-accounts', [AccountController::class, 'index'])->name('manage-accounts');  // Menambahkan name route
     Route::get('/admin/add-account', [AccountController::class, 'create'])->name('add-account');  // Menambahkan name route

@@ -90,41 +90,38 @@
 
 <script>
     function showPopup(status) {
-        let popup = document.getElementById('confirmationPopup');
-        popup.style.display = 'flex';
+    let popup = document.getElementById('confirmationPopup');
+    popup.style.display = 'flex';
 
-        // Menyimpan status dalam atribut data-status
-        document.querySelector('confirmValidate').setAttribute('data-status', status);
-    }
+    // Menyimpan status dalam atribut data-status
+    document.getElementById('confirmValidate').setAttribute('data-status', status);
+}
 
-    function hidePopup() {
-        document.getElementById('confirmationPopup').style.display = 'none';
-    }
+function hidePopup() {
+    document.getElementById('confirmationPopup').style.display = 'none';
+}
 
-    document.querySelector('confirmValidate').addEventListener('click', function () {
-        let status = this.getAttribute('data-status');
-        updateStatus(status);
-    });
+document.getElementById('confirmValidate').addEventListener('click', function () {
+    let status = this.getAttribute('data-status');
+    updateStatus(status);
+});
 
-    function updateStatus(status) {
-        fetch("{{ route('applicant.update_status', $applicant->id) }}", {
-            method: "POST",
-            headers: {
-                "X-CSRF-TOKEN": "{{ csrf_token() }}",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ status: status })
-        }).then(response => response.json())
-          .then(data => {
-              if (data.success) {
-                  window.location.href = "{{ route('dashboard_cs') }}";
-              }
-          });
-    }
+function updateStatus(status) {
+    fetch("{{ route('applicant.update_status', $applicant->id) }}", {
+        method: "POST",
+        headers: {
+            "X-CSRF-TOKEN": "{{ csrf_token() }}",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ status: status })
+    }).then(response => response.json())
+      .then(data => {
+          if (data.success) {
+              window.location.href = "{{ route('cs.dashboard') }}";
+          }
+      });
+}
 
-    function goBack() {
-        window.history.back();
-    }
 </script>
 
 @endsection

@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{ asset('style.css') }}">
 
 <!-- Popup Konfirmasi -->
-<div id="confirmationPopup" class="popup-area-confirm" style="z-index: 99999;">
+<div id="logoutPopup" class="popup-area-confirm" style="z-index: 99999;">
     <div class="popup-container-confirm">
         <p class="body-lg-semibold text-center">Apakah Anda yakin data sudah benar?</p>
         <div class="btn-area d-flex align-items-center mt-3">

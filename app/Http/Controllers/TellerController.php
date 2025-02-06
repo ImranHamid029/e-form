@@ -12,7 +12,9 @@ class TellerController extends Controller
 {
     public function index()
     {
-        return view('accountofficer.teller.dashboard_teller');
+        $tarikTunai = Withdraw::count();    
+        $setorTunai = Deposit::count(); 
+        return view('accountofficer.teller.dashboard_teller', compact('tarikTunai', 'setorTunai'));
     }
 
     public function withdraw()
