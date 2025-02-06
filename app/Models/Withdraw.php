@@ -10,6 +10,7 @@ class Withdraw extends Model
     protected $collection = 'withdraw';
 
     protected $fillable = [
+        'formtype',
         'queueNumber',
         'bankBranch',
         'ownerName',
@@ -19,6 +20,9 @@ class Withdraw extends Model
         'amount',
         'amountInWords',
         'status',
+    ];
+    protected $attributes = [
+        'formtype' => 'Tarik Tunai',
     ];
     
     protected $primaryKey = '_id';

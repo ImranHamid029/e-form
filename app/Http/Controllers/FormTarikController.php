@@ -47,6 +47,7 @@ class FormTarikController extends Controller
             'accountNumber'  => $request->accountNumber,
             'accountType'    => $request->accountType,
             'amount'         => $request->amount,
+            'formtype'       => 'Tarik Tunai',
         ]);
     
         \Log::info('Queue Created:', ['queueNumber' => $nextQueueNumber]);

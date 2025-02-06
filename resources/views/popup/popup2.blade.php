@@ -11,7 +11,7 @@
                 <div class="popup-content">
                     <div>
                         <h4 class="h4-medium">
-                            Berkas <strong>Setor Tunai</strong> Berhasil Dibuat!
+                        Berkas <strong>{{ session('formtype') }}</strong> Berhasil Dibuat!
                         </h4>
                     </div>
 

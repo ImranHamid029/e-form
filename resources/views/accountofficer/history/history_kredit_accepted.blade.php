@@ -7,9 +7,10 @@
     </div>
 
     <div class="container-bar">
+        <div></div>
         <div class="searchbar">
             <label for="">Search</label>
-            <input type="text" id="searchInput" placeholder="Cari nama...">
+            <input type="text" id="searchInput" placeholder="Search...">
         </div>
     </div>
 
@@ -24,8 +25,17 @@
                     <p class="caption-regular"><strong>Nama Lengkap :</strong> {{ $applicant->fullName }}</p>
                     <p class="caption-regular"><strong>NIK :</strong> {{ $applicant->nik }}</p>
                     <p class="caption-regular"><strong>No. Telp :</strong> {{ $applicant->phoneNumber }}</p>
-                    <p class="caption-regular"><strong>Status :</strong> {{ $applicant->status }}</p>
-                </div>
+                    <p class="caption-regular">
+                            <strong>Status:</strong> 
+                            <span class="status-label 
+                                {{ $applicant->status == 'Menunggu' ? 'status-pending' : 
+                                    ($applicant->status == 'Disetujui' ? 'status-complete' : 
+                                    ($applicant->status == 'Ditolak' ? 'status-rejected' : '')) }}
+                            ">
+                            {{ $applicant->status }}
+                            </span>
+                        </p>               
+                    </div>
                 <div class="cards-footer">
                     <img src="/img/logo/logo2.png" alt="">
                 </div>

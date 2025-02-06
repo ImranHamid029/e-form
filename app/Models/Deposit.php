@@ -10,6 +10,7 @@ class Deposit extends Model
     protected $collection = 'deposit';
 
     protected $fillable = [
+        'formtype',
         'queueNumber',
         'selectService',
         'accountNumber',
@@ -22,6 +23,9 @@ class Deposit extends Model
         'amount',
         'amountInWords',
         'status',
+    ];
+    protected $attributes = [
+        'formtype' => 'Setor Tunai',
     ];
     
     protected $primaryKey = '_id';

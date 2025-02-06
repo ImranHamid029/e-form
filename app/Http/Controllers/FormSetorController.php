@@ -51,6 +51,7 @@ class FormSetorController extends Controller
             'accountNumber'  => $request->accountNumber,
             'selectService'  => $request->selectService, 
             'amount'         => $request->amount,
+            'formtype'       => 'Setor Tunai',
         ]);
         
         \Log::info('Queue Created:', ['queueNumber' => $nextQueueNumber]);
