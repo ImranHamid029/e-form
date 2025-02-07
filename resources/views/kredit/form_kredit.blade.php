@@ -52,6 +52,7 @@
                     <span class="invalid-select" style="display: none;">!</span> 
                   </div>
                 </div>
+
               </div>
 
               <div class="form-container " style="flex: 1;width:50%; ">
@@ -417,6 +418,23 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const selects = document.querySelectorAll("select");
+
+    selects.forEach(select => {
+      select.style.color = "gray"; // Warna awal
+
+      select.addEventListener("change", function() {
+        if (this.value) {
+          this.style.color = "black";
+        } else {
+          this.style.color = "gray";
+        }
+      });
+    });
+  });
 </script>
 
 

@@ -47,12 +47,12 @@
                     <a href="javascript:void(0);" onclick="window.history.back(); " class="btn-blue">Kembali</a>
                     </div>
 
-                    @if (!isset($from_history) || $from_history != true) <!-- Jika bukan dari history, tampilkan tombol -->
+                    <!-- @if (!isset($from_history) || $from_history != true) 
                     <div style="display: flex; gap: 10px;">
                         <button type="button" class="btn-accepted" onclick="showPopup('Disetujui')">Setujui</button>
                         <button type="button" class="btn-rejected" onclick="showPopup('Ditolak')">Tolak</button>
                     </div>
-                    @endif
+                    @endif -->
                 </div>
                 
             </div>
