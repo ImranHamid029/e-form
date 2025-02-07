@@ -11,12 +11,18 @@
                     <div>
                         <h4 class="h4-semibold">Pengaduan Online Berhasil Dikirim!</h4> <!-- Sesuaikan dengan database -->
                     </div>
+                    <div class="d-flex">
+                    <p class="body-md-medium">
+                        Nomor Resi: <span class="h5-bold" id="resiNumber">{{ $uniqueResi }}</span>
+                    </p>
 
+                    </div>
                     <div>
                         <p class="caption-regular">
                             Untuk informasi lebih lanjut, tim kami akan menghubungi 
                             Anda melalui email atau nomor telepon yang telah Anda berikan.
                         </p>
+                        <p class="caption-regular">Jika Tidak Ada Balasan Dari Pihak Kami dalam waktu 3 X 24 Jam. Silahkan Datang Ke Kantor Cabang Terdekat. Dengan Menunjukan Nomor Resi Yang Telah DiBerikan</p>
                         
                         <p class="caption-regular">Terima kasih atas kepercayaan Anda kepada Bank Lampung!</p>
                     </div>

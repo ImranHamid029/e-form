@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Deposit;
 use App\Models\Withdraw;
 use App\Models\Applicant;
+use App\Models\HistoryApplicant;
 use Illuminate\Support\Facades\Validator;
 
 class StatusController extends Controller
@@ -54,8 +55,14 @@ class StatusController extends Controller
             ]);
         }
 
-        // Cari data applicant
-        $applicant = Applicant::where('resiNumber', $identifier)->first();
+        // Cari data applicant di tabel 'applicants' dulu
+$applicant = Applicant::where('resiNumber', $identifier)->first();
+
+        // Jika tidak ditemukan, cari di tabel 'history_applicant'
+        if (!$applicant) {
+            $applicant = HistoryApplicant::where('resiNumber', $identifier)->first();
+        }
+
         if ($applicant) {
             return response()->json([
                 'success' => true,
@@ -81,6 +88,11 @@ class StatusController extends Controller
             $feature = 'Tarik Tunai';
         } elseif ($type === 'Applicant') {
             $data = Applicant::find($id);
+        
+            if (!$data) {
+                $data = HistoryApplicant::find($id);
+            }
+        
             $feature = 'Pengajuan Kredit';
         } else {
             $data = null;

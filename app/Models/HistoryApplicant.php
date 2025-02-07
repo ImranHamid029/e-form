@@ -10,7 +10,8 @@ class HistoryApplicant extends Model
     protected $collection = 'history_applicant'; 
 
     protected $fillable = [
-        'nik',             
+        'nik', 
+        'resiNumber' ,           
         'fullName',
         'placeOfBirth',
         'dateOfBirth',

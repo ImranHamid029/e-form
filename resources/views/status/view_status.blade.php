@@ -15,7 +15,7 @@
                     <div class="content-status">
                         <h3 class="h3-bold">Hi {{ $data->fullName ?? $data->ownerName ?? 'Nasabah' }},</h3>
                         <p class="caption-regular">
-                            Terima kasih, pengajuan <span class="caption-semibold">{{ strtolower($feature ?? 'transaksi') }}</span> Anda
+                            Terima kasih, Status pengajuan <span class="caption-semibold">{{ strtolower($feature ?? 'transaksi') }}</span> Anda
                             <span class="caption-semibold">{{ $data->status ?? 'Sedang Diproses' }}.</span>
                         </p>
                     </div>
@@ -38,9 +38,10 @@
                     </div>
 
                     <div class="content-status">
-                        <div class="status-process">
-                            <h5 class="body-lg-bold">{{ $data->status ?? 'Sedang Diproses' }}.</h5>
+                        <div class="{{ $data->status === 'Ditolak' ? 'rejected-status' : ($data->status === 'Disetujui' ? 'accepted-status' : 'status-process') }}">
+                            <h5 class="body-lg-bold">{{ $data->status ?? 'Sedang Diproses' }}</h5>
                         </div>
+
                     </div>
 
                     <div class="content-status">

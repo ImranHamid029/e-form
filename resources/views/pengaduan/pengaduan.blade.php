@@ -39,7 +39,7 @@
                     <div class="form-container" style="position: relative;">
                         <label for="phoneNumber">No. Hp <span class="required">*</span></label>
                         <div class="input-area">
-                            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="No Hp Anda" required>
+                            <input type="number" id="phoneNumber" name="phoneNumber" placeholder="No Hp Anda" required>
                             <span class="invalid-icon" style="display: none;">&#x2716;</span>
                         </div>
                     </div>
@@ -65,10 +65,11 @@
                     
 
                     </div>
-                    <div class="col-12 text-center btn-area">
+                    
+                </div>
+                <div class="col-12 text-center btn-area">
                         <button type="submit" class="btn-custom" id="submitButton">Kirim</button>
                     </div>
-                </div>
                 </div>
                 </div>
             </div>

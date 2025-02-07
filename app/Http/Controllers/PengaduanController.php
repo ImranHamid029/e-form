@@ -20,7 +20,9 @@ class PengaduanController extends Controller
             'email'              => 'required|email|max:255',
             'complaint'          => 'required|string',
         ]);
+        $uniqueResi = 'PE' . strtoupper(uniqid());
 
+        $validatedData['resiNumber'] = $uniqueResi;
         $validatedData['status'] = 'Menunggu';
         
         Complaint::create($validatedData);
@@ -30,9 +32,10 @@ class PengaduanController extends Controller
             'phoneNumber'        => $request->phoneNumber,
             'email'              => $request->email,
             'complaint'          => $request->complaint,
+            'resiNumber'         => $uniqueResi,
         ]);
 
-        return view('popup.popup3');
+        return view('popup.popup3', compact('uniqueResi'));
     }
     
     public function validation(Request $request)

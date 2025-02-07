@@ -13,7 +13,7 @@ class Complaint extends Model
         'phoneNumber',    
         'email',                 
         'complaint',             
-
+        'resiNumber',
         'response',
         'status',
     ];
