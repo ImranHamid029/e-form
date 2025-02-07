@@ -240,5 +240,21 @@
 });
 
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const selects = document.querySelectorAll("select");
 
+    selects.forEach(select => {
+      select.style.color = "gray"; // Warna awal
+
+      select.addEventListener("change", function() {
+        if (this.value) {
+          this.style.color = "black";
+        } else {
+          this.style.color = "gray";
+        }
+      });
+    });
+  });
+</script>
 @endsection

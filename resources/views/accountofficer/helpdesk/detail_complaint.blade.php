@@ -21,7 +21,7 @@
             </div>
             <div class="btn-area3">
                 <div>
-                        <a href="javascript:void(0);" onclick="window.history.back(); " class="btn-blue">Kembali</a>
+                        <a href="javascript:void(0);" onclick="window.history.back(); " class="btn-custom">Kembali</a>
                 </div>
                 <div>
                     <a href="#" class="btn-custom" id="tanggapiBtn">Tanggapi</a>
@@ -66,3 +66,4 @@
 
 
 </script>
+@endsection
