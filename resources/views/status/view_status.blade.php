@@ -37,11 +37,27 @@
                         </p>
                     </div>
 
+                    @if (strtolower($data->status ?? '') === 'ditolak')
+                        <div class="content-status">
+                            <ul class="caption-regular">
+                                <li>
+                                    <strong>Dokumen Tidak Lengkap</strong> - Berkas atau dokumen yang diperlukan belum lengkap atau tidak sesuai.
+                                </li>
+                                <li>
+                                    <strong>Riwayat Kredit Buruk</strong> - Pemohon memiliki catatan kredit bermasalah atau keterlambatan pembayaran sebelumnya.
+                                </li>
+                                <li>
+                                    <strong>Penghasilan Tidak Memenuhi Syarat atau jaminan tidak sesuai dengan jumlah pengajuan Anda</strong> - Pendapatan tidak mencukupi untuk membayar cicilan sesuai ketentuan bank.
+                                </li>
+                                <li>Untuk informasi lebih lanjut, Anda dapat menghubungi layanan yang kami sediakan di bawah.</li>
+                            </ul>
+                        </div>
+                    @endif
+
                     <div class="content-status">
-                        <div class="{{ $data->status === 'Ditolak' ? 'rejected-status' : ($data->status === 'Disetujui' ? 'accepted-status' : 'status-process') }}">
+                        <div class="{{ strtolower($data->status ?? '') === 'ditolak' ? 'rejected-status' : (strtolower($data->status ?? '') === 'disetujui' ? 'accepted-status' : 'status-process') }}">
                             <h5 class="body-lg-bold">{{ $data->status ?? 'Sedang Diproses' }}</h5>
                         </div>
-
                     </div>
 
                     <div class="content-status">

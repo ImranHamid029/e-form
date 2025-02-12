@@ -257,4 +257,10 @@
     });
   });
 </script>
+
+<script>
+    function closePopup() {
+        document.getElementById("logoutPopup").style.display = "none";
+    }
+</script>
 @endsection

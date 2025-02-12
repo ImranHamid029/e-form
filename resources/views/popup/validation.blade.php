@@ -12,7 +12,8 @@
                 @endforeach
                 <button type="submit" class="btn-confirm" id="confirmButton">Ya</button>
             </form>
-            <button type="submit" class="btn-rejected" onclick="closePopup()">Tidak</button>
+            <button type="button" class="btn-rejected" onclick="closePopup()">Tidak</button>
         </div>
     </div>
 </div>
+

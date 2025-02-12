@@ -419,6 +419,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 </script>
+
+<script>
+    function closePopup() {
+        document.getElementById("logoutPopup").style.display = "none";
+    }
+</script>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     const selects = document.querySelectorAll("select");

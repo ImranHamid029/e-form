@@ -23,11 +23,12 @@
                 <div>
                         <a href="javascript:void(0);" onclick="window.history.back(); " class="btn-custom">Kembali</a>
                 </div>
+                @if(!isset($from_history) && auth()->user()->role !== 'adminsuper')
                 <div>
                     <a href="#" class="btn-custom" id="tanggapiBtn">Tanggapi</a>
 
                 </div>
-                
+                @endif
             </div>
             
         </div>

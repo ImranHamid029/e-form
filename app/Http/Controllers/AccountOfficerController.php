@@ -26,7 +26,18 @@ class AccountOfficerController extends Controller
         // Mengirim data ke view
         return view('accountofficer.adminsuper.index', compact('tarikTunai', 'setorTunai', 'pengaduanOnline', 'pengajuanKredit'));
     }
-   
+    public function history()
+{
+    // Ambil semua data transaksi untuk ditampilkan di halaman history
+    $withdraws = Withdraw::all();
+    $deposits = Deposit::all();
+    $complaints = Complaint::all();
+    $applicants = Applicant::all();
+
+    // Kirim data ke view 'adminsuper.history'
+    return view('accountofficer.adminsuper.history', compact('withdraws', 'deposits', 'complaints', 'applicants'));
+}
+
 }
 
 
