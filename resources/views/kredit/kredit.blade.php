@@ -1,7 +1,6 @@
 @extends('layout\user\app')
 @section('content')
 <section class="features-area ">
-
     <!-- content 1 -->
     <div class="container2">
         <div class="row align-items-center d-flex justify-content-between" style="padding-bottom:24px;" >
@@ -24,8 +23,7 @@
                     perorangan maupun kelompok untuk membiayai 
                     kebutuhan usaha produktif baik investasi maupun 
                     kebutuhan modal kerja.</p>
-                    </div>
-                        
+                    </div>                     
                 </div>
             </div>
             <!-- Kolom Kanan -->
@@ -34,9 +32,7 @@
                     <a href="#"><img src="img/img28.png" alt=""></a>
                 </div>
             </div>
-
         </div>
-
         <!-- Content 2 -->
         <div class="container2 row d-flex flex-column align-items-center justify-content-center" style=" padding-top:64px;">
             <h3 class="text-center h3-bold" style="padding-bottom:48px;">Tunggu apa lagi? AYO Ajukan Sekarang!</h3>

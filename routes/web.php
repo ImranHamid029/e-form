@@ -23,6 +23,10 @@ use App\Http\Controllers\TellerController;
 use App\Http\Controllers\AccountController;
 use Mews\Captcha\Facades\Captcha;
 
+
+Route::fallback(function () {
+    return response()->view('404', [], 404);
+});
 Route::get('/tes', function () {
     return view('tes');
 });
@@ -104,12 +108,13 @@ Route::middleware(['auth', 'role:adminsuper'])->group(function () {
 
 
 
-    Route::get('/admin/manage-accounts', [AccountController::class, 'index'])->name('manage-accounts');  // Menambahkan name route
-    Route::get('/admin/add-account', [AccountController::class, 'create'])->name('add-account');  // Menambahkan name route
-    Route::post('/admin/add-account', [AccountController::class, 'store']);
-    Route::get('/admin/edit-account/{id}', [AccountController::class, 'edit'])->name('edit-account');  // Menambahkan name route
-    Route::post('/admin/edit-account/{id}', [AccountController::class, 'update']);
-    Route::delete('/admin/delete-account/{id}', [AccountController::class, 'destroy'])->name('delete-account');  // Menambahkan name route
+    Route::get('/admin/manage-accounts', [AccountController::class, 'index'])->name('manage-accounts');
+    Route::get('/admin/add-account', [AccountController::class, 'create'])->name('add-account');
+    Route::post('/admin/add-account', [AccountController::class, 'store'])->name('store-account'); // Tambahkan name route
+    Route::get('/admin/edit-account/{id}', [AccountController::class, 'edit'])->name('edit-account');
+    Route::put('/admin/edit-account/{id}', [AccountController::class, 'update'])->name('update-account'); // Ubah POST ke PUT
+    Route::delete('/admin/delete-account/{id}', [AccountController::class, 'destroy'])->name('delete-account');
+    
     route::get('/history',[AccountOfficerController::class, 'history'])->name('history');
 });
 

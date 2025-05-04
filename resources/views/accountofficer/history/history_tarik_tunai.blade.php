@@ -1,4 +1,4 @@
-@extends('layout\teller\app')
+@extends('layout\admin\app')
 
 @section('content')
 <div class="features-area">

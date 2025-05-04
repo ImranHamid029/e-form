@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\OperationalOffice;
 
 class AccountController extends Controller
 {
@@ -17,7 +18,8 @@ class AccountController extends Controller
     // Menampilkan form untuk menambah akun
     public function create()
     {
-        return view('accountofficer.adminsuper.add_account');  // Mengarahkan ke form tambah akun
+        $offices = OperationalOffice::all(); // Ambil semua kantor dari koleksi MongoDB
+    return view('accountofficer.adminsuper.add_account', compact('offices')); 
     }
 
     // Menyimpan akun baru

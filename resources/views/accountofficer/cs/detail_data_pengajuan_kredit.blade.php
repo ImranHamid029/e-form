@@ -70,16 +70,14 @@
 
             <div class="btn-area3">
                 <div>
-                <a href="javascript:void(0);" class="btn-blue" onclick="goBack();">Kembali</a>
-
+                    <a href="javascript:void(0);" id="tanggapiBtn" class="btn-blue" onclick="goBack();">Kembali</a>
                 </div>
-                @if (!isset($from_history) && auth()->user()->role !== 'adminsuper')
-                    <div style="display: flex; gap: 10px;">
-                        <button type="button" class="btn-accepted" onclick="showPopup('Disetujui')">Setujui</button>
-                        <button type="button" class="btn-rejected" onclick="showPopup('Ditolak')">Tolak</button>
-                    </div>
+                @if (!isset($from_history))
+                <div style="display: flex; gap: 10px;">
+                    <button type="button" class="btn-accepted" onclick="showPopup('Disetujui')">Setujui</button>
+                    <button type="button" class="btn-rejected" onclick="showPopup('Ditolak')">Tolak</button>
+                </div>
                 @endif
-
             </div>
         </div>
     </div>
@@ -88,21 +86,34 @@
 @include('popup.validate')
 
 <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let confirmButton = document.getElementById('confirmValidate');
+        if (confirmButton) {
+            confirmButton.addEventListener('click', function () {
+                let status = this.getAttribute('data-status');
+                updateStatus(status);
+            });
+        }
+
+    });
+
     function showPopup(status) {
-        let popup = document.getElementById(status === 'Disetujui' ? 'confirmationPopup' : 'feedbackPopup');
-        popup.style.display = 'flex';
-        document.getElementById('confirmValidate').setAttribute('data-status', status);
+        let popup = document.getElementById('confirmationPopup');
+        if (popup) {
+            popup.style.display = 'flex';
+            let confirmButton = document.getElementById('confirmValidate');
+            if (confirmButton) {
+                confirmButton.setAttribute('data-status', status);
+            }
+        }
     }
 
     function hidePopup() {
-        document.getElementById('confirmationPopup').style.display = 'none';
-        document.getElementById('feedbackPopup').style.display = 'none';
+        let popup = document.getElementById('confirmationPopup');
+        if (popup) {
+            popup.style.display = 'none';
+        }
     }
-
-    document.getElementById('confirmValidate').addEventListener('click', function () {
-        let status = this.getAttribute('data-status');
-        updateStatus(status);
-    });
 
     function updateStatus(status) {
         fetch("{{ route('applicant.update_status', $applicant->id) }}", {
@@ -119,9 +130,6 @@
               }
           });
     }
-    function goBack() {
-    window.history.back();
-}
 </script>
 
 @endsection

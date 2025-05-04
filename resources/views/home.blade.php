@@ -1,8 +1,7 @@
 @extends('layout\user\app')
 @section('content')
 <!-- ##### Features Area Start ###### -->
-<section class="features-area " style="margin-top: -100px !important;"
->
+<section class="features-area " style="margin-top: -100px !important;">
     <div class="container2" style="padding-bottom:64px; ">
         <div class="home-container">
             <div class="row align-items-center justify-between">
